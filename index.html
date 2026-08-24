@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บัณฑิตโหด</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Kanit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header ด้านบน */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7928ca 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-bottom: 4px solid #87ceeb;
+            display: block;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* แถบด้านบนสำหรับปุ่ม Hamburger และเครื่องเล่นเพลง */
+        .top-bar {
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #e0e0e0;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* ปุ่ม Hamburger */
+        .hamburger-btn {
+            background: #ffffff;
+            border: 2px solid #87ceeb;
+            border-radius: 8px;
+            cursor: pointer;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(135, 206, 235, 0.3);
+        }
+
+        .hamburger-btn:hover {
+            background-color: #e1f5fe;
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(135, 206, 235, 0.5);
+        }
+
+        .hamburger-btn span {
+            display: block;
+            width: 26px;
+            height: 4px;
+            background-color: #87ceeb;
+            border-radius: 3px;
+        }
+
+        /* เมนูด้านข้าง (Sidebar Menu) */
+        nav.sidebar {
+            position: fixed;
+            top: 0;
+            left: -290px;
+            width: 280px;
+            height: 100%;
+            background-color: #ffffff;
+            box-shadow: 4px 0 15px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            gap: 12px;
+            transition: left 0.3s ease;
+            z-index: 1000;
+            border-right: 3px solid #1e3c72;
+        }
+
+        nav.sidebar.open {
+            left: 0;
+        }
+
+        .close-btn {
+            align-self: flex-end;
+            background: none;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            font-size: 1.2rem;
+            color: #888;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            border-color: #ff416c;
+            color: #ff416c;
+            background-color: #fff0f3;
+        }
+
+        .nav-btn {
+            padding: 12px 18px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            color: #333;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            border-color: #2a5298;
+            background-color: #eef4ff;
+            color: #1e3c72;
+            transform: translateX(5px);
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            border-color: #ff416c;
+            box-shadow: 0 4px 10px rgba(255, 65, 108, 0.3);
+            border-left: 6px solid #1e3c72;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            display: none;
+            z-index: 999;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* สไตล์แบบทดสอบ */
+        .quiz-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .difficulty-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .diff-btn {
+            padding: 8px 16px;
+            border: 2px solid #ccc;
+            background: white;
+            color: #333;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .diff-btn.easy.active {
+            background-color: #00b0ff;
+            color: white;
+            border-color: #00b0ff;
+            box-shadow: 0 3px 8px rgba(0, 176, 255, 0.3);
+        }
+
+        .diff-btn.medium.active {
+            background-color: #ff9800;
+            color: white;
+            border-color: #ff9800;
+            box-shadow: 0 3px 8px rgba(255, 152, 0, 0.3);
+        }
+
+        .diff-btn.hard.active {
+            background-color: #dc3545;
+            color: white;
+            border-color: #dc3545;
+            box-shadow: 0 3px 8px rgba(220, 53, 69, 0.3);
+        }
+
+        .reset-btn {
+            padding: 8px 16px;
+            background-color: #ff3366;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .reset-btn:hover {
+            background-color: #d62850;
+            box-shadow: 0 3px 8px rgba(214, 40, 80, 0.3);
+        }
+
+        .quiz-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .quiz-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .answers-box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .option-btn {
+            padding: 15px;
+            border: 2px solid #dcdcdc;
+            background: #ffffff;
+            border-radius: 8px;
+            text-align: left;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            border-color: #87ceeb;
+            background: #e1f5fe;
+            color: #0288d1;
+            font-weight: bold;
+            transform: scale(1.02);
+        }
+
+        .option-btn.correct {
+            background-color: #e1f5fe !important;
+            border-color: #03a9f4 !important;
+            color: #0277bd !important;
+            font-weight: bold;
+        }
+
+        .option-btn.wrong {
+            background-color: #f8d7da !important;
+            border-color: #dc3545 !important;
+            color: #721c24 !important;
+            font-weight: bold;
+        }
+
+        .question-box {
+            background: #1e3c72;
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 3px solid #ff416c;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 200px;
+            box-shadow: 0 4px 15px rgba(255, 65, 108, 0.2);
+        }
+
+        .explanation-box {
+            display: none;
+            margin-top: 20px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .explanation-box.correct-bg {
+            background-color: #e1f5fe;
+            border: 2px solid #03a9f4;
+            color: #01579b;
+        }
+
+        .explanation-box.wrong-bg {
+            background-color: #ffebee;
+            border: 2px solid #dc3545;
+            color: #b71c1c;
+        }
+
+        .toggle-scratchpad-btn {
+            margin-top: 20px;
+            padding: 10px 18px;
+            background: #1e3c72;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-scratchpad-btn:hover {
+            background: #2a5298;
+        }
+
+        .scratchpad-area {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: #fafafa;
+            border: 2px dashed #1e3c72;
+            border-radius: 12px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .scratchpad-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .clear-btn {
+            padding: 6px 14px;
+            background: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .clear-btn:hover {
+            background: #e68a00;
+        }
+
+        #scratchpad {
+            width: 100%;
+            height: 200px;
+            background: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            cursor: crosshair;
+            touch-action: none;
+        }
+
+        .quiz-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .prev-btn {
+            padding: 10px 20px;
+            background: #6c757d;
+            color: white;
+            border: 2px solid #5a6268;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .prev-btn:hover:not(:disabled) {
+            background: #5a6268;
+            box-shadow: 0 3px 8px rgba(108, 117, 125, 0.4);
+        }
+
+        .prev-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .next-btn {
+            padding: 10px 25px;
+            background: #ff416c;
+            color: white;
+            border: 2px solid #e0355c;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .next-btn:hover {
+            background: #e0355c;
+            box-shadow: 0 3px 8px rgba(224, 53, 92, 0.4);
+        }
+
+        .final-summary {
+            display: none;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 25px;
+            border: 3px solid #87ceeb;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .final-summary h3 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .final-summary #summary-diff-text {
+            font-size: 1.4rem;
+            color: #ffffff;
+            font-weight: 500;
+            opacity: 0.95;
+        }
+
+        .final-summary .score-big {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin: 20px 0;
+            color: #ffffff;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .final-summary #score-percentage-text {
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+            flex: 1;
+            width: 100%;
+        }
+
+        .page {
+            display: none;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .page h2 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #ff416c;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .page p {
+            line-height: 1.6;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- แถบปุ่มเมนู และ เครื่องเล่นเพลง -->
+    <div class="top-bar">
+        <button class="hamburger-btn" onclick="toggleMenu()" title="เปิดเมนู">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-weight: bold; color: #1e3c72; font-size: 0.9rem;">🎵 เพลงประกอบ:</span>
+            <audio controls loop style="height: 35px; max-width: 200px;">
+                <source src="music.mp3" type="audio/mpeg">
+                เบราว์เซอร์ไม่รองรับเสียง
+            </audio>
+        </div>
+    </div>
+
+    <!-- แถบเมนูด้านข้าง (Sidebar) ย้าย Quantifier ไปล่างสุด -->
+    <nav class="sidebar" id="sidebar">
+        <button class="close-btn" onclick="toggleMenu()" title="ปิดเมนู">&times;</button>
+        <button class="nav-btn active" onclick="showPage('page1', this)">หน้าแรก (Home)</button>
+        <button class="nav-btn" onclick="showPage('page2', this)">สัจนิรันดร์ (Tautology)</button>
+        <button class="nav-btn" onclick="showPage('page3', this)">สมมูล (Equivalent)</button>
+        <button class="nav-btn" onclick="showPage('page4', this)">การอ้างเหตุผล (Logical Argument)</button>
+        <button class="nav-btn" onclick="showPage('page6', this)">เนื้อหาเพิ่มเติม (Extra Content)</button>
+        <button class="nav-btn" onclick="showPage('page5', this)">ตัวบ่งปริมาณ (Quantifier)</button>
+    </nav>
+
+    <!-- ฉากหลังเมื่อเปิดเมนู -->
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <!-- Header ด้านบน -->
+    <header id="main-header">
+        <h1>คณิตศาสตร์</h1>
+        <p>ยินดีต้อนรับสู่เว็บไซต์ของพวกเรา เลือกหัวข้อเพื่อดูรายละเอียดในแต่ละหน้า</p>
+    </header>
+
+    <!-- เนื้อหาหลัก -->
+    <main>
+        <!-- หน้าที่ 1 -->
+        <section id="page1" class="page active">
+            <img src="https://static0.cbrimages.com/wordpress/wp-content/uploads/2025/04/untitled-39.jpg?w=1200&h=675&fit=crop" alt="รูปภาพตัวอย่าง" style="max-width: 100%; border-radius: 8px; border: 2px solid #ddd;">
+            <p style="margin-top: 15px;">ผมหล่อมาก <br> หล่อเหมือนแม่คุณ </p>
+        </section>
+
+        <!-- หน้าที่ 2 -->
+        <section id="page2" class="page">
+            <h2>สัจนิรันดร์ (Tautology)</h2>
+            <p>I sus</p>
+        </section>
+
+        <!-- หน้าที่ 3 -->
+        <section id="page3" class="page">
+            <h2>สมมูล (Equivalent)</h2>
+            <p>I am sus</p>
+        </section>
+
+        <!-- หน้าที่ 4 -->
+        <section id="page4" class="page">
+            <h2>การอ้างเหตุผล (Logical Argument)</h2>
+            <p>Web are sus</p>
+        </section>
+
+        <!-- หน้าที่ 6 (เนื้อหาเพิ่มเติม) -->
+        <section id="page6" class="page">
+            <h2>เนื้อหาเพิ่มเติม (Extra Content)</h2>
+            <p>ตรงนี้คือพื้นที่สำหรับใส่ข้อมูลเพิ่มเติมที่คุณต้องการ สามารถเพิ่มข้อความ รูปภาพ หรือสื่อการเรียนรู้อื่นๆ เพิ่มเติมได้ที่ส่วนนี้เลยครับ</p>
+        </section>
+
+        <!-- หน้าที่ 5 (แบบทดสอบ ตัวบ่งปริมาณ - ย้ายมาไว้ล่างสุด) -->
+        <section id="page5" class="page">
+            <h2>ตัวบ่งปริมาณ (Quantifier)</h2>
+            <p style="margin-bottom: 15px;">เลือกระดับความยากแล้วเริ่มทำแบบทดสอบ:</p>
+            
+            <div class="quiz-menu">
+                <div class="difficulty-tabs">
+                    <button class="diff-btn easy active" onclick="setDifficulty('easy', this)">🔵 ง่าย</button>
+                    <button class="diff-btn medium" onclick="setDifficulty('medium', this)">🟡 ปานกลาง</button>
+                    <button class="diff-btn hard" onclick="setDifficulty('hard', this)">🔴 ยาก</button>
+                </div>
+                <button class="reset-btn" onclick="resetQuiz()">🔄 รีเซ็ตแบบทดสอบ</button>
+            </div>
+
+            <!-- ส่วนของข้อสอบ -->
+            <div id="quiz-body">
+                <div class="quiz-container">
+                    <div class="answers-box">
+                        <button class="option-btn" id="opt0" onclick="checkAnswer(0)">ก. ตัวเลือกที่ 1</button>
+                        <button class="option-btn" id="opt1" onclick="checkAnswer(1)">ข. ตัวเลือกที่ 2</button>
+                        <button class="option-btn" id="opt2" onclick="checkAnswer(2)">ค. ตัวเลือกที่ 3</button>
+                        <button class="option-btn" id="opt3" onclick="checkAnswer(3)">ง. ตัวเลือกที่ 4</button>
+                    </div>
+
+                    <div class="question-box">
+                        <h3 id="question-text">โจทย์ข้อที่ 1 จะแสดงตรงนี้...</h3>
+                    </div>
+                </div>
+
+                <div id="explanation-box" class="explanation-box"></div>
+
+                <button class="toggle-scratchpad-btn" onclick="toggleScratchpad()">📝 เปิดกระดาษทดเลข</button>
+
+                <div class="scratchpad-area" id="scratchpad-area">
+                    <div class="scratchpad-header">
+                        <span style="font-weight: bold; color: #1e3c72;">✍️ กระดาษทดเลข:</span>
+                        <button class="clear-btn" onclick="clearScratchpad()">ล้างกระดาษทด</button>
+                    </div>
+                    <canvas id="scratchpad"></canvas>
+                </div>
+
+                <!-- Footer ปุ่มควบคุมย้อนกลับ / ถัดไป -->
+                <div class="quiz-footer">
+                    <button class="prev-btn" id="prev-btn" onclick="prevQuestion()">⏮️ ข้อก่อนหน้า</button>
+                    <span id="score-text" style="font-weight: bold; color: #1e3c72;">คะแนน: 0 / 20</span>
+                    <button class="next-btn" onclick="nextQuestion()">ข้อถัดไป ➔</button>
+                </div>
+            </div>
+
+            <!-- กล่องสรุปผลคะแนนรวม -->
+            <div id="final-summary" class="final-summary">
+                <h3>ทำแบบทดสอบเรียบร้อยแล้ว!</h3>
+                <p id="summary-diff-text">สรุปคะแนนรวมของคุณ</p>
+                <div class="score-big" id="final-score-text">0 / 20</div>
+                <p id="score-percentage-text"></p>
+                <button class="reset-btn" style="padding: 14px 32px; font-size: 1.1rem; background-color: #4fc3f7; color: #004d40;" onclick="resetQuiz()">🔄 ทำแบบทดสอบอีกครั้ง</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // --- ระบบสลับหน้า ---
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.getElementById('overlay').classList.toggle('active');
+        }
+
+        function showPage(pageId, btnElement) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(pageId).classList.add('active');
+            btnElement.classList.add('active');
+
+            document.getElementById('main-header').style.display = 'block';
+
+            if(document.getElementById('sidebar').classList.contains('open')) {
+                toggleMenu();
+            }
+
+            if (pageId === 'page5') {
+                setTimeout(resizeCanvas, 100);
+            }
+        }
+
+        // --- ระบบแบบทดสอบ ---
+        let currentQuestion = 1;
+        let currentDifficulty = 'easy';
+        let userAnswers = Array(20).fill(null);
+
+        const quizData = {
+            easy: Array.from({length: 20}, (_, i) => ({
+                q: `[ระดับง่าย] ข้อที่ ${i+1}: สัญลักษณ์ ∀ อ่านว่าอย่างไร?`,
+                options: [
+                    `ก. สำหรับทุกตัว (For all)`, 
+                    `ข. สำหรับบางตัว (For some)`, 
+                    `ค. สมมูลกับ (Equivalent)`, 
+                    `ง. เป็นนิเสธของ (Not)`
+                ],
+                correct: 0,
+                explanations: [
+                    `<b>ข้อ ก. ถูกต้องแล้ว!</b> สัญลักษณ์ ∀ มาจากคำว่า All ใช้แทน "สำหรับทุกตัว"`,
+                    `<b>ข้อ ข. ผิดเพราะ:</b> "สำหรับบางตัว" จะใช้สัญลักษณ์ ∃ (Existential Quantifier)`,
+                    `<b>ข้อ ค. ผิดเพราะ:</b> สัญลักษณ์สมมูลคือ ≡`,
+                    `<b>ข้อ ง. ผิดเพราะ:</b> สัญลักษณ์นิเสธคือ ~`
+                ]
+            })),
+            medium: Array.from({length: 20}, (_, i) => ({
+                q: `[ระดับปานกลาง] ข้อที่ ${i+1}: ข้อใดเป็นนิเสธของ ∀x[P(x)]?`,
+                options: [
+                    `ก. ∀x[~P(x)]`, 
+                    `ข. ∃x[~P(x)]`, 
+                    `ค. ∃x[P(x)]`, 
+                    `ง. ~∃x[P(x)]`
+                ],
+                correct: 1,
+                explanations: [
+                    `<b>ข้อ ก. ผิดเพราะ:</b> กระจายนิเสธแล้วต้องเปลี่ยนตัวบ่งปริมาณจาก ∀ เป็น ∃ ด้วย`,
+                    `<b>ข้อ ข. ถูกต้องแล้ว!</b> กฎการหาทางนิเสธคือ ~∀x[P(x)] ≡ ∃x[~P(x)]`,
+                    `<b>ข้อ ค. ผิดเพราะ:</b> เปลี่ยนแค่ตัวบ่งปริมาณ แต่ลืมใส่นิเสธข้างใน`,
+                    `<b>ข้อ ง. ผิดเพราะ:</b> ไม่ใช่รูปแบบนิเสธที่ถูกต้อง`
+                ]
+            })),
+            hard: Array.from({length: 20}, (_, i) => ({
+                q: `[ระดับยาก] ข้อที่ ${i+1}: กำหนด U = {-1, 0, 1} ประพจน์ ∃x[x² + 1 = 0] มีค่าความจริงเป็นอย่างไร?`,
+                options: [
+                    `ก. เป็นจริง เพราะมี x = 0`, 
+                    `ข. เป็นจริง เพราะมี x = 1`, 
+                    `ค. เป็นเท็จ เพราะไม่มี x ใดใน U ที่ทำให้สมการเป็นจริง`, 
+                    `ง. หาค่าความจริงไม่ได้`
+                ],
+                correct: 2,
+                explanations: [
+                    `<b>ข้อ ก. ผิดเพราะ:</b> 0² + 1 = 1 ซึ่ง ≠ 0`,
+                    `<b>ข้อ ข. ผิดเพราะ:</b> 1² + 1 = 2 ซึ่ง ≠ 0`,
+                    `<b>ข้อ ค. ถูกต้องแล้ว!</b> ลองแทนค่า x ใน U ทั้งหมด (-1, 0, 1) จะได้ x² + 1 > 0 ทั้งหมด ทำให้ไม่มี x ตัวใดเป็นจริง ประพจน์ ∃ จึงเป็นเท็จ`,
+                    `<b>ข้อ ง. ผิดเพราะ:</b> ประพจน์สามารถหาค่าความจริงได้เสมอเมื่อกำหนดเอกภพสมาพัทธ์ U`
+                ]
+            }))
+        };
+
+        function calculateScore() {
+            let currentScore = 0;
+            const currentSet = quizData[currentDifficulty];
+            userAnswers.forEach((ans, idx) => {
+                if (ans !== null && ans === currentSet[idx].correct) {
+                    currentScore++;
+                }
+            });
+            return currentScore;
+        }
+
+        function updateQuizDisplay() {
+            const qData = quizData[currentDifficulty][currentQuestion - 1];
+            document.getElementById('question-text').innerText = qData.q;
+            
+            const savedAnswer = userAnswers[currentQuestion - 1];
+            const expBox = document.getElementById('explanation-box');
+
+            document.getElementById('prev-btn').disabled = (currentQuestion === 1);
+
+            for (let i = 0; i < 4; i++) {
+                const btn = document.getElementById(`opt${i}`);
+                btn.innerText = qData.options[i];
+                btn.classList.remove('correct', 'wrong');
+                btn.disabled = false;
+            }
+
+            if (savedAnswer !== null) {
+                for (let i = 0; i < 4; i++) {
+                    document.getElementById(`opt${i}`).disabled = true;
+                }
+
+                const correctIndex = qData.correct;
+                if (savedAnswer === correctIndex) {
+                    document.getElementById(`opt${savedAnswer}`).classList.add('correct');
+                    expBox.className = 'explanation-box correct-bg';
+                    expBox.innerHTML = `📌 <b>คำตอบของคุณถูกต้อง!</b><br>${qData.explanations[savedAnswer]}`;
+                } else {
+                    document.getElementById(`opt${savedAnswer}`).classList.add('wrong');
+                    document.getElementById(`opt${correctIndex}`).classList.add('correct');
+                    expBox.className = 'explanation-box wrong-bg';
+                    expBox.innerHTML = `❌ <b>คำตอบของคุณยังไม่ถูกต้อง!</b><br>${qData.explanations[savedAnswer]}<br><br>💡 <i>คำตอบที่ถูกต้องคือ <b>${qData.options[correctIndex]}</b></i>`;
+                }
+                expBox.style.display = 'block';
+            } else {
+                expBox.style.display = 'none';
+                expBox.className = 'explanation-box';
+            }
+
+            document.getElementById('score-text').innerText = `คะแนน: ${calculateScore()} / 20`;
+        }
+
+        function checkAnswer(selectedIndex) {
+            if (userAnswers[currentQuestion - 1] !== null) return;
+
+            userAnswers[currentQuestion - 1] = selectedIndex;
+            updateQuizDisplay();
+        }
+
+        function setDifficulty(diff, btn) {
+            currentDifficulty = diff;
+            document.querySelectorAll('.diff-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            resetQuiz();
+        }
+
+        function prevQuestion() {
+            if (currentQuestion > 1) {
+                currentQuestion--;
+                updateQuizDisplay();
+                clearScratchpad();
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < 20) {
+                currentQuestion++;
+                updateQuizDisplay();
+                clearScratchpad();
+            } else {
+                document.getElementById('quiz-body').style.display = 'none';
+                
+                const finalSummary = document.getElementById('final-summary');
+                const totalScore = calculateScore();
+                document.getElementById('final-score-text').innerText = `${totalScore} / 20`;
+                
+                let diffLabel = currentDifficulty === 'easy' ? '🔵 ง่าย' : (currentDifficulty === 'medium' ? '🟡 ปานกลาง' : '🔴 ยาก');
+                document.getElementById('summary-diff-text').innerText = `สรุปคะแนนระดับ [ ${diffLabel} ]`;
+
+                const percentage = (totalScore / 20) * 100;
+                document.getElementById('score-percentage-text').innerText = `คิดเป็น ${percentage}% ของคะแนนทั้งหมด`;
+                
+                finalSummary.style.display = 'block';
+            }
+        }
+
+        function resetQuiz() {
+            currentQuestion = 1;
+            userAnswers = Array(20).fill(null);
+            document.getElementById('quiz-body').style.display = 'block';
+            document.getElementById('final-summary').style.display = 'none';
+            updateQuizDisplay();
+            clearScratchpad();
+        }
+
+        // --- ระบบกระดาษทดเลข ---
+        const canvas = document.getElementById('scratchpad');
+        const ctx = canvas.getContext('2d');
+        let isDrawing = false;
+
+        function toggleScratchpad() {
+            const scratchArea = document.getElementById('scratchpad-area');
+            const btn = document.querySelector('.toggle-scratchpad-btn');
+            
+            if (scratchArea.style.display === 'block') {
+                scratchArea.style.display = 'none';
+                btn.innerText = '📝 เปิดกระดาษทดเลข';
+            } else {
+                scratchArea.style.display = 'block';
+                btn.innerText = '🙈 ซ่อนกระดาษทดเลข';
+                setTimeout(resizeCanvas, 50);
+            }
+        }
+
+        function resizeCanvas() {
+            const rect = canvas.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
+            ctx.lineWidth = 2;
+            ctx.lineCap = 'round';
+            ctx.strokeStyle = '#1e3c72';
+        }
+
+        function startDrawing(e) {
+            isDrawing = true;
+            draw(e);
+        }
+
+        function stopDrawing() {
+            isDrawing = false;
+            ctx.beginPath();
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            const rect = canvas.getBoundingClientRect();
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+            ctx.lineTo(clientX - rect.left, clientY - rect.top);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(clientX - rect.left, clientY - rect.top);
+        }
+
+        function clearScratchpad() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mousemove', draw);
+
+        canvas.addEventListener('touchstart', startDrawing);
+        canvas.addEventListener('touchend', stopDrawing);
+        canvas.addEventListener('touchmove', draw);
+
+        window.addEventListener('resize', resizeCanvas);
+
+        updateQuizDisplay();
+    </script>
+
+</body>
+</html>
