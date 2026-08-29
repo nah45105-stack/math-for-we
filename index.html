@@ -1052,16 +1052,10 @@
     </main>
 
     <script>
-        // ฟังก์ชันสำหรับสลับอาเรย์ (Fisher-Yates Shuffle Algorithm)
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
         // ----------------------------------------------------
         // 1. ระบบควบคุม Sidebar และการเปลี่ยนหน้า (Navigation System)
         // ----------------------------------------------------
+
 
         // ฟังก์ชันสลับการเปิด/ปิด Sidebar
         function toggleMenu() {
@@ -1862,65 +1856,51 @@ function shuffleArray(array) {
         }
 
         // โหลดและแสดงคำถาม
-        function loadQuestion(index) {
-            const qData = quizData[currentDifficulty][index - 1];
-            
-            // แสดงข้อความโจทย์
-            document.getElementById('question-text').innerText = qData.q;
-            
-            // แสดงตัวเลือก
-            for (let i = 0; i < 4; i++) {
-                const btn = document.getElementById(`opt${i}`);
-                btn.innerText = qData.options[i];
-                btn.className = 'option-btn';
-                btn.disabled = false;
-            }
+     function loadQuestion() {
+    const list = quizData[currentDifficulty];
+    if (!list || list.length === 0) return;
 
-            const expBox = document.getElementById('explanation-box');
-            
-            // แสดงคำตอบเดิมกรณีที่ทำไปแล้ว
-            if (userAnswers[index - 1] !== null) {
-                const selected = userAnswers[index - 1];
-                const correct = qData.correct;
-                
-                if (selected === correct) {
-                    document.getElementById(`opt${selected}`).classList.add('correct');
-                    expBox.className = 'explanation-box correct-bg';
-                } else {
-                    document.getElementById(`opt${selected}`).classList.add('wrong');
-                    document.getElementById(`opt${correct}`).classList.add('correct');
-                    expBox.className = 'explanation-box wrong-bg';
-                }
-                
-                for (let i = 0; i < 4; i++) {
-                    document.getElementById(`opt${i}`).disabled = true;
-                }
-                
-                expBox.innerHTML = qData.explanations[selected];
-                expBox.style.display = 'block';
-            } else {
-                expBox.style.display = 'none';
-            }
+    const qData = list[(currentQuestion - 1) % list.length];
 
-            // ปิดปุ่ม "ข้อก่อนหน้า" ถ้าเป็นข้อที่ 1
-            document.getElementById('prev-btn').disabled = (index === 1);
+    if (!qData.shuffledOptions) {
+        // 💡 สลับ LOGIC: ข้อที่เคยผิด (idx !== qData.correct) ให้เปลี่ยนเป็น isCorrect: true
+        let optionsWithIdx = qData.options.map((opt, idx) => ({
+            text: opt.replace(/^[ก-ง]\.\s*/, ''),
+            explanation: qData.explanations[idx],
+            isCorrect: idx !== qData.correct 
+        }));
 
-            updateScoreDisplay();
-            // สกัดลบคำนำหน้าเดิม (ก. ข. ค. ง.) แล้วนำไปสลับตำแหน่ง
-             let optionsWithIdx = qData.options.map((opt, idx) => ({
-             text: opt.replace(/^[ก-ง]\.\s*/, ''),
-             explanation: qData.explanations[idx],
-              isCorrect: idx === qData.correct
-            }));
+        shuffleArray(optionsWithIdx);
 
-             shuffleArray(optionsWithIdx);
+        const prefixes = ["ก. ", "ข. ", "ค. ", "ง. "];
+        qData.shuffledOptionsData = optionsWithIdx;
+        qData.shuffledOptions = optionsWithIdx.map((item, i) => prefixes[i] + item.text);
+    }
 
-            // รันตัวอักษร ก. ข. ค. ง. นำหน้าใหม่ตามตำแหน่งที่สุ่มได้
-             const prefixes = ["ก. ", "ข. ", "ค. ", "ง. "];
-             qData.shuffledOptions = optionsWithIdx.map((item, i) => prefixes[i] + item.text);
-             qData.shuffledExplanations = optionsWithIdx.map(item => item.explanation);
-             qData.shuffledCorrectIndex = optionsWithIdx.findIndex(item => item.isCorrect);
-        }
+    document.getElementById('question-text').innerText = qData.q + " (เลือกข้อที่ไม่ถูกต้องตามหลักตรรกศาสตร์)";
+
+    const prefixes = ["ก. ", "ข. ", "ค. ", "ง. "];
+    for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`opt${i}`);
+        btn.innerText = qData.shuffledOptions[i] || `${prefixes[i]}ตัวเลือกที่ ${i+1}`;
+        btn.className = 'option-btn';
+        btn.disabled = false;
+    }
+
+    document.getElementById('prev-btn').disabled = (currentQuestion === 1);
+    document.getElementById('explanation-box').style.display = 'none';
+
+    const savedAns = userAnswers[currentQuestion - 1];
+    if (savedAns !== null) {
+        renderAnswerState(savedAns, qData.shuffledOptionsData);
+    }
+
+    updateScoreDisplay();
+
+    if (window.MathJax) {
+        MathJax.typesetPromise();
+    }
+}
 
         // ตรวจคำตอบ
         function checkAnswer(selectedIndex) {
@@ -2059,7 +2039,27 @@ function shuffleArray(array) {
             canvas.addEventListener('touchend', stopDrawing);
             canvas.addEventListener('touchmove', draw);
         }
+function renderAnswerState(selectedIdx, optionsWithIdx) {
+    for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`opt${i}`);
+        btn.disabled = true;
+        
+        // ถ้าเป็นข้อที่ถูก (ซึ่งสลับมาจากข้อผิดเดิม) ให้ไฮไลต์เป็นสีฟ้า/เขียว
+        if (optionsWithIdx[i].isCorrect) {
+            btn.classList.add('correct');
+        }
+        // ถ้าเป็นข้อที่ผู้เล่นเลือกแต่ดันเป็นข้อที่ผิด (ซึ่งสลับมาจากข้อถูกเดิม) ให้เป็นสีแดง
+        if (i === selectedIdx && !optionsWithIdx[i].isCorrect) {
+            btn.classList.add('wrong');
+        }
+    }
 
+    const isUserCorrect = optionsWithIdx[selectedIdx].isCorrect;
+    const expBox = document.getElementById('explanation-box');
+    expBox.style.display = 'block';
+    expBox.className = 'explanation-box ' + (isUserCorrect ? 'correct-bg' : 'wrong-bg');
+    expBox.innerHTML = optionsWithIdx[selectedIdx].explanation || "คำอธิบายรายละเอียดข้อนี้";
+}
         window.addEventListener('resize', resizeCanvas);
 
         // เริ่มต้นโหลดข้อที่ 1 เมื่อเปิดหน้าเว็บ
@@ -2067,4 +2067,3 @@ function shuffleArray(array) {
             loadQuestion(1);
         });
     </script>
-</html>
