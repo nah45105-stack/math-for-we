@@ -1052,10 +1052,17 @@
     </main>
 
     <script>
+        // ฟังก์ชันสำหรับสลับอาเรย์ (Fisher-Yates Shuffle Algorithm)
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
         // ----------------------------------------------------
         // 1. ระบบควบคุม Sidebar และการเปลี่ยนหน้า (Navigation System)
         // ----------------------------------------------------
-        
+
         // ฟังก์ชันสลับการเปิด/ปิด Sidebar
         function toggleMenu() {
             document.getElementById('sidebar').classList.toggle('open');
@@ -1899,6 +1906,20 @@
             document.getElementById('prev-btn').disabled = (index === 1);
 
             updateScoreDisplay();
+            // สกัดลบคำนำหน้าเดิม (ก. ข. ค. ง.) แล้วนำไปสลับตำแหน่ง
+             let optionsWithIdx = qData.options.map((opt, idx) => ({
+             text: opt.replace(/^[ก-ง]\.\s*/, ''),
+             explanation: qData.explanations[idx],
+              isCorrect: idx === qData.correct
+            }));
+
+             shuffleArray(optionsWithIdx);
+
+            // รันตัวอักษร ก. ข. ค. ง. นำหน้าใหม่ตามตำแหน่งที่สุ่มได้
+             const prefixes = ["ก. ", "ข. ", "ค. ", "ง. "];
+             qData.shuffledOptions = optionsWithIdx.map((item, i) => prefixes[i] + item.text);
+             qData.shuffledExplanations = optionsWithIdx.map(item => item.explanation);
+             qData.shuffledCorrectIndex = optionsWithIdx.findIndex(item => item.isCorrect);
         }
 
         // ตรวจคำตอบ
@@ -1957,7 +1978,15 @@
             document.getElementById('final-score-text').innerText = `${score} / 20`;
             document.getElementById('score-percentage-text').innerText = `คิดเป็น ${percent}%`;
         }
-
+// ฟังก์ชันสุ่มสลับตำแหน่งข้อมูลใน Array
+function shuffleArray(array) {
+    let arr = [...array];
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
         // รีเซ็ตแบบทดสอบในระดับปัจจุบัน
         function resetQuiz() {
             currentQuestion = 1;
@@ -2038,3 +2067,4 @@
             loadQuestion(1);
         });
     </script>
+</html>
