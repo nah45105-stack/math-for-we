@@ -1055,8 +1055,13 @@
         // ----------------------------------------------------
         // 1. ระบบควบคุม Sidebar และการเปลี่ยนหน้า (Navigation System)
         // ----------------------------------------------------
-
-
+        // ฟังก์ชันสำหรับสุ่มสลับตำแหน่งใน Array (Fisher-Yates Shuffle)
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
         // ฟังก์ชันสลับการเปิด/ปิด Sidebar
         function toggleMenu() {
             document.getElementById('sidebar').classList.toggle('open');
@@ -1855,34 +1860,38 @@
             loadQuestion(currentQuestion);
         }
 
-        // โหลดและแสดงคำถาม
-     function loadQuestion() {
+        function loadQuestion() {
     const list = quizData[currentDifficulty];
     if (!list || list.length === 0) return;
 
     const qData = list[(currentQuestion - 1) % list.length];
 
+    // 💡 สุ่มสลับตำแหน่งตัวเลือก (สุ่มครั้งเดียวต่อข้อ)
     if (!qData.shuffledOptions) {
-        // 💡 สลับ LOGIC: ข้อที่เคยผิด (idx !== qData.correct) ให้เปลี่ยนเป็น isCorrect: true
-        let optionsWithIdx = qData.options.map((opt, idx) => ({
-            text: opt.replace(/^[ก-ง]\.\s*/, ''),
+        // 1. มัดรวม ข้อความคำตอบ, คำอธิบาย, และเช็คว่าข้อนี้ใช่ข้อที่ถูกหรือไม่
+        let combinedOptions = qData.options.map((opt, idx) => ({
+            text: opt.replace(/^[ก-ง]\.\s*/, ''), // ตัด ก. ข. ค. ง. ดั้งเดิมออกก่อน
             explanation: qData.explanations[idx],
-            isCorrect: idx !== qData.correct 
+            isCorrect: idx === qData.correct
         }));
 
-        shuffleArray(optionsWithIdx);
+        // 2. ทำการสุ่มสลับตำแหน่ง
+        shuffleArray(combinedOptions);
 
+        // 3. นำคำนำหน้า ก. ข. ค. ง. ใส่กลับเข้าไปตามลำดับใหม่ที่ถูกสุ่ม
         const prefixes = ["ก. ", "ข. ", "ค. ", "ง. "];
-        qData.shuffledOptionsData = optionsWithIdx;
-        qData.shuffledOptions = optionsWithIdx.map((item, i) => prefixes[i] + item.text);
+        qData.shuffledOptions = combinedOptions.map((item, i) => prefixes[i] + item.text);
+        qData.shuffledExplanations = combinedOptions.map(item => item.explanation);
+        qData.shuffledCorrectIndex = combinedOptions.findIndex(item => item.isCorrect); // หา index ใหม่ของข้อที่ถูก
     }
 
-    document.getElementById('question-text').innerText = qData.q + " (เลือกข้อที่ไม่ถูกต้องตามหลักตรรกศาสตร์)";
+    // แสดงผลข้อความโจทย์
+    document.getElementById('question-text').innerText = qData.q;
 
-    const prefixes = ["ก. ", "ข. ", "ค. ", "ง. "];
+    // แสดงผลปุ่มตัวเลือกทั้ง 4 ข้อ
     for (let i = 0; i < 4; i++) {
         const btn = document.getElementById(`opt${i}`);
-        btn.innerText = qData.shuffledOptions[i] || `${prefixes[i]}ตัวเลือกที่ ${i+1}`;
+        btn.innerText = qData.shuffledOptions[i];
         btn.className = 'option-btn';
         btn.disabled = false;
     }
@@ -1890,9 +1899,10 @@
     document.getElementById('prev-btn').disabled = (currentQuestion === 1);
     document.getElementById('explanation-box').style.display = 'none';
 
+    // ถ้าเคยตอบข้อนี้ไปแล้ว ให้ดึงคำตอบเดิมมาแสดงผล
     const savedAns = userAnswers[currentQuestion - 1];
     if (savedAns !== null) {
-        renderAnswerState(savedAns, qData.shuffledOptionsData);
+        renderAnswerState(savedAns, qData.shuffledCorrectIndex, qData.shuffledExplanations);
     }
 
     updateScoreDisplay();
@@ -1958,23 +1968,24 @@
             document.getElementById('final-score-text').innerText = `${score} / 20`;
             document.getElementById('score-percentage-text').innerText = `คิดเป็น ${percent}%`;
         }
-// ฟังก์ชันสุ่มสลับตำแหน่งข้อมูลใน Array
-function shuffleArray(array) {
-    let arr = [...array];
-    for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
+
+     function resetQuiz() {
+    currentQuestion = 1;
+    userAnswers = Array(20).fill(null);
+    
+    // 💡 ล้างค่าตัวเลือกที่เคยสุ่มไว้ เพื่อให้สุ่มใหม่ทุกครั้งที่กดรีเซ็ต
+    for (let key in quizData) {
+        quizData[key].forEach(q => {
+            delete q.shuffledOptions;
+            delete q.shuffledExplanations;
+            delete q.shuffledCorrectIndex;
+        });
     }
-    return arr;
+
+    document.getElementById('final-summary').style.display = 'none';
+    document.getElementById('quiz-body').style.display = 'block';
+    loadQuestion();
 }
-        // รีเซ็ตแบบทดสอบในระดับปัจจุบัน
-        function resetQuiz() {
-            currentQuestion = 1;
-            userAnswers = Array(20).fill(null);
-            document.getElementById('quiz-body').style.display = 'block';
-            document.getElementById('final-summary').style.display = 'none';
-            loadQuestion(1);
-        }
 
         // ----------------------------------------------------
         // 4. ระบบกระดาษทดเลข (Scratchpad Canvas Engine)
@@ -2039,27 +2050,7 @@ function shuffleArray(array) {
             canvas.addEventListener('touchend', stopDrawing);
             canvas.addEventListener('touchmove', draw);
         }
-function renderAnswerState(selectedIdx, optionsWithIdx) {
-    for (let i = 0; i < 4; i++) {
-        const btn = document.getElementById(`opt${i}`);
-        btn.disabled = true;
-        
-        // ถ้าเป็นข้อที่ถูก (ซึ่งสลับมาจากข้อผิดเดิม) ให้ไฮไลต์เป็นสีฟ้า/เขียว
-        if (optionsWithIdx[i].isCorrect) {
-            btn.classList.add('correct');
-        }
-        // ถ้าเป็นข้อที่ผู้เล่นเลือกแต่ดันเป็นข้อที่ผิด (ซึ่งสลับมาจากข้อถูกเดิม) ให้เป็นสีแดง
-        if (i === selectedIdx && !optionsWithIdx[i].isCorrect) {
-            btn.classList.add('wrong');
-        }
-    }
 
-    const isUserCorrect = optionsWithIdx[selectedIdx].isCorrect;
-    const expBox = document.getElementById('explanation-box');
-    expBox.style.display = 'block';
-    expBox.className = 'explanation-box ' + (isUserCorrect ? 'correct-bg' : 'wrong-bg');
-    expBox.innerHTML = optionsWithIdx[selectedIdx].explanation || "คำอธิบายรายละเอียดข้อนี้";
-}
         window.addEventListener('resize', resizeCanvas);
 
         // เริ่มต้นโหลดข้อที่ 1 เมื่อเปิดหน้าเว็บ
