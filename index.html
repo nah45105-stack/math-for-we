@@ -3,8 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>บัณฑิตโหด</title>
+    <title>บัณฑิตโหด - สื่อการเรียนรู้คณิตศาสตร์</title>
+    
+    <!-- ==========================================
+         ส่วนที่ 1: การกำหนดสไตล์ (CSS)
+         ========================================== -->
     <style>
+        .image-container {
+            max-width: 100%;
+            margin: 15px 0;
+            text-align: center; /* จัดรูปและปุ่มให้อยู่ตรงกลาง */
+        }
+
+        .image-container img {
+            max-width: 100%;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+            display: block;
+            margin: 0 auto 12px auto;
+        }
+
+        /* ปุ่มแหล่งที่มาของภาพทั่วไป */
+        .source-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #1e3c72;
+            color: #ffffff !important;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .source-btn:hover {
+            background-color: #2a5298;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ปุ่มแหล่งที่มาสำหรับปุ่มกด Pop Clicker (ขนาดเล็ก) */
+        .clicker-source-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            background-color: #e0e0e0;
+            color: #333333 !important;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .clicker-source-btn:hover {
+            background-color: #87ceeb;
+            color: #1e3c72 !important;
+        }
+
+        /* รีเซ็ตค่าเริ่มต้นของทุก Element */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -12,6 +70,7 @@
             font-family: 'Kanit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        /* พื้นหลังและโครงสร้างหลักของหน้าเว็บ */
         body {
             background-color: #f4f7f6;
             color: #333;
@@ -20,7 +79,7 @@
             flex-direction: column;
         }
 
-        /* Header ด้านบน */
+        /* Header ด้านบนสุด */
         header {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7928ca 100%);
             color: white;
@@ -42,7 +101,7 @@
             opacity: 0.9;
         }
 
-        /* แถบด้านบนสำหรับปุ่ม Hamburger และเครื่องเล่นเพลง */
+        /* แถบควบคุมด้านบน (ปุ่มเปิดเมนู + เครื่องเล่นเพลง + Pop Clicker) */
         .top-bar {
             background-color: #ffffff;
             padding: 10px 20px;
@@ -87,7 +146,7 @@
         nav.sidebar {
             position: fixed;
             top: 0;
-            left: -290px;
+            left: -290px; /* ซ่อนไว้ด้านซ้าย */
             width: 280px;
             height: 100%;
             background-color: #ffffff;
@@ -101,10 +160,12 @@
             border-right: 3px solid #1e3c72;
         }
 
+        /* แสดง Sidebar เมื่อมีคลาส open */
         nav.sidebar.open {
             left: 0;
         }
 
+        /* ปุ่มปิดเมนู */
         .close-btn {
             align-self: flex-end;
             background: none;
@@ -128,6 +189,7 @@
             background-color: #fff0f3;
         }
 
+        /* ปุ่มแต่ละรายการในเมนู */
         .nav-btn {
             padding: 12px 18px;
             border: 2px solid #e0e0e0;
@@ -156,6 +218,7 @@
             border-left: 6px solid #1e3c72;
         }
 
+        /* ฉากหลังดำใสเมื่อเปิดเมนู */
         .overlay {
             position: fixed;
             top: 0;
@@ -171,7 +234,81 @@
             display: block;
         }
 
-        /* สไตล์แบบทดสอบ */
+        /* ==========================================
+           สไตล์ POP CLICKER (ขนาดเล็ก กะทัดรัด)
+           ========================================== */
+        .pop-clicker-mini {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #f0f4f8;
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1.5px solid #87ceeb;
+            position: relative;
+        }
+
+        .score-display-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 2px;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .score-display-box.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .clicker-btn-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .clicker-img {
+            width: 38px;
+            height: 38px;
+            object-fit: contain;
+            background: transparent;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+            transition: transform 0.1s ease;
+        }
+
+        .clicker-btn-wrapper:active .clicker-img,
+        .clicker-img.pop-active {
+            transform: scale(0.8) rotate(-5deg);
+        }
+
+        .floating-num {
+            position: absolute;
+            color: #ff416c;
+            font-weight: bold;
+            font-size: 0.9rem;
+            pointer-events: none;
+            animation: floatUpFade 0.7s ease-out forwards;
+            z-index: 10;
+        }
+
+        @keyframes floatUpFade {
+            0% { opacity: 1; transform: translate(-50%, 0) scale(0.8); }
+            50% { transform: translate(-50%, -15px) scale(1.1); }
+            100% { opacity: 0; transform: translate(-50%, -30px) scale(1); }
+        }
+
+        /* สไตล์หน้าแบบทดสอบ */
         .quiz-menu {
             display: flex;
             justify-content: space-between;
@@ -187,6 +324,7 @@
             flex-wrap: wrap;
         }
 
+        /* ปุ่มเลือกระดับความยาก */
         .diff-btn {
             padding: 8px 16px;
             border: 2px solid #ccc;
@@ -219,6 +357,7 @@
             box-shadow: 0 3px 8px rgba(220, 53, 69, 0.3);
         }
 
+        /* ปุ่มรีเซ็ต */
         .reset-btn {
             padding: 8px 16px;
             background-color: #ff3366;
@@ -235,6 +374,7 @@
             box-shadow: 0 3px 8px rgba(214, 40, 80, 0.3);
         }
 
+        /* การจัดวางกล่องตัวเลือกและคำถามแบบ Grid */
         .quiz-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -254,6 +394,7 @@
             justify-content: center;
         }
 
+        /* ปุ่มตัวเลือก ก, ข, ค, ง */
         .option-btn {
             padding: 15px;
             border: 2px solid #dcdcdc;
@@ -273,6 +414,7 @@
             transform: scale(1.02);
         }
 
+        /* สถานะตอบถูก / ตอบผิด */
         .option-btn.correct {
             background-color: #e1f5fe !important;
             border-color: #03a9f4 !important;
@@ -287,6 +429,7 @@
             font-weight: bold;
         }
 
+        /* กล่องแสดงโจทย์คำถาม */
         .question-box {
             background: #1e3c72;
             color: white;
@@ -302,6 +445,7 @@
             box-shadow: 0 4px 15px rgba(255, 65, 108, 0.2);
         }
 
+        /* กล่อง เฉลย/คำอธิบาย */
         .explanation-box {
             display: none;
             margin-top: 20px;
@@ -324,6 +468,7 @@
             color: #b71c1c;
         }
 
+        /* ส่วนกระดาษทดเลข */
         .toggle-scratchpad-btn {
             margin-top: 20px;
             padding: 10px 18px;
@@ -381,6 +526,7 @@
             touch-action: none;
         }
 
+        /* แถบปุ่ม นำทางในข้อสอบ (ถัดไป/ย้อนกลับ) */
         .quiz-footer {
             display: flex;
             justify-content: space-between;
@@ -429,6 +575,7 @@
             box-shadow: 0 3px 8px rgba(224, 53, 92, 0.4);
         }
 
+        /* หน้าสรุปคะแนนรวม */
         .final-summary {
             display: none;
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
@@ -472,6 +619,7 @@
             font-weight: bold;
         }
 
+        /* โครงสร้างการจัดวางหน้าหลัก */
         main {
             max-width: 900px;
             margin: 30px auto;
@@ -480,6 +628,7 @@
             width: 100%;
         }
 
+        /* การซ่อน/แสดงหน้าแต่ละหน้า */
         .page {
             display: none;
             background: white;
@@ -508,6 +657,7 @@
             color: #555;
         }
 
+        /* Animation ค่อยๆ แสดงผล */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -516,80 +666,123 @@
 </head>
 <body>
 
-    <!-- แถบปุ่มเมนู และ เครื่องเล่นเพลง -->
+    <!-- ==========================================
+         ส่วนที่ 2: แถบปุ่มเมนู, เครื่องเล่นเพลง และ Pop Clicker
+         ========================================== -->
     <div class="top-bar">
+        <!-- ปุ่มเปิด/ปิด Sidebar -->
         <button class="hamburger-btn" onclick="toggleMenu()" title="เปิดเมนู">
             <span></span>
             <span></span>
             <span></span>
         </button>
 
-        <div style="display: flex; align-items: center; gap: 8px;">
-            <span style="font-weight: bold; color: #1e3c72; font-size: 0.9rem;">🎵 เพลงประกอบ:</span>
-            <audio controls loop style="height: 35px; max-width: 200px;">
-                <source src="music.mp3" type="audio/mpeg">
-                เบราว์เซอร์ไม่รองรับเสียง
-            </audio>
+        <!-- กลุ่มด้านขวา: เครื่องเล่นเพลงประกอบเว็บ + ปุ่ม Pop Clicker เล็ก + ปุ่มที่มาของภาพปุ่มกด -->
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            
+            <!-- เครื่องเล่นเพลงประกอบเว็บ -->
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-weight: bold; color: #1e3c72; font-size: 0.9rem;">🎵 เพลงประกอบ:</span>
+                <audio controls loop style="height: 35px; max-width: 180px;">
+                    <source src="music.mp3" type="audio/mpeg">
+                    เบราว์เซอร์ไม่รองรับเสียง
+                </audio>
+            </div>
+
+            <!-- ปุ่ม Pop Clicker ขนาดเล็กวางข้างเพลง -->
+            <div class="pop-clicker-mini">
+                <!-- ตัวนับคะแนน (แสดงและค่อยๆ จางหาย) -->
+                <div class="score-display-box" id="score-box">
+                    <span>🎯</span>
+                    <span id="score-count">0</span>
+                </div>
+
+                <!-- รูปภาพปุ่มกดไร้ขอบ (Transparent Image) -->
+                <div class="clicker-btn-wrapper" id="clicker-btn" title="คลิกสะสมคะแนน!">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLX74zodcYG0ypVIdUkYwLf9u9KdEJIkSvY1H47tQRfA&s=10" 
+                         alt="Pop Clicker" 
+                         class="clicker-img" 
+                         id="clicker-img">
+                </div>
+            </div>
+
+            <!-- 📍 ปุ่มแหล่งที่มาของภาพปุ่มกด Pop Clicker -->
+            <a href=""\\ https://fanloid.fandom.com/wiki/Soldier_Teto" title="ดูแหล่งที่มาของรูปปุ่มกด">
+                🔗 ที่มารูปปุ่มกด
+            </a>
+
         </div>
     </div>
+    
 
-    <!-- แถบเมนูด้านข้าง (Sidebar) ย้าย Quantifier ไปล่างสุด -->
+    <!-- ==========================================
+         ส่วนที่ 3: แถบเมนูด้านข้าง (Sidebar Menu)
+         ========================================== -->
     <nav class="sidebar" id="sidebar">
         <button class="close-btn" onclick="toggleMenu()" title="ปิดเมนู">&times;</button>
         <button class="nav-btn active" onclick="showPage('page1', this)">หน้าแรก (Home)</button>
         <button class="nav-btn" onclick="showPage('page2', this)">สัจนิรันดร์ (Tautology)</button>
         <button class="nav-btn" onclick="showPage('page3', this)">สมมูล (Equivalent)</button>
         <button class="nav-btn" onclick="showPage('page4', this)">การอ้างเหตุผล (Logical Argument)</button>
-        <button class="nav-btn" onclick="showPage('page6', this)">เนื้อหาเพิ่มเติม (Extra Content)</button>
-        <button class="nav-btn" onclick="showPage('page5', this)">ตัวบ่งปริมาณ (Quantifier)</button>
+        <button class="nav-btn" onclick="showPage('page6', this)">ตัวบ่งปริมาณ (Quantifier)</button>
+        <button class="nav-btn" onclick="showPage('page5', this)">แบบทดสอบ (Quiz)</button>
     </nav>
 
-    <!-- ฉากหลังเมื่อเปิดเมนู -->
+    <!-- ฉากหลังเมื่อเปิดเมนู sidebar -->
     <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
-    <!-- Header ด้านบน -->
+    <!-- Header หลักของเว็บ -->
     <header id="main-header">
         <h1>คณิตศาสตร์</h1>
         <p>ยินดีต้อนรับสู่เว็บไซต์ของพวกเรา เลือกหัวข้อเพื่อดูรายละเอียดในแต่ละหน้า</p>
     </header>
 
-    <!-- เนื้อหาหลัก -->
+    <!-- ==========================================
+         ส่วนที่ 4: ส่วนเนื้อหาหลัก (Pages Container)
+         ========================================== -->
     <main>
-        <!-- หน้าที่ 1 -->
+        <!-- หน้าที่ 1: หน้าแรก (Home) -->
         <section id="page1" class="page active">
-            <img src="https://static0.cbrimages.com/wordpress/wp-content/uploads/2025/04/untitled-39.jpg?w=1200&h=675&fit=crop" alt="รูปภาพตัวอย่าง" style="max-width: 100%; border-radius: 8px; border: 2px solid #ddd;">
-            <p style="margin-top: 15px;">ผมหล่อมาก <br> หล่อเหมือนแม่คุณ </p>
+            <h2>ยินดีต้อนรับ</h2>
+            <p>เลือกหัวข้อจากเมนูด้านข้างเพื่อเริ่มต้นเรียนรู้บทเรียนตรรกศาสตร์และทำแบบทดสอบได้เลย!</p>
+            
+            <!-- รูปภาพและปุ่มแหล่งที่มา (แสดงผลเฉพาะหน้าแรกเท่านั้น) -->
+            <figure class="image-container">
+                <img src="https://static0.cbrimages.com/wordpress/wp-content/uploads/2025/04/untitled-39.jpg" alt="รูปภาพตัวอย่าง">
+                <a href="https://www.cbr.com" target="_blank" rel="noopener" class="source-btn">🔗 แหล่งที่มาของภาพ: https://www.cbr.com/colorful-stage-miku-who-cant-sing-most-underrated-anime-movie-2025/</a>
+            </figure>
         </section>
 
-        <!-- หน้าที่ 2 -->
+        <!-- หน้าที่ 2: สัจนิรันดร์ -->
         <section id="page2" class="page">
             <h2>สัจนิรันดร์ (Tautology)</h2>
-            <p>I sus</p>
+            <p>ไปทำอย่างอื่นไป</p>
         </section>
 
-        <!-- หน้าที่ 3 -->
+        <!-- หน้าที่ 3: สมมูล -->
         <section id="page3" class="page">
             <h2>สมมูล (Equivalent)</h2>
-            <p>I am sus</p>
+            <p>ขยันออ</p>
         </section>
 
-        <!-- หน้าที่ 4 -->
+        <!-- หน้าที่ 4: การอ้างเหตุผล -->
         <section id="page4" class="page">
             <h2>การอ้างเหตุผล (Logical Argument)</h2>
-            <p>Web are sus</p>
+            <p>มาอ่านทำไมไปนอน</p>
         </section>
 
-        <!-- หน้าที่ 6 (เนื้อหาเพิ่มเติม) -->
+        <!-- หน้าที่ 6: ตัวบ่งปริมาณ -->
         <section id="page6" class="page">
-            <h2>เนื้อหาเพิ่มเติม (Extra Content)</h2>
-            <p>ตรงนี้คือพื้นที่สำหรับใส่ข้อมูลเพิ่มเติมที่คุณต้องการ สามารถเพิ่มข้อความ รูปภาพ หรือสื่อการเรียนรู้อื่นๆ เพิ่มเติมได้ที่ส่วนนี้เลยครับ</p>
+            <h2>ตัวบ่งปริมาณ (Quantifier)</h2>
+            <p>ไม่มีsomeให้คิดถึงเพราะทุกคนไม่มีใครเอาคุณAllไปนอนสาาาาาาาาาาาาาาา</p>
         </section>
 
-        <!-- หน้าที่ 5 (แบบทดสอบ ตัวบ่งปริมาณ - ย้ายมาไว้ล่างสุด) -->
+        <!-- หน้าที่ 5: แบบทดสอบ ตัวบ่งปริมาณ -->
         <section id="page5" class="page">
-            <h2>ตัวบ่งปริมาณ (Quantifier)</h2>
+            <h2>แบบทดสอบ (Quiz)</h2>
             <p style="margin-bottom: 15px;">เลือกระดับความยากแล้วเริ่มทำแบบทดสอบ:</p>
             
+            <!-- แถบเลือกระดับความยาก + รีเซ็ต -->
             <div class="quiz-menu">
                 <div class="difficulty-tabs">
                     <button class="diff-btn easy active" onclick="setDifficulty('easy', this)">🔵 ง่าย</button>
@@ -599,9 +792,10 @@
                 <button class="reset-btn" onclick="resetQuiz()">🔄 รีเซ็ตแบบทดสอบ</button>
             </div>
 
-            <!-- ส่วนของข้อสอบ -->
+            <!-- ส่วนการแสดงผลโจทย์ข้อสอบ -->
             <div id="quiz-body">
                 <div class="quiz-container">
+                    <!-- ปุ่มตัวเลือกคำตอบ 4 ตัวเลือก -->
                     <div class="answers-box">
                         <button class="option-btn" id="opt0" onclick="checkAnswer(0)">ก. ตัวเลือกที่ 1</button>
                         <button class="option-btn" id="opt1" onclick="checkAnswer(1)">ข. ตัวเลือกที่ 2</button>
@@ -609,15 +803,19 @@
                         <button class="option-btn" id="opt3" onclick="checkAnswer(3)">ง. ตัวเลือกที่ 4</button>
                     </div>
 
+                    <!-- กล่องแสดงข้อความคำถาม -->
                     <div class="question-box">
                         <h3 id="question-text">โจทย์ข้อที่ 1 จะแสดงตรงนี้...</h3>
                     </div>
                 </div>
 
+                <!-- กล่องคำอธิบาย/เฉลย -->
                 <div id="explanation-box" class="explanation-box"></div>
 
+                <!-- ปุ่มเปิด/ปิด กระดาษทดเลข -->
                 <button class="toggle-scratchpad-btn" onclick="toggleScratchpad()">📝 เปิดกระดาษทดเลข</button>
 
+                <!-- พื้นที่วาดกระดาษทดเลข -->
                 <div class="scratchpad-area" id="scratchpad-area">
                     <div class="scratchpad-header">
                         <span style="font-weight: bold; color: #1e3c72;">✍️ กระดาษทดเลข:</span>
@@ -626,7 +824,7 @@
                     <canvas id="scratchpad"></canvas>
                 </div>
 
-                <!-- Footer ปุ่มควบคุมย้อนกลับ / ถัดไป -->
+                <!-- แถบปุ่ม นำทางในข้อสอบ (ถัดไป/ย้อนกลับ) -->
                 <div class="quiz-footer">
                     <button class="prev-btn" id="prev-btn" onclick="prevQuestion()">⏮️ ข้อก่อนหน้า</button>
                     <span id="score-text" style="font-weight: bold; color: #1e3c72;">คะแนน: 0 / 20</span>
@@ -634,7 +832,7 @@
                 </div>
             </div>
 
-            <!-- กล่องสรุปผลคะแนนรวม -->
+            <!-- กล่องสรุปผลคะแนนหลังทำเสร็จ 20 ข้อ -->
             <div id="final-summary" class="final-summary">
                 <h3>ทำแบบทดสอบเรียบร้อยแล้ว!</h3>
                 <p id="summary-diff-text">สรุปคะแนนรวมของคุณ</p>
@@ -645,39 +843,138 @@
         </section>
     </main>
 
+    <!-- ==========================================
+         ส่วนที่ 5: สคริปต์ควบคุมระบบ (JavaScript)
+         ========================================== -->
     <script>
-        // --- ระบบสลับหน้า ---
+        // ----------------------------------------------------
+        // 1. ระบบควบคุม Sidebar และการเปลี่ยนหน้า (Navigation System)
+        // ----------------------------------------------------
+        
+        // ฟังก์ชันสลับการเปิด/ปิด Sidebar
         function toggleMenu() {
             document.getElementById('sidebar').classList.toggle('open');
             document.getElementById('overlay').classList.toggle('active');
         }
 
+        // ฟังก์ชันสลับแสดงผลหน้าเพจ
         function showPage(pageId, btnElement) {
+            // ซ่อนทุกหน้า
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => page.classList.remove('active'));
 
+            // ลบสถานะ active ออกจากปุ่มเมนูทั้งหมด
             const buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
 
+            // แสดงหน้าเพจและตั้งค่าปุ่มเมนูที่เลือก
             document.getElementById(pageId).classList.add('active');
             btnElement.classList.add('active');
 
             document.getElementById('main-header').style.display = 'block';
 
+            // ปิด Sidebar อัตโนมัติเมื่อเลือกเมนูแล้ว
             if(document.getElementById('sidebar').classList.contains('open')) {
                 toggleMenu();
             }
 
+            // ถ้าเปิดหน้าแบบทดสอบ ให้ปรับขนาด Canvas ของกระดาษทด
             if (pageId === 'page5') {
                 setTimeout(resizeCanvas, 100);
             }
         }
 
-        // --- ระบบแบบทดสอบ ---
-        let currentQuestion = 1;
-        let currentDifficulty = 'easy';
-        let userAnswers = Array(20).fill(null);
+        // ----------------------------------------------------
+        // 2. ระบบ POP CLICKER (เสียงเด้ง + ตัวนับคะแนนจางหาย)
+        // ----------------------------------------------------
+        let clickScore = 0;
+        let fadeTimer = null;
 
+        const clickerBtn = document.getElementById('clicker-btn');
+        const clickerImg = document.getElementById('clicker-img');
+        const scoreBox = document.getElementById('score-box');
+        const scoreCountDisplay = document.getElementById('score-count');
+
+        // ฟังก์ชันสร้างเสียงเด้ง (Pop Audio Dynamic Synthesizer)
+        function playPopSound() {
+            try {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContext) return;
+                
+                const audioCtx = new AudioContext();
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+
+                osc.type = 'sine';
+                
+                const startTime = audioCtx.currentTime;
+                osc.frequency.setValueAtTime(350, startTime);
+                osc.frequency.exponentialRampToValueAtTime(900, startTime + 0.08);
+
+                gain.gain.setValueAtTime(0.3, startTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, startTime + 0.08);
+
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                osc.start(startTime);
+                osc.stop(startTime + 0.08);
+            } catch (e) {
+                console.log("Audio play error:", e);
+            }
+        }
+
+        // ฟังก์ชันสร้างตัวเลข +1 ลอยขึ้นเมื่อคลิก
+        function createFloatingText(x, y) {
+            const floatNum = document.createElement('div');
+            floatNum.className = 'floating-num';
+            floatNum.innerText = '+1';
+            
+            const rect = clickerBtn.getBoundingClientRect();
+            floatNum.style.left = `${x - rect.left}px`;
+            floatNum.style.top = `${y - rect.top}px`;
+
+            clickerBtn.appendChild(floatNum);
+
+            setTimeout(() => {
+                floatNum.remove();
+            }, 700);
+        }
+
+        // เหตุการณ์การคลิกรูปภาพ Pop Clicker
+        if (clickerBtn) {
+            clickerBtn.addEventListener('click', (e) => {
+                clickScore++;
+                scoreCountDisplay.innerText = clickScore;
+
+                playPopSound();
+
+                clickerImg.classList.add('pop-active');
+                setTimeout(() => clickerImg.classList.remove('pop-active'), 100);
+
+                createFloatingText(e.clientX, e.clientY);
+
+                scoreBox.classList.add('show');
+
+                if (fadeTimer) {
+                    clearTimeout(fadeTimer);
+                }
+
+                fadeTimer = setTimeout(() => {
+                    scoreBox.classList.remove('show');
+                }, 1500);
+            });
+        }
+
+        // ----------------------------------------------------
+        // 3. ระบบจัดการแบบทดสอบ (Quiz Engine)
+        // ----------------------------------------------------
+        
+        let currentQuestion = 1;         // ลำดับข้อปัจจุบัน (1-20)
+        let currentDifficulty = 'easy';   // ระดับความยากปัจจุบัน ('easy', 'medium', 'hard')
+        let userAnswers = Array(20).fill(null); // อาเรย์เก็บคำตอบของผู้ใช้ (null = ยังไม่ได้ตอบ)
+
+        // คลังข้อมูลโจทย์แบบทดสอบแบ่งตามระดับ
         const quizData = {
             easy: Array.from({length: 20}, (_, i) => ({
                 q: `[ระดับง่าย] ข้อที่ ${i+1}: สัญลักษณ์ ∀ อ่านว่าอย่างไร?`,
@@ -687,7 +984,7 @@
                     `ค. สมมูลกับ (Equivalent)`, 
                     `ง. เป็นนิเสธของ (Not)`
                 ],
-                correct: 0,
+                correct: 0,//กำข้อที่ถูก
                 explanations: [
                     `<b>ข้อ ก. ถูกต้องแล้ว!</b> สัญลักษณ์ ∀ มาจากคำว่า All ใช้แทน "สำหรับทุกตัว"`,
                     `<b>ข้อ ข. ผิดเพราะ:</b> "สำหรับบางตัว" จะใช้สัญลักษณ์ ∃ (Existential Quantifier)`,
@@ -729,6 +1026,7 @@
             }))
         };
 
+        // ฟังก์ชันคำนวณคะแนนรวม
         function calculateScore() {
             let currentScore = 0;
             const currentSet = quizData[currentDifficulty];
@@ -740,6 +1038,7 @@
             return currentScore;
         }
 
+        // ฟังก์ชันอัปเดตหน้าจอข้อสอบตามลำดับข้อปัจจุบัน
         function updateQuizDisplay() {
             const qData = quizData[currentDifficulty][currentQuestion - 1];
             document.getElementById('question-text').innerText = qData.q;
@@ -747,8 +1046,10 @@
             const savedAnswer = userAnswers[currentQuestion - 1];
             const expBox = document.getElementById('explanation-box');
 
+            // ปิดใช้งานปุ่มย้อนกลับเมื่ออยู่ข้อแรก
             document.getElementById('prev-btn').disabled = (currentQuestion === 1);
 
+            // แสดงข้อความบนปุ่มตัวเลือก และคืนค่าสถานะปุ่ม
             for (let i = 0; i < 4; i++) {
                 const btn = document.getElementById(`opt${i}`);
                 btn.innerText = qData.options[i];
@@ -756,6 +1057,7 @@
                 btn.disabled = false;
             }
 
+            // กรณีที่เคยทำข้อนี้ไปแล้ว ให้ปิดการกด และแสดงเฉลย
             if (savedAnswer !== null) {
                 for (let i = 0; i < 4; i++) {
                     document.getElementById(`opt${i}`).disabled = true;
@@ -778,24 +1080,28 @@
                 expBox.className = 'explanation-box';
             }
 
+            // แสดงคะแนนรวมปัจจุบัน
             document.getElementById('score-text').innerText = `คะแนน: ${calculateScore()} / 20`;
         }
 
+        // ฟังก์ชันตรวจคำตอบเมื่อคลิกเลือกตัวเลือก
         function checkAnswer(selectedIndex) {
-            if (userAnswers[currentQuestion - 1] !== null) return;
+            if (userAnswers[currentQuestion - 1] !== null) return; // ถ้าเคยตอบแล้วไม่ให้ตอบซ้ำ
 
             userAnswers[currentQuestion - 1] = selectedIndex;
             updateQuizDisplay();
         }
 
+        // ฟังก์ชันเปลี่ยนระดับความยาก
         function setDifficulty(diff, btn) {
             currentDifficulty = diff;
             document.querySelectorAll('.diff-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            resetQuiz();
+            resetQuiz(); // รีเซ็ตการทำข้อสอบใหม่เมื่อเปลี่ยนระดับ
         }
 
+        // ปุ่มไปยังข้อก่อนหน้า
         function prevQuestion() {
             if (currentQuestion > 1) {
                 currentQuestion--;
@@ -804,12 +1110,14 @@
             }
         }
 
+        // ปุ่มไปยังข้อถัดไป
         function nextQuestion() {
             if (currentQuestion < 20) {
                 currentQuestion++;
                 updateQuizDisplay();
                 clearScratchpad();
             } else {
+                // เมื่อทำครบ 20 ข้อ ซ่อนส่วนทำข้อสอบ แล้วแสดงหน้าสรุปคะแนน
                 document.getElementById('quiz-body').style.display = 'none';
                 
                 const finalSummary = document.getElementById('final-summary');
@@ -826,6 +1134,7 @@
             }
         }
 
+        // ฟังก์ชันรีเซ็ตระบบทำข้อสอบ
         function resetQuiz() {
             currentQuestion = 1;
             userAnswers = Array(20).fill(null);
@@ -835,11 +1144,15 @@
             clearScratchpad();
         }
 
-        // --- ระบบกระดาษทดเลข ---
+        // ----------------------------------------------------
+        // 4. ระบบกระดาษทดเลข (Scratchpad Canvas Engine)
+        // ----------------------------------------------------
+        
         const canvas = document.getElementById('scratchpad');
         const ctx = canvas.getContext('2d');
         let isDrawing = false;
 
+        // สลับเปิด/ปิด กระดาษทด
         function toggleScratchpad() {
             const scratchArea = document.getElementById('scratchpad-area');
             const btn = document.querySelector('.toggle-scratchpad-btn');
@@ -854,6 +1167,7 @@
             }
         }
 
+        // ปรับขนาดความกว้างกระดาษทดตามหน้าจอ
         function resizeCanvas() {
             const rect = canvas.getBoundingClientRect();
             canvas.width = rect.width;
@@ -863,16 +1177,19 @@
             ctx.strokeStyle = '#1e3c72';
         }
 
+        // เริ่มวาด
         function startDrawing(e) {
             isDrawing = true;
             draw(e);
         }
 
+        // หยุดวาด
         function stopDrawing() {
             isDrawing = false;
             ctx.beginPath();
         }
 
+        // ฟังก์ชันวาดลายเส้น
         function draw(e) {
             if (!isDrawing) return;
             const rect = canvas.getBoundingClientRect();
@@ -885,20 +1202,25 @@
             ctx.moveTo(clientX - rect.left, clientY - rect.top);
         }
 
+        // ล้างลายเส้นกระดาษทด
         function clearScratchpad() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         }
 
+        // Event Listener สำหรับเมาส์ (PC)
         canvas.addEventListener('mousedown', startDrawing);
         canvas.addEventListener('mouseup', stopDrawing);
         canvas.addEventListener('mousemove', draw);
 
+        // Event Listener สำหรับระบบสัมผัส (มือถือ/แท็บเล็ต)
         canvas.addEventListener('touchstart', startDrawing);
         canvas.addEventListener('touchend', stopDrawing);
         canvas.addEventListener('touchmove', draw);
 
+        // คำนวณขนาดกระดาษทดใหม่เมื่อมีการขยาย/ย่อหน้าจอ
         window.addEventListener('resize', resizeCanvas);
 
+        // เริ่มต้นแสดงผลแบบทดสอบหน้าแรก
         updateQuizDisplay();
     </script>
 
