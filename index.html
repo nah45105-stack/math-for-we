@@ -706,7 +706,8 @@
                 <a href="https://www.cbr.com" target="_blank" rel="noopener" class="source-btn">🔗 แหล่งที่มาของภาพ: https://www.cbr.com/colorful-stage-miku-who-cant-sing-most-underrated-anime-movie-2025/</a>
             </figure>
         </section>
-<section id="page2" class="page">
+
+        <section id="page2" class="page">
             <h2>สัจนิรันดร์ (Tautology)</h2>
             <p><b>สัจนิรันดร์</b> คือ รูปแบบของประพจน์ที่มีค่าความจริงเป็น <b>จริง (True : T) เสมอทุกกรณี</b> ไม่ว่าประพจน์ย่อยๆ ที่ประกอบอยู่ภายในจะมีค่าความจริงเป็นจริงหรือเท็จก็ตาม</p>
             
@@ -722,7 +723,7 @@
                             <li>ถ้าไล่หาค่าความจริงแล้ว **ไม่เกิดข้อขัดแย้ง** (หาค่าประพจน์ย่อยได้จริง) $\rightarrow$ แปลว่า **ไม่เป็นสัจนิรันดร์**</li>
                         </ul>
                     </li>
-                    <li><b>วิธีใช้กฎการสมมูล (Equivalence Rules):</b> ยุบรูปแบบประพจน์ให้อยู่ในรูปประพจน์พื้นฐานที่เป็นจริงเสมอ เช่น $p \lor \sim p \equiv \text{T}$</li>
+                    <li><b>วิธีใช้กฎการสมมูล (Equivalence Rules):</b> ยุบรูปแบบประพจน์ให้อยูในรูปประพจน์พื้นฐานที่เป็นจริงเสมอ เช่น $p \lor \sim p \equiv \text{T}$</li>
                 </ol>
             </div>
 
@@ -737,7 +738,6 @@
                 <p>3. พิจารณาค่าของ $p$: จากฝั่งขวาได้ $p = \text{F}$ แต่จากฝั่งซ้ายได้ $p = \text{T}$ เกิด<b>ข้อขัดแย้ง!</b></p>
                 <p><b>สรุป:</b> เมื่อเกิดข้อขัดแย้ง แสดงว่ารูปแบบประพจน์นี้ <b>เป็นสัจนิรันดร์</b></p>
             </div>
-           
         </section>
 
         <section id="page3" class="page">
@@ -773,185 +773,179 @@
                 <p>3. จัดรูปใหม่โดยเปลี่ยนเป็นตัวเชื่อมถ้า...แล้ว ($p \lor \sim q \equiv \sim q \lor p \equiv q \rightarrow p$):</p>
                 <p style="padding-left: 20px;">$\rightarrow (p \land q) \rightarrow r$ หรือ $(q \land \sim r) \rightarrow p$ เป็นต้น</p>
             </div>
-             <!-- สรุปตัวเชื่อมประพจน์กับกฎการสมมูล -->
-    <div class="card" style="margin-top: 25px;">
-        <h3>สรุป: ตัวเชื่อมประพจน์ไหน ใช้กับกฎ/สมบัติข้อไหนได้บ้าง?</h3>
-        <p>ตารางสรุปการประยุกต์ใช้สมบัติพื้นฐานกับตัวเชื่อมต่างๆ:</p>
-        
-        <table class="styled-table" style="width:100%; border-collapse: collapse; margin-top: 15px;">
-            <thead>
-                <tr style="background-color: #2c3e50; color: white;">
-                    <th style="padding: 10px; border: 1px solid #ddd;">กฎ / สมบัติ (Rule / Property)</th>
-                    <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">และ ($\land$)</th>
-                    <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">หรือ ($\lor$)</th>
-                    <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">ถ้า...แล้ว ($\rightarrow$)</th>
-                    <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">ก็ต่อเมื่อ ($\leftrightarrow$)</th>
-                    <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">นิเสธ ($\sim$)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;"><b>1. สลับที่ (Commutative)</b></td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;"><b>2. เปลี่ยนกลุ่ม (Associative)</b></td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;"><b>3. แจกแจง (Distributive)</b></td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ (กับ $\lor$)</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ (กับ $\land$)</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ (แจกข้างหลัง)</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;"><b>4. กฎเดอมอร์แกน (De Morgan's)</b></td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ (กระจาย $\sim$)</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ (กระจาย $\sim$)</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;"><b>5. เอกลักษณ์ซ้ำเดิม (Idempotent)</b><br><small>($p \circ p \equiv p$)</small></td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗ ($p \rightarrow p \equiv T$)</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗ ($p \leftrightarrow p \equiv T$)</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;"><b>6. นิเสธสองชั้น (Double Negation)</b></td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ ($\sim\sim p \equiv p$)</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;"><b>7. การเปลี่ยนรูป (Transformation)</b></td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ ($\sim p \lor q$)</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ ($(p\rightarrow q) \land (q\rightarrow p)$)</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;"><b>8. การแย้งสลับที่ (Contraposition)</b></td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ ($\sim q \rightarrow \sim p$)</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ ($\sim p \leftrightarrow \sim q$)</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                </tr>
-            </tbody>
-        </table>
+            
+            <div class="card" style="margin-top: 25px;">
+                <h3>สรุป: ตัวเชื่อมประพจน์ไหน ใช้กับกฎ/สมบัติข้อไหนได้บ้าง?</h3>
+                <p>ตารางสรุปการประยุกต์ใช้สมบัติพื้นฐานกับตัวเชื่อมต่างๆ:</p>
+                
+                <table class="styled-table" style="width:100%; border-collapse: collapse; margin-top: 15px;">
+                    <thead>
+                        <tr style="background-color: #2c3e50; color: white;">
+                            <th style="padding: 10px; border: 1px solid #ddd;">กฎ / สมบัติ (Rule / Property)</th>
+                            <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">และ ($\land$)</th>
+                            <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">หรือ ($\lor$)</th>
+                            <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">ถ้า...แล้ว ($\rightarrow$)</th>
+                            <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">ก็ต่อเมื่อ ($\leftrightarrow$)</th>
+                            <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">นิเสธ ($\sim$)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;"><b>1. สลับที่ (Commutative)</b></td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;"><b>2. เปลี่ยนกลุ่ม (Associative)</b></td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;"><b>3. แจกแจง (Distributive)</b></td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ (กับ $\lor$)</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ (กับ $\land$)</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ (แจกข้างหลัง)</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;"><b>4. กฎเดอมอร์แกน (De Morgan's)</b></td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ (กระจาย $\sim$)</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ (กระจาย $\sim$)</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;"><b>5. เอกลักษณ์ซ้ำเดิม (Idempotent)</b><br><small>($p \circ p \equiv p$)</small></td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗ ($p \rightarrow p \equiv T$)</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗ ($p \leftrightarrow p \equiv T$)</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;"><b>6. นิเสธสองชั้น (Double Negation)</b></td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ ($\sim\sim p \equiv p$)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;"><b>7. การเปลี่ยนรูป (Transformation)</b></td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ ($\sim p \lor q$)</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ ($(p\rightarrow q) \land (q\rightarrow p)$)</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;"><b>8. การแย้งสลับที่ (Contraposition)</b></td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ ($\sim q \rightarrow \sim p$)</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ ($\sim p \leftrightarrow \sim q$)</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-    <h4 style="margin-top: 25px; margin-bottom: 15px;">รายละเอียดการนำตัวเชื่อมแต่ละชนิดไปใช้ในแต่ละกฎ:</h4>
-        
-        <div style="display: flex; flex-direction: column; gap: 15px;">
-            <!-- ตัวเชื่อม และ / หรือ -->
-            <div style="background-color: #eef6ff; border-left: 5px solid #3498db; padding: 15px; border-radius: 6px;">
-                <h5 style="margin: 0 0 8px 0; color: #2980b9; font-size: 1.05rem;">
-                    🔷 ตัวเชื่อม และ ($\land$) และ หรือ ($\lor$)
-                </h5>
-                <ul style="margin: 0; padding-left: 20px; line-height: 1.7;">
-                    <li>ใช้กฎ<b>สลับที่</b>ได้: $p \land q \equiv q \land p$ และ $p \lor q \equiv q \lor p$</li>
-                    <li>ใช้กฎ<b>เปลี่ยนกลุ่ม</b>ได้: $(p \land q) \land r \equiv p \land (q \land r)$</li>
-                    <li>ใช้กฎ<b>แจกแจง</b>ข้ามกันได้: $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$</li>
-                    <li>ใช้กฎ<b>ซ้ำเดิม</b>ได้: $p \land p \equiv p$ และ $p \lor p \equiv p$</li>
-                </ul>
-            </div>
+                <h4 style="margin-top: 25px; margin-bottom: 15px;">รายละเอียดการนำตัวเชื่อมแต่ละชนิดไปใช้ในแต่ละกฎ:</h4>
+                
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div style="background-color: #eef6ff; border-left: 5px solid #3498db; padding: 15px; border-radius: 6px;">
+                        <h5 style="margin: 0 0 8px 0; color: #2980b9; font-size: 1.05rem;">
+                            🔷 ตัวเชื่อม และ ($\land$) และ หรือ ($\lor$)
+                        </h5>
+                        <ul style="margin: 0; padding-left: 20px; line-height: 1.7;">
+                            <li>ใช้กฎ<b>สลับที่</b>ได้: $p \land q \equiv q \land p$ และ $p \lor q \equiv q \lor p$</li>
+                            <li>ใช้กฎ<b>เปลี่ยนกลุ่ม</b>ได้: $(p \land q) \land r \equiv p \land (q \land r)$</li>
+                            <li>ใช้กฎ<b>แจกแจง</b>ข้ามกันได้: $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$</li>
+                            <li>ใช้กฎ<b>ซ้ำเดิม</b>ได้: $p \land p \equiv p$ และ $p \lor p \equiv p$</li>
+                        </ul>
+                    </div>
 
-            <!-- ตัวเชื่อม ถ้า...แล้ว -->
-            <div style="background-color: #fff8ec; border-left: 5px solid #e67e22; padding: 15px; border-radius: 6px;">
-                <h5 style="margin: 0 0 8px 0; color: #d35400; font-size: 1.05rem;">
-                    🟠 ตัวเชื่อม ถ้า...แล้ว ($\rightarrow$)
-                </h5>
-                <ul style="margin: 0; padding-left: 20px; line-height: 1.7;">
-                    <li><b>ไม่สามารถ</b>สลับที่ตรงๆ ได้ ($p \rightarrow q \not\equiv q \rightarrow p$)</li>
-                    <li><b>ไม่สามารถ</b>เปลี่ยนกลุ่มได้ ($(p \rightarrow q) \rightarrow r \not\equiv p \rightarrow (q \rightarrow r)$)</li>
-                    <li>ใช้กฎ<b>การแย้งสลับที่</b>ได้: $p \rightarrow q \equiv \sim q \rightarrow \sim p$</li>
-                    <li>ใช้กฎ<b>เปลี่ยนรูปเป็น "หรือ"</b> ได้: $p \rightarrow q \equiv \sim p \lor q$</li>
-                    <li>ใช้กฎ<b>แจกแจง</b>ได้เฉพาะกรณี: $p \rightarrow (q \land r) \equiv (p \rightarrow q) \land (p \rightarrow r)$</li>
-                </ul>
-            </div>
+                    <div style="background-color: #fff8ec; border-left: 5px solid #e67e22; padding: 15px; border-radius: 6px;">
+                        <h5 style="margin: 0 0 8px 0; color: #d35400; font-size: 1.05rem;">
+                            🟠 ตัวเชื่อม ถ้า...แล้ว ($\rightarrow$)
+                        </h5>
+                        <ul style="margin: 0; padding-left: 20px; line-height: 1.7;">
+                            <li><b>ไม่สามารถ</b>สลับที่ตรงๆ ได้ ($p \rightarrow q \not\equiv q \rightarrow p$)</li>
+                            <li><b>ไม่สามารถ</b>เปลี่ยนกลุ่มได้ ($(p \rightarrow q) \rightarrow r \not\equiv p \rightarrow (q \rightarrow r)$)</li>
+                            <li>ใช้กฎ<b>การแย้งสลับที่</b>ได้: $p \rightarrow q \equiv \sim q \rightarrow \sim p$</li>
+                            <li>ใช้กฎ<b>เปลี่ยนรูปเป็น "หรือ"</b> ได้: $p \rightarrow q \equiv \sim p \lor q$</li>
+                            <li>ใช้กฎ<b>แจกแจง</b>ได้เฉพาะกรณี: $p \rightarrow (q \land r) \equiv (p \rightarrow q) \land (p \rightarrow r)$</li>
+                        </ul>
+                    </div>
 
-            <!-- ตัวเชื่อม ก็ต่อเมื่อ -->
-            <div style="background-color: #f5eef8; border-left: 5px solid #8e44ad; padding: 15px; border-radius: 6px;">
-                <h5 style="margin: 0 0 8px 0; color: #6c3483; font-size: 1.05rem;">
-                    🟣 ตัวเชื่อม ก็ต่อเมื่อ ($\leftrightarrow$)
-                </h5>
-                <ul style="margin: 0; padding-left: 20px; line-height: 1.7;">
-                    <li>ใช้กฎ<b>สลับที่</b>ได้: $p \leftrightarrow q \equiv q \leftrightarrow p$</li>
-                    <li>ใช้กฎ<b>เปลี่ยนรูป</b>ได้: $p \leftrightarrow q \equiv (p \rightarrow q) \land (q \rightarrow p)$</li>
-                    <li>ใส่<b>นิเสธทั้งสองข้าง</b>ได้: $p \leftrightarrow q \equiv \sim p \leftrightarrow \sim q$</li>
-                </ul>
-            </div>
+                    <div style="background-color: #f5eef8; border-left: 5px solid #8e44ad; padding: 15px; border-radius: 6px;">
+                        <h5 style="margin: 0 0 8px 0; color: #6c3483; font-size: 1.05rem;">
+                            🟣 ตัวเชื่อม ก็ต่อเมื่อ ($\leftrightarrow$)
+                        </h5>
+                        <ul style="margin: 0; padding-left: 20px; line-height: 1.7;">
+                            <li>ใช้กฎ<b>สลับที่</b>ได้: $p \leftrightarrow q \equiv q \leftrightarrow p$</li>
+                            <li>ใช้กฎ<b>เปลี่ยนรูป</b>ได้: $p \leftrightarrow q \equiv (p \rightarrow q) \land (q \rightarrow p)$</li>
+                            <li>ใส่<b>นิเสธทั้งสองข้าง</b>ได้: $p \leftrightarrow q \equiv \sim p \leftrightarrow \sim q$</li>
+                        </ul>
+                    </div>
 
-            <!-- ตัวเชื่อม นิเสธ -->
-            <div style="background-color: #fdf2e9; border-left: 5px solid #e74c3c; padding: 15px; border-radius: 6px;">
-                <h5 style="margin: 0 0 8px 0; color: #c0392b; font-size: 1.05rem;">
-                    🔴 ตัวเชื่อม นิเสธ ($\sim$)
-                </h5>
-                <ul style="margin: 0; padding-left: 20px; line-height: 1.7;">
-                    <li>ใช้กฎ<b>นิเสธสองชั้น</b>ได้: $\sim(\sim p) \equiv p$</li>
-                    <li>ใช้กฎ<b>เดอมอร์แกน</b>เพื่อเปลี่ยนตัวเชื่อมได้: $\sim(p \land q) \equiv \sim p \lor \sim q$ และ $\sim(p \lor q) \equiv \sim p \land \sim q$</li>
-                    <li>ใช้หา<b>นิเสธของเงื่อนไข</b>ได้: $\sim(p \rightarrow q) \equiv p \land \sim q$</li>
-                </ul>
+                    <div style="background-color: #fdf2e9; border-left: 5px solid #e74c3c; padding: 15px; border-radius: 6px;">
+                        <h5 style="margin: 0 0 8px 0; color: #c0392b; font-size: 1.05rem;">
+                            🔴 ตัวเชื่อม นิเสธ ($\sim$)
+                        </h5>
+                        <ul style="margin: 0; padding-left: 20px; line-height: 1.7;">
+                            <li>ใช้กฎ<b>นิเสธสองชั้น</b>ได้: $\sim(\sim p) \equiv p$</li>
+                            <li>ใช้กฎ<b>เดอมอร์แกน</b>เพื่อเปลี่ยนตัวเชื่อมได้: $\sim(p \land q) \equiv \sim p \lor \sim q$ และ $\sim(p \lor q) \equiv \sim p \land \sim q$</li>
+                            <li>ใช้หา<b>นิเสธของเงื่อนไข</b>ได้: $\sim(p \rightarrow q) \equiv p \land \sim q$</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
         </section>
 
-        <!-- ==========================================
-     หน้า 4: การอ้างเหตุผล (Logical Argument)
-     ========================================== -->
-<section id="page4" class="page">
-    <h2>การอ้างเหตุผล (Logical Argument)</h2>
-    <p>การอ้างเหตุผลประกอบด้วยส่วนสำคัญ 2 ส่วน คือ:</p>
-    <ol style="padding-left: 20px; margin: 10px 0;">
-        <li><b>เหตุ (Premises):</b> $H_1, H_2, H_3, ..., H_n$</li>
-        <li><b>ผล (Conclusion):</b> $C$</li>
-    </ol>
-    <p>การอ้างเหตุผลจะ <b>"สมเหตุสมผล" (Valid)</b> ก็ต่อเมื่อ เมื่อเรานำเหตุทุกข้อมาเชื่อมด้วย "และ" ($\land$) แล้วเชื่อมไปยังผลด้วย "ถ้า...แล้ว" ($\rightarrow$) แล้วรูปแบบประพจน์นั้นเป็น <b>สัจนิรันดร์</b></p>
+        <section id="page4" class="page">
+            <h2>การอ้างเหตุผล (Logical Argument)</h2>
+            <p>การอ้างเหตุผลประกอบด้วยส่วนสำคัญ 2 ส่วน คือ:</p>
+            <ol style="padding-left: 20px; margin: 10px 0;">
+                <li><b>เหตุ (Premises):</b> $H_1, H_2, H_3, ..., H_n$</li>
+                <li><b>ผล (Conclusion):</b> $C$</li>
+            </ol>
+            <p>การอ้างเหตุผลจะ <b>"สมเหตุสมผล" (Valid)</b> ก็ต่อเมื่อ เมื่อเรานำเหตุทุกข้อมาเชื่อมด้วย "และ" ($\land$) แล้วเชื่อมไปยังผลด้วย "ถ้า...แล้ว" ($\rightarrow$) แล้วรูปแบบประพจน์นั้นเป็น <b>สัจนิรันดร์</b></p>
 
-    <div style="background-color: #f8f9fa; border-left: 4px solid #2a5298; padding: 15px; margin: 15px 0; border-radius: 4px;">
-        <h3 style="color: #2a5298; margin-bottom: 8px;">⚙️ ขั้นตอนการตรวจสอบความสมเหตุสมผล</h3>
-        <p><b>วิธีสั้น (การหาข้อขัดแย้ง):</b></p>
-        <ol style="padding-left: 20px; line-height: 1.8;">
-            <li>ให้ <b>เหตุทุกข้อมีค่าความจริงเป็น จริง (T)</b></li>
-            <li>ให้ <b>ผลลัพธ์มีค่าความจริงเป็น เท็จ (F)</b></li>
-            <li>นำค่าความจริงจากผล ($F$) และเหตุพิสูจน์ย้อนกลับไปหาประพจน์ย่อย</li>
-            <li>หากเกิด <b>ข้อขัดแย้ง</b> $\rightarrow$ สรุปว่า <b>สมเหตุสมผล (Valid)</b></li>
-            <li>หาก <b>ไม่เกิดข้อขัดแย้ง</b> (กำหนดให้เหตุเป็นจริงทุกข้อและผลเป็นเท็จได้สำเร็จ) $\rightarrow$ สรุปว่า <b>ไม่สมเหตุสมผล (Invalid)</b></li>
-        </ol>
-    </div>
+            <div style="background-color: #f8f9fa; border-left: 4px solid #2a5298; padding: 15px; margin: 15px 0; border-radius: 4px;">
+                <h3 style="color: #2a5298; margin-bottom: 8px;">⚙️ ขั้นตอนการตรวจสอบความสมเหตุสมผล</h3>
+                <p><b>วิธีสั้น (การหาข้อขัดแย้ง):</b></p>
+                <ol style="padding-left: 20px; line-height: 1.8;">
+                    <li>ให้ <b>เหตุทุกข้อมีค่าความจริงเป็น จริง (T)</b></li>
+                    <li>ให้ <b>ผลลัพธ์มีค่าความจริงเป็น เท็จ (F)</b></li>
+                    <li>นำค่าความจริงจากผล ($F$) และเหตุพิสูจน์ย้อนกลับไปหาประพจน์ย่อย</li>
+                    <li>หากเกิด <b>ข้อขัดแย้ง</b> $\rightarrow$ สรุปว่า <b>สมเหตุสมผล (Valid)</b></li>
+                    <li>หาก <b>ไม่เกิดข้อขัดแย้ง</b> (กำหนดให้เหตุเป็นจริงทุกข้อและผลเป็นเท็จได้สำเร็จ) $\rightarrow$ สรุปว่า <b>ไม่สมเหตุสมผล (Invalid)</b></li>
+                </ol>
+            </div>
 
-    <div style="background: #eef4ff; border: 1px solid #1e3c72; padding: 15px; border-radius: 8px; margin-top: 15px;">
-        <h4 style="color: #1e3c72;">💡 ตัวอย่างการพิสูจน์การอ้างเหตุผล</h4>
-        <p><b>กำหนดให้:</b></p>
-        <p>เหตุ 1: $p \rightarrow q$</p>
-        <p>เหตุ 2: $\sim q$</p>
-        <p>ผล: $\sim p$</p>
-        <p><b>ตรวจสอบ:</b></p>
-        <p>1. กำหนดให้ผลเป็นเท็จ: $\sim p \equiv \text{F} \Rightarrow p \equiv \text{T}$</p>
-        <p>2. กำหนดให้เหตุเป็นจริงทุกข้อ:</p>
-        <p style="padding-left: 20px;">- เหตุ 2: $\sim q \equiv \text{T} \Rightarrow q \equiv \text{F}$</p>
-        <p style="padding-left: 20px;">- เหตุ 1: $p \rightarrow q \equiv \text{T}$</p>
-        <p>3. แทนค่า $p=\text{T}$ และ $q=\text{F}$ ในเหตุ 1 จะได้ $\text{T} \rightarrow \text{F} \equiv \text{F}$ ซึ่งขัดแย้งกับที่ตั้งไว้ว่าเหตุ 1 ต้องเป็น $\text{T}$</p>
-        <p><b>สรุป:</b> เกิดข้อขัดแย้ง การอ้างเหตุผลนี้จึง <b>สมเหตุสมผล (Valid)</b></p>
-    </div>
-</section>
+            <div style="background: #eef4ff; border: 1px solid #1e3c72; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                <h4 style="color: #1e3c72;">💡 ตัวอย่างการพิสูจน์การอ้างเหตุผล</h4>
+                <p><b>กำหนดให้:</b></p>
+                <p>เหตุ 1: $p \rightarrow q$</p>
+                <p>เหตุ 2: $\sim q$</p>
+                <p>ผล: $\sim p$</p>
+                <p><b>ตรวจสอบ:</b></p>
+                <p>1. กำหนดให้ผลเป็นเท็จ: $\sim p \equiv \text{F} \Rightarrow p \equiv \text{T}$</p>
+                <p>2. กำหนดให้เหตุเป็นจริงทุกข้อ:</p>
+                <p style="padding-left: 20px;">- เหตุ 2: $\sim q \equiv \text{T} \Rightarrow q \equiv \text{F}$</p>
+                <p style="padding-left: 20px;">- เหตุ 1: $p \rightarrow q \equiv \text{T}$</p>
+                <p>3. แทนค่า $p=\text{T}$ และ $q=\text{F}$ ในเหตุ 1 จะได้ $\text{T} \rightarrow \text{F} \equiv \text{F}$ ซึ่งขัดแย้งกับที่ตั้งไว้ว่าเหตุ 1 ต้องเป็น $\text{T}$</p>
+                <p><b>สรุป:</b> เกิดข้อขัดแย้ง การอ้างเหตุผลนี้จึง <b>สมเหตุสมผล (Valid)</b></p>
+            </div>
+        </section>
 
         <section id="page6" class="page">
             <h2>ตัวบ่งปริมาณ (Quantifiers)</h2>
@@ -996,6 +990,7 @@
                 <p style="padding-left: 20px;">- มี $x=-1$ ที่ทำให้ประพจน์เป็นเท็จ $\Rightarrow$ <b>ตอบ: มีค่าความจริงเป็น เท็จ (F)</b></p>
             </div>
         </section>
+
         <section id="page5" class="page">
             <h2>แบบทดสอบตรรกศาสตร์ (Mathematical Logic Quiz)</h2>
             <p style="margin-bottom: 15px;">เลือกระดับความยากแล้วเริ่มทำแบบทดสอบ:</p>
@@ -1055,20 +1050,11 @@
         // ----------------------------------------------------
         // 1. ระบบควบคุม Sidebar และการเปลี่ยนหน้า (Navigation System)
         // ----------------------------------------------------
-        // ฟังก์ชันสำหรับสุ่มสลับตำแหน่งใน Array (Fisher-Yates Shuffle)
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-        // ฟังก์ชันสลับการเปิด/ปิด Sidebar
         function toggleMenu() {
             document.getElementById('sidebar').classList.toggle('open');
             document.getElementById('overlay').classList.toggle('active');
         }
 
-        // ฟังก์ชันสลับแสดงผลหน้าเพจ
         function showPage(pageId, btnElement) {
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => page.classList.remove('active'));
@@ -1165,896 +1151,924 @@ function shuffleArray(array) {
         }
 
         // ----------------------------------------------------
-        // 3. ระบบจัดการแบบทดสอบ (Quiz Engine - 60 ข้อปะปนกันตามระดับ)
+        // 3. ระบบจัดการแบบทดสอบ (Quiz Engine พร้อมระบบสลับตัวเลือก)
         // ----------------------------------------------------
-        let currentQuestion = 1; // ลำดับข้อเริ่มต้นที่ 1 เสมอ
+        let currentQuestion = 1;
         let currentDifficulty = 'easy';
-        let userAnswers = Array(20).fill(null); // อาเรย์เก็บคำตอบ 20 ข้อต่อชุด
+        let userAnswers = Array(20).fill(null);
+        let randomizedOptionsMap = {}; // เก็บแผนผังการสลับตัวเลือกของแต่ละข้อ
 
-        // คลังข้อมูลโจทย์รวม 60 ข้อ (คละเรื่อง ตรรกศาสตร์, สัจนิรันดร์, สมมูล, การอ้างเหตุผล, ตัวบ่งปริมาณ)
-        // และเริ่มนับโจทย์ข้อที่ 1 ถึง 20 ใหม่ในทุกๆ ระดับ
-      const quizData = {
+        const quizData = {
             easy: [
                 {
                     q: "[ระดับง่าย] ข้อที่ 1: รูปแบบของประพจน์ p ∨ ~p เป็นสัจนิรันดร์หรือไม่?",
-                    options: ["ก. เป็นสัจนิรันดร์", "ข. ไม่เป็นสัจนิรันดร์", "ค. เป็นจริงเฉพาะเมื่อ p เป็นจริง", "ง. เป็นจริงเฉพาะเมื่อ p เป็นเท็จ"],
+                    options: ["เป็นสัจนิรันดร์", "ไม่เป็นสัจนิรันดร์", "เป็นจริงเฉพาะเมื่อ p เป็นจริง", "เป็นจริงเฉพาะเมื่อ p เป็นเท็จ"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> p ∨ ~p เป็นสัจนิรันดร์เสมอ ตามกฎ Law of Excluded Middle",
-                        "<b>ข้อ ข. ผิด</b> เพราะไม่ว่า p จะเป็นจริง (T) หรือเท็จ (F) ผลลัพธ์ของ p ∨ ~p จะได้จริง (T) เสมอ",
-                        "<b>ข้อ ค. ผิด</b> เพราะถ้า p เป็นเท็จ (F) ตัว ~p จะเป็นจริง (T) ส่งผลให้ p ∨ ~p ยังคงเป็นจริง",
-                        "<b>ข้อ ง. ผิด</b> เพราะถ้า p เป็นจริง (T) ผลลัพธ์ของ p ∨ ~p ก็เป็นจริงเช่นกัน"
+                        "<b>ถูกต้อง!</b> p ∨ ~p เป็นสัจนิรันดร์เสมอ ตามกฎ Law of Excluded Middle",
+                        "<b>ผิด</b> เพราะไม่ว่า p จะเป็นจริง (T) หรือเท็จ (F) ผลลัพธ์ของ p ∨ ~p จะได้จริง (T) เสมอ",
+                        "<b>ผิด</b> เพราะถ้า p เป็นเท็จ (F) ตัว ~p จะเป็นจริง (T) ส่งผลให้ p ∨ ~p ยังคงเป็นจริง",
+                        "<b>ผิด</b> เพราะถ้า p เป็นจริง (T) ผลลัพธ์ของ p ∨ ~p ก็เป็นจริงเช่นกัน"
                     ]
                 },
                 {
                     q: "[ระดับง่าย] ข้อที่ 2: ข้อใดเป็นนิยามของ 'สัจนิรันดร์' (Tautology)?",
-                    options: ["ก. ประพจน์ที่มีค่าความจริงเป็นจริงทุกกรณี", "ข. ประพจน์ที่มีค่าความจริงเป็นเท็จทุกกรณี", "ค. ประพจน์ที่เป็นจริงเฉพาะกรณีแรก", "ง. ประพจน์ที่ไม่สามารถหาค่าความจริงได้"],
+                    options: ["ประพจน์ที่มีค่าความจริงเป็นจริงทุกกรณี", "ประพจน์ที่มีค่าความจริงเป็นเท็จทุกกรณี", "ประพจน์ที่เป็นจริงเฉพาะกรณีแรก", "ประพจน์ที่ไม่สามารถหาค่าความจริงได้"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> สัจนิรันดร์ (Tautology) หมายถึงประพจน์ที่มีค่าความจริงเป็นจริงเสมอในทุกกรณี",
-                        "<b>ข้อ ข. ผิด</b> ประพจน์ที่เป็นเท็จทุกกรณีเรียกว่า ข้อขัดแย้ง (Contradiction)",
-                        "<b>ข้อ ค. ผิด</b> สัจนิรันดร์ต้องเป็นจริงทุกกรณี ไม่ใช่เฉพาะแค่กรณีใดกรณีหนึ่ง",
-                        "<b>ข้อ ง. ผิด</b> รูปแบบประพจน์ในตรรกศาสตร์สามารถตรวจสอบและหาค่าความจริงได้เสมอ"
+                        "<b>ถูกต้อง!</b> สัจนิรันดร์ (Tautology) หมายถึงประพจน์ที่มีค่าความจริงเป็นจริงเสมอในทุกกรณี",
+                        "<b>ผิด</b> ประพจน์ที่เป็นเท็จทุกกรณีเรียกว่า ข้อขัดแย้ง (Contradiction)",
+                        "<b>ผิด</b> สัจนิรันดร์ต้องเป็นจริงทุกกรณี ไม่ใช่เฉพาะแค่กรณีใดกรณีหนึ่ง",
+                        "<b>ผิด</b> รูปแบบประพจน์ในตรรกศาสตร์สามารถตรวจสอบและหาค่าความจริงได้เสมอ"
                     ]
                 },
                 {
                     q: "[ระดับง่าย] ข้อที่ 3: ประพจน์ ~(p ∧ q) สมมูลกับประพจน์ในข้อใด? (กฎเดอมอร์แกน)",
-                    options: ["ก. ~p ∨ ~q", "ข. ~p ∧ ~q", "ค. p ∨ q", "ง. ~p → ~q"],
+                    options: ["~p ∨ ~q", "~p ∧ ~q", "p ∨ q", "~p → ~q"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> ตามกฎ De Morgan เมื่อกระจายนิเสธเข้าใน (∧) จะเปลี่ยนเป็น (∨) ได้ ~p ∨ ~q",
-                        "<b>ข้อ ข. ผิด</b> การกระจายนิเสธเข้าไปต้องเปลี่ยนตัวเชื่อมจาก 'และ' (∧) เป็น 'หรือ' (∨)",
-                        "<b>ข้อ ค. ผิด</b> ต้องมีการใส่ นิเสธ (~) ให้กับทั้ง p และ q ด้วย",
-                        "<b>ข้อ ง. ผิด</b> ~p → ~q สมมูลกับ p ∨ ~q ซึ่งไม่ตรงกับกฎ De Morgan"
+                        "<b>ถูกต้อง!</b> ตามกฎ De Morgan เมื่อกระจายนิเสธเข้าใน (∧) จะเปลี่ยนเป็น (∨) ได้ ~p ∨ ~q",
+                        "<b>ผิด</b> การกระจายนิเสธเข้าไปต้องเปลี่ยนตัวเชื่อมจาก 'และ' (∧) เป็น 'หรือ' (∨)",
+                        "<b>ผิด</b> ต้องมีการใส่ นิเสธ (~) ให้กับทั้ง p และ q ด้วย",
+                        "<b>ผิด</b> ~p → ~q สมมูลกับ p ∨ ~q ซึ่งไม่ตรงกับกฎ De Morgan"
                     ]
                 },
                 {
                     q: "[ระดับง่าย] ข้อที่ 4: ประพจน์ p → q สมมูลกับประพจน์ในข้อใด?",
-                    options: ["ก. ~p ∨ q", "ข. p ∨ ~q", "ค. ~p ∧ q", "ง. ~q → p"],
+                    options: ["~p ∨ q", "p ∨ ~q", "~p ∧ q", "~q → p"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> กฎการแปลงเงื่อนไขพื้นฐานระบุว่า p → q ≡ ~p ∨ q",
-                        "<b>ข้อ ข. ผิด</b> นิเสธต้องใส่อยู่หน้าประพจน์หน้า (p) ไม่ใช่ประพจน์หลัง (q)",
-                        "<b>ข้อ ค. ผิด</b> ตัวเชื่อมหลักในการแปลงถ้า...แล้ว ต้องเปลี่ยนเป็น 'หรือ' (∨) ไม่ใช่ 'และ' (∧)",
-                        "<b>ข้อ ง. ผิด</b> รูปแบบที่ถูกต้องของการสลับที่คือ ~q → ~p (Contraposition)"
+                        "<b>ถูกต้อง!</b> กฎการแปลงเงื่อนไขพื้นฐานระบุว่า p → q ≡ ~p ∨ q",
+                        "<b>ผิด</b> นิเสธต้องใส่อยู่หน้าประพจน์หน้า (p) ไม่ใช่ประพจน์หลัง (q)",
+                        "<b>ผิด</b> ตัวเชื่อมหลักในการแปลงถ้า...แล้ว ต้องเปลี่ยนเป็น 'หรือ' (∨) ไม่ใช่ 'และ' (∧)",
+                        "<b>ผิด</b> รูปแบบที่ถูกต้องของการสลับที่คือ ~q → ~p (Contraposition)"
                     ]
                 },
                 {
                     q: "[ระดับง่าย] ข้อที่ 5: ข้อใดคือนิเสธของข้อความ 'สำหรับ x ทุกตัว P(x)' หรือ ~[∀x[P(x)]]?",
-                    options: ["ก. ∃x[~P(x)]", "ข. ∀x[~P(x)]", "ค. ∃x[P(x)]", "ง. ~∃x[P(x)]"],
+                    options: ["∃x[~P(x)]", "∀x[~P(x)]", "∃x[P(x)]", "~∃x[P(x)]"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> การหานิเสธตัวบ่งปริมาณ ต้องเปลี่ยน ∀ เป็น ∃ และใส่นิเสธที่เงื่อนไขเป็น ~P(x)",
-                        "<b>ข้อ ข. ผิด</b> การหานิเสธต้องเปลี่ยนตัวบ่งปริมาณจาก ∀ (สำหรับทุกตัว) ให้เป็น ∃ (สำหรับบางตัว) ด้วย",
-                        "<b>ข้อ ค. ผิด</b> ต้องใส่นิเสธ ~ ด้านหน้าประโยคเปิด P(x) กลายเป็น ~P(x) ด้วย",
-                        "<b>ข้อ ง. ผิด</b> ยังคงมีสัญลักษณ์นิเสธซ้อนอยู่ด้านหน้า ไม่ได้กระจายเข้าไปจัดการตัวประพจน์ภายใน"
+                        "<b>ถูกต้อง!</b> การหานิเสธตัวบ่งปริมาณ ต้องเปลี่ยน ∀ เป็น ∃ และใส่นิเสธที่เงื่อนไขเป็น ~P(x)",
+                        "<b>ผิด</b> การหานิเสธต้องเปลี่ยนตัวบ่งปริมาณจาก ∀ (สำหรับทุกตัว) ให้เป็น ∃ (สำหรับบางตัว) ด้วย",
+                        "<b>ผิด</b> ต้องใส่นิเสธ ~ ด้านหน้าประโยคเปิด P(x) กลายเป็น ~P(x) ด้วย",
+                        "<b>ผิด</b> ยังคงมีสัญลักษณ์นิเสธซ้อนอยู่ด้านหน้า ไม่ได้กระจายเข้าไปจัดการตัวประพจน์ภายใน"
                     ]
                 },
                 {
                     q: "[ระดับง่าย] ข้อที่ 6: การอ้างเหตุผลที่มีรูปแบบ (p → q) ∧ p สรุปผลเป็น q เป็นการอ้างเหตุผลที่สมเหตุสมผลหรือไม่?",
-                    options: ["ก. สมเหตุสมผล (Modus Ponens)", "ข. ไม่สมเหตุสมผล", "ค. สรุปไม่ได้", "ง. เป็นจริงเฉพาะบางกรณี"],
+                    options: ["สมเหตุสมผล (Modus Ponens)", "ไม่สมเหตุสมผล", "สรุปไม่ได้", "เป็นจริงเฉพาะบางกรณี"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> เป็นรูปแบบ Modus Ponens (ถ้าเกิด p แล้วเกิด q, เมื่อเกิด p ย่อมเกิด q) ซึ่งสมเหตุสมผลเสมอ",
-                        "<b>ข้อ ข. ผิด</b> รูปแบบนี้เป็นกฎพื้นฐานของการอ้างเหตุผลที่สมเหตุสมผลเสมอ (Tautology)",
-                        "<b>ข้อ ค. ผิด</b> สามารถสรุปผลได้อย่างชัดเจนว่าคือ q",
-                        "<b>ข้อ ง. ผิด</b> การตรวจสอบการอ้างเหตุผลแบบนี้ให้ผลเป็นสัจนิรันดร์ ซึ่งหมายถึงสมเหตุสมผลในทุกกรณี"
+                        "<b>ถูกต้อง!</b> เป็นรูปแบบ Modus Ponens (ถ้าเกิด p แล้วเกิด q, เมื่อเกิด p ย่อมเกิด q) ซึ่งสมเหตุสมผลเสมอ",
+                        "<b>ผิด</b> รูปแบบนี้เป็นกฎพื้นฐานของการอ้างเหตุผลที่สมเหตุสมผลเสมอ (Tautology)",
+                        "<b>ผิด</b> สามารถสรุปผลได้อย่างชัดเจนว่าคือ q",
+                        "<b>ผิด</b> การตรวจสอบการอ้างเหตุผลแบบนี้ให้ผลเป็นสัจนิรันดร์ ซึ่งหมายถึงสมเหตุสมผลในทุกกรณี"
                     ]
                 },
                 {
                     q: "[ระดับง่าย] ข้อที่ 7: ประพจน์ p ∧ ~p มีค่าความจริงตรงกับข้อใด?",
-                    options: ["ก. เท็จทุกกรณี (Contradiction)", "ข. จริงทุกกรณี (Tautology)", "ค. เป็นจริงเมื่อ p เป็นจริง", "ง. เป็นจริงเมื่อ p เป็นเท็จ"],
+                    options: ["เท็จทุกกรณี (Contradiction)", "จริงทุกกรณี (Tautology)", "เป็นจริงเมื่อ p เป็นจริง", "เป็นจริงเมื่อ p เป็นเท็จ"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> ประพจน์และนิเสธของตัวมันเองไม่สามารถเป็นจริงพร้อมกันได้ ผลลัพธ์จึงเป็นเท็จเสมอ",
-                        "<b>ข้อ ข. ผิด</b> ตัวเชื่อม 'และ' (∧) จะเป็นจริงได้เมื่อทั้งสองฝั่งเป็นจริง แต่ p กับ ~p มีค่าความจริงตรงข้ามกันเสมอ",
-                        "<b>ข้อ ค. ผิด</b> ถ้า p เป็นจริง ~p จะเป็นเท็จ ทำให้ True ∧ False ได้ผลลัพธ์เป็นเท็จ",
-                        "<b>ข้อ ง. ผิด</b> ถ้า p เป็นเท็จ ~p จะเป็นจริง ทำให้ False ∧ True ได้ผลลัพธ์เป็นเท็จเช่นกัน"
+                        "<b>ถูกต้อง!</b> ประพจน์และนิเสธของตัวมันเองไม่สามารถเป็นจริงพร้อมกันได้ ผลลัพธ์จึงเป็นเท็จเสมอ",
+                        "<b>ผิด</b> ตัวเชื่อม 'และ' (∧) จะเป็นจริงได้เมื่อทั้งสองฝั่งเป็นจริง แต่ p กับ ~p มีค่าความจริงตรงข้ามกันเสมอ",
+                        "<b>ผิด</b> ถ้า pเป็นจริง ~p จะเป็นเท็จ ทำให้ True ∧ False ได้ผลลัพธ์เป็นเท็จ",
+                        "<b>ผิด</b> ถ้า pเป็นเท็จ ~p จะเป็นจริง ทำให้ False ∧ True ได้ผลลัพธ์เป็นเท็จเช่นกัน"
                     ]
                 },
                 {
                     q: "[ระดับง่าย] ข้อที่ 8: กำหนด U = {1, 2, 3} ประพจน์ ∃x[x + 1 = 3] มีค่าความจริงเป็นอย่างไร?",
-                    options: ["ก. เป็นจริง (T) เพราะมี x = 2", "ข. เป็นเท็จ (F)", "ค. หาค่าความจริงไม่ได้", "ง. เป็นสัจนิรันดร์"],
+                    options: ["เป็นจริง (T) เพราะมี x = 2", "เป็นเท็จ (F)", "หาค่าความจริงไม่ได้", "เป็นสัจนิรันดร์"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> สัญลักษณ์ ∃ ต้องการ x แค่เพียงตัวเดียวในเอกภพพิลบพัทธ์ U ซึ่งเมื่อแทน x = 2 จะได้ 2 + 1 = 3 เป็นจริง",
-                        "<b>ข้อ ข. ผิด</b> เพราะมีอย่างน้อยหนึ่งค่าใน U นั่นคือ x = 2 ที่ทำให้สมการเป็นจริง",
-                        "<b>ข้อ ค. ผิด</b> สามารถหาค่าความจริงได้ชัดเจนเนื่องจากมีขอบเขตเอกภพสัมพัทธ์ U กำหนดไว้",
-                        "<b>ข้อ ง. ผิด</b> คำว่าสัจนิรันดร์ใช้กับรูปแบบประพจน์ ไม่ใช่ใช้บอกค่าความจริงของประโยคที่มีตัวบ่งปริมาณ"
+                        "<b>ถูกต้อง!</b> สัญลักษณ์ ∃ ต้องการ x แค่เพียงตัวเดียวในเอกภพสัมพัทธ์ U ซึ่งเมื่อแทน x = 2 จะได้ 2 + 1 = 3 เป็นจริง",
+                        "<b>ผิด</b> เพราะมีอย่างน้อยหนึ่งค่าใน U นั่นคือ x = 2 ที่ทำให้สมการเป็นจริง",
+                        "<b>ผิด</b> สามารถหาค่าความจริงได้ชัดเจนเนื่องจากมีขอบเขตเอกภพสัมพัทธ์ U กำหนดไว้",
+                        "<b>ผิด</b> คำว่าสัจนิรันดร์ใช้กับรูปแบบประพจน์ ไม่ใช่ใช้บอกค่าความจริงของประโยคที่มีตัวบ่งปริมาณ"
                     ]
                 },
                 {
                     q: "[ระดับง่าย] ข้อที่ 9: ประพจน์ p → p เป็นสัจนิรันดร์หรือไม่?",
-                    options: ["ก. เป็นสัจนิรันดร์", "ข. ไม่เป็นสัจนิรันดร์", "ค. เป็นจริงเฉพาะเมื่อ p=T", "ง. เป็นจริงเฉพาะเมื่อ p=F"],
+                    options: ["เป็นสัจนิรันดร์", "ไม่เป็นสัจนิรันดร์", "เป็นจริงเฉพาะเมื่อ p=T", "เป็นจริงเฉพาะเมื่อ p=F"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> ถ้า p=T จะได้ T → T (จริง), ถ้า p=F จะได้ F → F (จริง) เป็นจริงทุกกรณีจึงเป็นสัจนิรันดร์",
-                        "<b>ข้อ ข. ผิด</b> ไม่สามารถหากรณีที่ทำให้ p → p เป็นเท็จได้เลย",
-                        "<b>ข้อ ค. ผิด</b> เมื่อ p=F จะได้ F → F ซึ่งตามตารางค่าความจริงของ 'ถ้า...แล้ว' มีค่าเป็นจริงเช่นกัน",
-                        "<b>ข้อ ง. ผิด</b> เมื่อ p=T จะได้ T → T ซึ่งมีค่าความจริงเป็นจริงด้วยเช่นกัน"
+                        "<b>ถูกต้อง!</b> ถ้า p=T จะได้ T → T (จริง), ถ้า p=F จะได้ F → F (จริง) เป็นจริงทุกกรณีจึงเป็นสัจนิรันดร์",
+                        "<b>ผิด</b> ไม่สามารถหากรณีที่ทำให้ p → p เป็นเท็จได้เลย",
+                        "<b>ผิด</b> เมื่อ p=F จะได้ F → F ซึ่งตามตารางค่าความจริงของ 'ถ้า...แล้ว' มีค่าเป็นจริงเช่นกัน",
+                        "<b>ผิด</b> เมื่อ p=T จะได้ T → T ซึ่งมีค่าความจริงเป็นจริงด้วยเช่นกัน"
                     ]
                 },
                 {
                     q: "[ระดับง่าย] ข้อที่ 10: รูปแบบการอ้างเหตุผล เหตุ: 1. p → q 2. ~q ผล: ~p สมเหตุสมผลหรือไม่?",
-                    options: ["ก. สมเหตุสมผล (Modus Tollens)", "ข. ไม่สมเหตุสมผล", "ค. สรุปผลไม่ได้", "ง. ไม่เป็นสัจนิรันดร์"],
+                    options: ["สมเหตุสมผล (Modus Tollens)", "ไม่สมเหตุสมผล", "สรุปผลไม่ได้", "ไม่เป็นสัจนิรันดร์"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> เป็นรูปแบบการอ้างเหตุผล Modus Tollens (ปฏิเสธผล ย่อมปฏิเสธเหตุ) ซึ่งสมเหตุสมผล",
-                        "<b>ข้อ ข. ผิด</b> รูปแบบนี้สามารถพิสูจน์ได้ว่า [(p → q) ∧ ~q] → ~p เป็นสัจนิรันดร์",
-                        "<b>ข้อ ค. ผิด</b> สามารถสรุปผล ~p ได้อย่างสมบูรณ์และถูกต้อง",
-                        "<b>ข้อ ง. ผิด</b> เมื่อนำเหตุมาเชื่อมด้วย 'และ' แล้วเชื่อมไปหาผลด้วย 'ถ้า...แล้ว' จะได้รูปแบบที่เป็นสัจนิรันดร์"
+                        "<b>ถูกต้อง!</b> เป็นรูปแบบการอ้างเหตุผล Modus Tollens (ปฏิเสธผล ย่อมปฏิเสธเหตุ) ซึ่งสมเหตุสมผล",
+                        "<b>ผิด</b> รูปแบบนี้สามารถพิสูจน์ได้ว่า [(p → q) ∧ ~q] → ~p เป็นสัจนิรันดร์",
+                        "<b>ผิด</b> สามารถสรุปผล ~p ได้อย่างสมบูรณ์และถูกต้อง",
+                        "<b>ผิด</b> เมื่อนำเหตุมาเชื่อมด้วย 'และ' แล้วเชื่อมไปหาผลด้วย 'ถ้า...แล้ว' จะได้รูปแบบที่เป็นสัจนิรันดร์"
                     ]
                 },
                 {
                     q: "[ระดับง่าย] ข้อที่ 11: ประพจน์ p ↔ q สมมูลกับข้อใด?",
-                    options: ["ก. (p → q) ∧ (q → p)", "ข. (p → q) ∨ (q → p)", "ค. (p ∧ q) → (p ∨ q)", "ง. ~p ↔ ~q"],
+                    options: ["(p → q) ∧ (q → p)", "(p → q) ∨ (q → p)", "(p ∧ q) → (p ∨ q)", "~p ↔ ~q"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> นิยามของ 'ก็ต่อเมื่อ' คือการเชื่อมเหตุไปผลและผลไปเหตุด้วยตัวเชื่อม 'และ' (∧)",
-                        "<b>ข้อ ข. ผิด</b> ตัวเชื่อมระหว่างเงื่อนไขสองทางต้องเป็น 'และ' (∧) ไม่ใช่ 'หรือ' (∨)",
-                        "<b>ข้อ ค. ผิด</b> (p ∧ q) → (p ∨ q) เป็นสัจนิรันดร์ ไม่ใช่การแปลงสมมูลของ p ↔ q",
-                        "<b>ข้อ ง. ผิด</b> ถึงแม้ค่าความจริงจะเหมือนกันในบางกรณี แต่นิยามความหมายตามกฎการสมมูลคือ (p → q) ∧ (q → p)"
+                        "<b>ถูกต้อง!</b> นิยามของ 'ก็ต่อเมื่อ' คือการเชื่อมเหตุไปผลและผลไปเหตุด้วยตัวเชื่อม 'และ' (∧)",
+                        "<b>ผิด</b> ตัวเชื่อมระหว่างเงื่อนไขสองทางต้องเป็น 'และ' (∧) ไม่ใช่ 'หรือ' (∨)",
+                        "<b>ผิด</b> (p ∧ q) → (p ∨ q) เป็นสัจนิรันดร์ ไม่ใช่การแปลงสมมูลของ p ↔ q",
+                        "<b>ผิด</b> ถึงแม้ค่าความจริงจะเหมือนกันในบางกรณี แต่นิยามความหมายตามกฎการสมมูลคือ (p → q) ∧ (q → p)"
                     ]
                 },
                 {
                     q: "[ระดับง่าย] ข้อที่ 12: ข้อความ ∃x[P(x)] อ่านว่าอย่างไร?",
-                    options: ["ก. มี x บางตัว ซึ่งทำให้ P(x) เป็นจริง", "ข. สำหรับ x ทุกตัว ทำให้ P(x) เป็นจริง", "ค. ไม่มี x ตัวใดเลยที่ทำให้ P(x) เป็นจริง", "ง. x ทุกตัวไม่ทำให้ P(x) เป็นจริง"],
+                    options: ["มี x บางตัว ซึ่งทำให้ P(x) เป็นจริง", "สำหรับ x ทุกตัว ทำให้ P(x) เป็นจริง", "ไม่มี x ตัวใดเลยที่ทำให้ P(x) เป็นจริง", "x ทุกตัวไม่ทำให้ P(x) เป็นจริง"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> สัญลักษณ์ ∃ (Existential Quantifier) อ่านว่า 'มี x บางตัว' หรือ 'มี x อย่างน้อยหนึ่งตัว'",
-                        "<b>ข้อ ข. ผิด</b> 'สำหรับ x ทุกตัว' ใช้สัญลักษณ์ ∀ (Universal Quantifier)",
-                        "<b>ข้อ ค. ผิด</b> ข้อความนี้คือ ~∃x[P(x)] หรือ ∀x[~P(x)]",
-                        "<b>ข้อ ง. ผิด</b> ข้อความนี้คือ ∀x[~P(x)]"
+                        "<b>ถูกต้อง!</b> สัญลักษณ์ ∃ (Existential Quantifier) อ่านว่า 'มี x บางตัว' หรือ 'มี x อย่างน้อยหนึ่งตัว'",
+                        "<b>ผิด</b> 'สำหรับ x ทุกตัว' ใช้สัญลักษณ์ ∀ (Universal Quantifier)",
+                        "<b>ผิด</b> ข้อความนี้คือ ~∃x[P(x)] หรือ ∀x[~P(x)]",
+                        "<b>ผิด</b> ข้อความนี้คือ ∀x[~P(x)]"
                     ]
                 },
                 {
                     q: "[ระดับง่าย] ข้อที่ 13: ประพจน์ p ∨ F มีค่าความจริงสมมูลกับประพจน์ใด?",
-                    options: ["ก. p", "ข. F", "ค. T", "ง. ~p"],
+                    options: ["p", "F", "T", "~p"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> เพราะตัวเชื่อม 'หรือ' (∨) ถ้ามีตัวหนึ่งเป็น F ผลลัพธ์ขึ้นอยู่กับ p (ถ้า p=T ได้ T, ถ้า p=F ได้ F)",
-                        "<b>ข้อ ข. ผิด</b> จะได้ F ก็ต่อเมื่อ p เป็น F เท่านั้น ดังนั้นจึงไม่สามารถสรุปว่าได้ F เสมอ",
-                        "<b>ข้อ ค. ผิด</b> จะได้ T ก็ต่อเมื่อ p เป็น T เท่านั้น",
-                        "<b>ข้อ ง. ผิด</b> ค่าความจริงจะตรงกับ p ไม่ใช่ค่านิเสธของ p"
+                        "<b>ถูกต้อง!</b> เพราะตัวเชื่อม 'หรือ' (∨) ถ้ามีตัวหนึ่งเป็น F ผลลัพธ์ขึ้นอยู่กับ p (ถ้า p=T ได้ T, ถ้า p=F ได้ F)",
+                        "<b>ผิด</b> จะได้ F ก็ต่อเมื่อ p เป็น F เท่านั้น ดังนั้นจึงไม่สามารถสรุปว่าได้ F เสมอ",
+                        "<b>ผิด</b> จะได้ T ก็ต่อเมื่อ p เป็น T เท่านั้น",
+                        "<b>ผิด</b> ค่าความจริงจะตรงกับ p ไม่ใช่ค่านิเสธของ p"
                     ]
                 },
                 {
                     q: "[ระดับง่าย] ข้อที่ 14: ประพจน์ p ∧ T มีค่าความจริงสมมูลกับประพจน์ใด?",
-                    options: ["ก. p", "ข. T", "ค. F", "ง. ~p"],
+                    options: ["p", "T", "F", "~p"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> ตัวเชื่อม 'และ' (∧) เมื่อเชื่อมกับ True ผลลัพธ์จะขึ้นอยู่กับค่าของ p (ถ้า p=T ได้ T, ถ้า p=F ได้ F)",
-                        "<b>ข้อ ข. ผิด</b> ผลลัพธ์จะเป็น T ได้เฉพาะกรณีที่ p เป็น T เท่านั้น",
-                        "<b>ข้อ ค. ผิด</b> ผลลัพธ์จะเป็น F เมื่อ p เป็น F เท่านั้น จึงไม่สรุปว่าเป็น F เสมอ",
-                        "<b>ข้อ ง. ผิด</b> ค่าความจริงที่ได้ผันแปรตาม p ไม่ใช่ตรงข้ามกับ p"
+                        "<b>ถูกต้อง!</b> ตัวเชื่อม 'และ' (∧) เมื่อเชื่อมกับ True ผลลัพธ์จะขึ้นอยู่กับค่าของ p (ถ้า p=T ได้ T, ถ้า p=F ได้ F)",
+                        "<b>ผิด</b> ผลลัพธ์จะเป็น T ได้เฉพาะกรณีที่ p เป็น T เท่านั้น",
+                        "<b>ผิด</b> ผลลัพธ์จะเป็น F เมื่อ p เป็น F เท่านั้น จึงไม่สรุปว่าเป็น F เสมอ",
+                        "<b>ผิด</b> ค่าความจริงที่ได้ผันแปรตาม p ไม่ใช่ตรงข้ามกับ p"
                     ]
                 },
                 {
                     q: "[ระดับง่าย] ข้อที่ 15: ในการตรวจสอบสัจนิรันดร์ด้วยการหาข้อขัดแย้งของ A → B เราจะเริ่มกำหนดค่าอย่างไร?",
-                    options: ["ก. ให้ A เป็น T และ B เป็น F", "ข. ให้ A เป็น F และ B เป็น T", "ค. ให้ A เป็น T และ B เป็น T", "ง. ให้ A เป็น F และ B เป็น F"],
+                    options: ["ให้ A เป็น T และ B เป็น F", "ให้ A เป็น F และ B เป็น T", "ให้ A เป็น T และ B เป็น T", "ให้ A เป็น F และ B เป็น F"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> เพราะตัวเชื่อม 'ถ้า...แล้ว' (→) มีกรณีที่เป็นเท็จเพียงกรณีเดียวคือ หน้าจริง (T) หลังเท็จ (F)",
-                        "<b>ข้อ ข. ผิด</b> F → T ให้ผลลัพธ์เป็นจริง (T) ไม่สามารถใช้หาข้อขัดแย้งของสมมติฐานเท็จได้",
-                        "<b>ข้อ ค. ผิด</b> T → T ให้ผลลัพธ์เป็นจริง (T)",
-                        "<b>ข้อ ง. ผิด</b> F → F ให้ผลลัพธ์เป็นจริง (T)"
+                        "<b>ถูกต้อง!</b> เพราะตัวเชื่อม 'ถ้า...แล้ว' (→) มีกรณีที่เป็นเท็จเพียงกรณีเดียวคือ หน้าจริง (T) หลังเท็จ (F)",
+                        "<b>ผิด</b> F → T ให้ผลลัพธ์เป็นจริง (T) ไม่สามารถใช้หาข้อขัดแย้งของสมมติฐานเท็จได้",
+                        "<b>ผิด</b> T → T ให้ผลลัพธ์เป็นจริง (T)",
+                        "<b>ผิด</b> F → F ให้ผลลัพธ์เป็นจริง (T)"
                     ]
                 },
                 {
                     q: "[ระดับง่าย] ข้อที่ 16: กำหนด U = {0, 1} ประพจน์ ∀x[x + 0 = x] มีค่าความจริงเป็นอย่างไร?",
-                    options: ["ก. เป็นจริง (T)", "ข. เป็นเท็จ (F)", "ค. สรุปไม่ได้", "ง. เป็นข้อขัดแย้ง"],
+                    options: ["เป็นจริง (T)", "เป็นเท็จ (F)", "สรุปไม่ได้", "เป็นข้อขัดแย้ง"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> ทดลองแทน x=0 ได้ 0+0=0 (จริง) และ x=1 ได้ 1+0=1 (จริง) จริงทุกตัวใน U",
-                        "<b>ข้อ ข. ผิด</b> ไม่พบสมาชิกใน U แม้แต่ตัวเดียวที่ทำให้สมการเป็นเท็จ",
-                        "<b>ข้อ ค. ผิด</b> สามารถตรวจสอบสมาชิกทุกตัวใน U ได้ครบถ้วน จึงสรุปได้ทันที",
-                        "<b>ข้อ ง. ผิด</b> คำว่าข้อขัดแย้งใช้กับรูปแบบประพจน์ ไม่ใช่ค่าความจริงของประโยคที่มีตัวบ่งปริมาณ"
+                        "<b>ถูกต้อง!</b> ทดลองแทน x=0 ได้ 0+0=0 (จริง) และ x=1 ได้ 1+0=1 (จริง) จริงทุกตัวใน U",
+                        "<b>ผิด</b> ไม่พบสมาชิกใน U แม้แต่ตัวเดียวที่ทำให้สมการเป็นเท็จ",
+                        "<b>ผิด</b> สามารถตรวจสอบสมาชิกทุกตัวใน U ได้ครบถ้วน จึงสรุปได้ทันที",
+                        "<b>ผิด</b> คำว่าข้อขัดแย้งใช้กับรูปแบบประพจน์ ไม่ใช่ค่าความจริงของประโยคที่มีตัวบ่งปริมาณ"
                     ]
                 },
                 {
                     q: "[ระดับง่าย] ข้อที่ 17: นิเสธของประพจน์ p → q คือข้อใด?",
-                    options: ["ก. p ∧ ~q", "ข. ~p ∨ q", "ค. ~p → ~q", "ง. ~p ∧ q"],
+                    options: ["p ∧ ~q", "~p ∨ q", "~p → ~q", "~p ∧ q"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> เนื่องจาก p → q ≡ ~p ∨ q ดังนั้น นิเสธคือ ~(~p ∨ q) ซึ่งกระจายได้ p ∧ ~q",
-                        "<b>ข้อ ข. ผิด</b> ~p ∨ q คือรูปสมมูลของ p → q ไม่ใช่นิเสธ",
-                        "<b>ข้อ ค. ผิด</b> ~p → ~q คือ Inverse ไม่ใช่นิเสธ",
-                        "<b>ข้อ ง. ผิด</b> ตัวหน้านิเสธต้องเป็น p ไม่ใช่ ~p"
+                        "<b>ถูกต้อง!</b> เนื่องจาก p → q ≡ ~p ∨ q ดังนั้น นิเสธคือ ~(~p ∨ q) ซึ่งกระจายได้ p ∧ ~q",
+                        "<b>ผิด</b> ~p ∨ q คือรูปสมมูลของ p → q ไม่ใช่นิเสธ",
+                        "<b>ผิด</b> ~p → ~q คือ Inverse ไม่ใช่นิเสธ",
+                        "<b>ผิด</b> ตัวหน้านิเสธต้องเป็น p ไม่ใช่ ~p"
                     ]
                 },
                 {
                     q: "[ระดับง่าย] ข้อที่ 18: ข้อใดเป็นประพจน์ที่สมมูลกับ ~p → ~q?",
-                    options: ["ก. q → p", "ข. p → q", "ค. ~q → ~p", "ง. p ∨ ~q"],
+                    options: ["q → p", "p → q", "~q → ~p", "p ∨ ~q"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> ใช้กฎ Contraposition (สลับที่และใส่นิเสธซ้อน) จะได้ ~(~q) → ~(~p) ซึ่งก็คือ q → p",
-                        "<b>ข้อ ข. ผิด</b> p → q สมมูลกับ ~q → ~p ไม่ใช่ ~p → ~q",
-                        "<b>ข้อ ค. ผิด</b> ~q → ~p เป็นรูปสลับที่ใส่นิเสธของ p → q",
-                        "<b>ข้อ ง. ผิด</b> ~p → ~q ≡ ~(~p) ∨ ~q ≡ p ∨ ~q... อ้อ ขออภัย p ∨ ~q สมมูลกับ q → p"
+                        "<b>ถูกต้อง!</b> ใช้กฎ Contraposition (สลับที่และใส่นิเสธซ้อน) จะได้ ~(~q) → ~(~p) ซึ่งก็คือ q → p",
+                        "<b>ผิด</b> p → q สมมูลกับ ~q → ~p ไม่ใช่ ~p → ~q",
+                        "<b>ผิด</b> ~q → ~p เป็นรูปสลับที่ใส่นิเสธของ p → q",
+                        "<b>ผิด</b> ~p → ~q ≡ ~(~p) ∨ ~q ≡ p ∨ ~q..."
                     ]
                 },
                 {
                     q: "[ระดับง่าย] ข้อที่ 19: ข้อใดต่อไปนี้เป็นสัจนิรันดร์?",
-                    options: ["ก. (p ∧ q) → p", "ข. (p ∨ q) → p", "ค. p → (p ∧ q)", "ง. (p → q) → p"],
+                    options: ["(p ∧ q) → p", "(p ∨ q) → p", "p → (p ∧ q)", "(p → q) → p"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> สมมติให้เป็น F จะได้ตัวหน้า (p ∧ q) = T (ส่งผลให้ p=T) แต่ตัวหลัง p=F เกิดข้อขัดแย้ง แสดงว่าเป็นสัจนิรันดร์",
-                        "<b>ข้อ ข. ผิด</b> หาก p=F, q=T จะได้ (F ∨ T) → F ≡ T → F ซึ่งเป็นเท็จได้",
-                        "<b>ข้อ ค. ผิด</b> หาก p=T, q=F จะได้ T → (T ∧ F) ≡ T → F ซึ่งเป็นเท็จได้",
-                        "<b>ข้อ ง. ผิด</b> หาก p=F, q=F จะได้ (F → F) → F ≡ T → F ซึ่งเป็นเท็จได้"
+                        "<b>ถูกต้อง!</b> สมมติให้เป็น F จะได้ตัวหน้า (p ∧ q) = T (ส่งผลให้ p=T) แต่ตัวหลัง p=F เกิดข้อขัดแย้ง แสดงว่าเป็นสัจนิรันดร์",
+                        "<b>ผิด</b> หาก p=F, q=T จะได้ (F ∨ T) → F ≡ T → F ซึ่งเป็นเท็จได้",
+                        "<b>ผิด</b> หาก p=T, q=F จะได้ T → (T ∧ F) ≡ T → F ซึ่งเป็นเท็จได้",
+                        "<b>ผิด</b> หาก p=F, q=F จะได้ (F → F) → F ≡ T → F ซึ่งเป็นเท็จได้"
                     ]
                 },
                 {
                     q: "[ระดับง่าย] ข้อที่ 20: ข้อความ 'มีจำนวนจริง x ซึ่ง x^2 = 0' เขียนเป็นสัญลักษณ์ได้ตามข้อใด?",
-                    options: ["ก. ∃x[x^2 = 0], U = R", "ข. ∀x[x^2 = 0], U = R", "ค. ∃x[x^2 ≠ 0], U = R", "ง. ∀x[x^2 > 0], U = R"],
+                    options: ["∃x[x^2 = 0], U = R", "∀x[x^2 = 0], U = R", "∃x[x^2 ≠ 0], U = R", "∀x[x^2 > 0], U = R"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> คำว่า 'มี...ซึ่ง' ใช้สัญลักษณ์ตัวบ่งปริมาณ ∃ (Exists) และขอบเขตจำนวนจริงคือ R",
-                        "<b>ข้อ ข. ผิด</b> สัญลักษณ์ ∀ หมายถึง 'ทุกตัว' ซึ่งไม่ตรงกับคำว่า 'มีบางตัว'",
-                        "<b>ข้อ ค. ผิด</b> เงื่อนไขในวงเล็บต้องเป็นสมการ x^2 = 0 ไม่ใช่ ≠ 0",
-                        "<b>ข้อ ง. ผิด</b> สัญลักษณ์ ∀ และเงื่อนไข > 0 ไม่ตรงกับข้อความโจทย์"
+                        "<b>ถูกต้อง!</b> คำว่า 'มี...ซึ่ง' ใช้สัญลักษณ์ตัวบ่งปริมาณ ∃ (Exists) และขอบเขตจำนวนจริงคือ R",
+                        "<b>ผิด</b> สัญลักษณ์ ∀ หมายถึง 'ทุกตัว' ซึ่งไม่ตรงกับคำว่า 'มีบางตัว'",
+                        "<b>ผิด</b> เงื่อนไขในวงเล็บต้องเป็นสมการ x^2 = 0 ไม่ใช่ ≠ 0",
+                        "<b>ผิด</b> สัญลักษณ์ ∀ และเงื่อนไข > 0 ไม่ตรงกับข้อความโจทย์"
                     ]
                 }
             ],    
-           medium: [
+            medium: [
                 {
                     q: "[ระดับปานกลาง] ข้อที่ 1: ประพจน์ [(p → q) ∧ p] → q เป็นสัจนิรันดร์หรือไม่?",
-                    options: ["ก. เป็นสัจนิรันดร์", "ข. ไม่เป็นสัจนิรันดร์", "ค. เป็นจริงเมื่อ p เป็นเท็จเท่านั้น", "ง. เป็นจริงเมื่อ q เป็นเท็จเท่านั้น"],
+                    options: ["เป็นสัจนิรันดร์", "ไม่เป็นสัจนิรันดร์", "เป็นจริงเมื่อ p เป็นเท็จเท่านั้น", "เป็นจริงเมื่อ q เป็นเท็จเท่านั้น"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> เมื่อสมมติให้เป็นเท็จ จะได้ฝั่งซ้ายเป็น T (p=T, p→q=T) และฝั่งขวา q=F ซึ่งขัดแย้งกับ p→q=T จึงเป็นสัจนิรันดร์",
-                        "<b>ข้อ ข. ผิด</b> ไม่สามารถหากรณีที่ทำให้ประพจน์นี้เป็นเท็จได้เลย",
-                        "<b>ข้อ ค. ผิด</b> เมื่อ p=T และ q=T ประพจน์นี้ก็ยังคงมีค่าความจริงเป็นจริง",
-                        "<b>ข้อ ง. ผิด</b> เมื่อ q=T ประพจน์นี้ก็มีค่าความจริงเป็นจริงเช่นเดียวกัน"
+                        "<b>ถูกต้อง!</b> เมื่อสมมติให้เป็นเท็จ จะได้ฝั่งซ้ายเป็น T (p=T, p→q=T) และฝั่งขวา q=F ซึ่งขัดแย้งกับ p→q=T จึงเป็นสัจนิรันดร์",
+                        "<b>ผิด</b> ไม่สามารถหากรณีที่ทำให้ประพจน์นี้เป็นเท็จได้เลย",
+                        "<b>ผิด</b> เมื่อ p=T และ q=T ประพจน์นี้ก็ยังคงมีค่าความจริงเป็นจริง",
+                        "<b>ผิด</b> เมื่อ q=T ประพจน์นี้ก็มีค่าความจริงเป็นจริงเช่นเดียวกัน"
                     ]
                 },
                 {
                     q: "[ระดับปานกลาง] ข้อที่ 2: นิเสธของประพจน์ ∀x[P(x) → Q(x)] สมมูลกับข้อใด?",
-                    options: ["ก. ∃x[P(x) ∧ ~Q(x)]", "ข. ∃x[~P(x) ∨ Q(x)]", "ค. ∀x[P(x) ∧ ~Q(x)]", "ง. ∃x[~P(x) ∧ ~Q(x)]"],
+                    options: ["∃x[P(x) ∧ ~Q(x)]", "∃x[~P(x) ∨ Q(x)]", "∀x[P(x) ∧ ~Q(x)]", "∃x[~P(x) ∧ ~Q(x)]"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> กระจายนิเสธ: ~∀x[P(x) → Q(x)] ≡ ∃x[~(P(x) → Q(x))] ≡ ∃x[P(x) ∧ ~Q(x)]",
-                        "<b>ข้อ ข. ผิด</b> ~P(x) ∨ Q(x) คือรูปสมมูลของ P(x) → Q(x) ไม่ใช่นิเสธ",
-                        "<b>ข้อ ค. ผิด</b> ลืมเปลี่ยนตัวบ่งปริมาณจาก ∀ เป็น ∃",
-                        "<b>ข้อ ง. ผิด</b> นิเสธของ P → Q ต้องได้ P ∧ ~Q ไม่ใช่ ~P ∧ ~Q"
+                        "<b>ถูกต้อง!</b> กระจายนิเสธ: ~∀x[P(x) → Q(x)] ≡ ∃x[~(P(x) → Q(x))] ≡ ∃x[P(x) ∧ ~Q(x)]",
+                        "<b>ผิด</b> ~P(x) ∨ Q(x) คือรูปสมมูลของ P(x) → Q(x) ไม่ใช่นิเสธ",
+                        "<b>ผิด</b> ลืมเปลี่ยนตัวบ่งปริมาณจาก ∀ เป็น ∃",
+                        "<b>ผิด</b> นิเสธของ P → Q ต้องได้ P ∧ ~Q ไม่ใช่ ~P ∧ ~Q"
                     ]
                 },
                 {
                     q: "[ระดับปานกลาง] ข้อที่ 3: ข้อใดสมมูลกับประพจน์ p → (q → r)?",
-                    options: ["ก. (p ∧ q) → r", "ข. (p ∨ q) → r", "ค. p → (q ∧ r)", "ง. (p → q) ∧ (p → r)"],
+                    options: ["(p ∧ q) → r", "(p ∨ q) → r", "p → (q ∧ r)", "(p → q) ∧ (p → r)"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> p → (q → r) ≡ ~p ∨ (~q ∨ r) ≡ ~(p ∧ q) ∨ r ≡ (p ∧ q) → r",
-                        "<b>ข้อ ข. ผิด</b> (p ∨ q) → r ≡ (~p ∧ ~q) ∨ r ซึ่งสมมูลกับ (p → r) ∧ (q → r)",
-                        "<b>ข้อ ค. ผิด</b> การกระจายตัวเชื่อมลักษณะนี้ไม่ตรงตามกฎการสมมูล",
-                        "<b>ข้อ ง. ผิด</b> รูปแบบนี้สมมูลกับ p → (q ∧ r) ไม่ใช่ p → (q → r)"
+                        "<b>ถูกต้อง!</b> p → (q → r) ≡ ~p ∨ (~q ∨ r) ≡ ~(p ∧ q) ∨ r ≡ (p ∧ q) → r",
+                        "<b>ผิด</b> (p ∨ q) → r ≡ (~p ∧ ~q) ∨ r ซึ่งสมมูลกับ (p → r) ∧ (q → r)",
+                        "<b>ผิด</b> การกระจายตัวเชื่อมลักษณะนี้ไม่ตรงตามกฎการสมมูล",
+                        "<b>ผิด</b> รูปแบบนี้สมมูลกับ p → (q ∧ r) ไม่ใช่ p → (q → r)"
                     ]
                 },
                 {
                     q: "[ระดับปานกลาง] ข้อที่ 4: พิจารณาการอ้างเหตุผล เหตุ: 1. ~p ∨ q  2. ~q  ผลสรุปในข้อใดทำให้การอ้างเหตุผลสมเหตุสมผล?",
-                    options: ["ก. ~p", "ข. p", "ค. q", "ง. p ∧ q"],
+                    options: ["~p", "p", "q", "p ∧ q"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> จาก ~p ∨ q หมายความว่าต้องมีอย่างน้อยหนึ่งตัวที่เป็นจริง เมื่อเหตุที่ 2 ยืนยันว่า ~q (นั่นคือ q เป็นเท็จ) ตัวที่เหลือคือ ~p จึงต้องเป็นจริง",
-                        "<b>ข้อ ข. ผิด</b> หากสรุปเป็น p จะทำให้การอ้างเหตุผลไม่สมเหตุสมผล (เกิดข้อขัดแย้งกับ ~p)",
-                        "<b>ข้อ ค. ผิด</b> เหตุที่ 2 ระบุชัดเจนว่า ~q (q เป็นเท็จ) จึงสรุป q ไม่ได้",
-                        "<b>ข้อ ง. ผิด</b> ทั้ง p และ q ต่างก็มีค่าความจริงเป็นเท็จทั้งคู่"
+                        "<b>ถูกต้อง!</b> จาก ~p ∨ q หมายความว่าต้องมีอย่างน้อยหนึ่งตัวที่เป็นจริง เมื่อเหตุที่ 2 ยืนยันว่า ~q (นั่นคือ q เป็นเท็จ) ตัวที่เหลือคือ ~p จึงต้องเป็นจริง",
+                        "<b>ผิด</b> หากสรุปเป็น p จะทำให้การอ้างเหตุผลไม่สมเหตุสมผล (เกิดข้อขัดแย้งกับ ~p)",
+                        "<b>ผิด</b> เหตุที่ 2 ระบุชัดเจนว่า ~q (q เป็นเท็จ) จึงสรุป q ไม่ได้",
+                        "<b>ผิด</b> ทั้ง p และ q ต่างก็มีค่าความจริงเป็นเท็จทั้งคู่"
                     ]
                 },
                 {
                     q: "[ระดับปานกลาง] ข้อที่ 5: กำหนด U = {-1, 0, 1} ประพจน์ ∀x[x^2 ≥ 0] ∧ ∃x[x + 1 = 0] มีค่าความจริงเป็นอย่างไร?",
-                    options: ["ก. เป็นจริง (T)", "ข. เป็นเท็จ (F)", "ค. สรุปไม่ได้", "ง. เป็นข้อขัดแย้ง"],
+                    options: ["เป็นจริง (T)", "เป็นเท็จ (F)", "สรุปไม่ได้", "เป็นข้อขัดแย้ง"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> ∀x[x^2 ≥ 0] เป็น T (ทุกตัวกำลังสอง ≥ 0) และ ∃x[x + 1 = 0] เป็น T (เมื่อ x=-1) ดังนั้น T ∧ T ได้ T",
-                        "<b>ข้อ ข. ผิด</b> เพราะประพจน์ย่อยทั้งสองฝั่งต่างมีค่าความจริงเป็นจริงทั้งคู่",
-                        "<b>ข้อ ค. ผิด</b> สามารถหาค่าความจริงได้ชัดเจนจากสมาชิกใน U",
-                        "<b>ข้อ ง. ผิด</b> ประพจน์นี้มีค่าความจริงเป็นจริง ไม่ใช่ข้อขัดแย้ง"
+                        "<b>ถูกต้อง!</b> ∀x[x^2 ≥ 0] เป็น T (ทุกตัวกำลังสอง ≥ 0) และ ∃x[x + 1 = 0] เป็น T (เมื่อ x=-1) ดังนั้น T ∧ T ได้ T",
+                        "<b>ผิด</b> เพราะประพจน์ย่อยทั้งสองฝั่งต่างมีค่าความจริงเป็นจริงทั้งคู่",
+                        "<b>ผิด</b> สามารถหาค่าความจริงได้ชัดเจนจากสมาชิกใน U",
+                        "<b>ผิด</b> ประพจน์นี้มีค่าความจริงเป็นจริง ไม่ใช่ข้อขัดแย้ง"
                     ]
                 },
                 {
                     q: "[ระดับปานกลาง] ข้อที่ 6: ประพจน์ (p ↔ q) ↔ (~p ↔ ~q) เป็นสัจนิรันดร์หรือไม่?",
-                    options: ["ก. เป็นสัจนิรันดร์", "ข. ไม่เป็นสัจนิรันดร์", "ค. เป็นจริงเมื่อ p=T เท่านั้น", "ง. เป็นจริงเมื่อ q=F เท่านั้น"],
+                    options: ["เป็นสัจนิรันดร์", "ไม่เป็นสัจนิรันดร์", "เป็นจริงเมื่อ p=T เท่านั้น", "เป็นจริงเมื่อ q=F เท่านั้น"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> เนื่องจาก (p ↔ q) สมมูลกับ (~p ↔ ~q) เสมอ เมื่อประพจน์ที่สมมูลกันเชื่อมด้วย ↔ จะได้ค่าความจริงเป็นจริงทุกกรณี",
-                        "<b>ข้อ ข. ผิด</b> ไม่ว่า p และ q จะมีค่าความจริงอย่างไร สองฝั่งจะเท่ากันเสมอ",
-                        "<b>ข้อ ค. ผิด</b> แม้ p=F ประพจน์นี้ก็ยังคงเป็นจริง",
-                        "<b>ข้อ ง. ผิด</b> แม้ q=T ประพจน์นี้ก็ยังคงเป็นจริง"
+                        "<b>ถูกต้อง!</b> เนื่องจาก (p ↔ q) สมมูลกับ (~p ↔ ~q) เสมอ เมื่อประพจน์ที่สมมูลกันเชื่อมด้วย ↔ จะได้ค่าความจริงเป็นจริงทุกกรณี",
+                        "<b>ผิด</b> ไม่ว่า p และ q จะมีค่าความจริงอย่างไร สองฝั่งจะเท่ากันเสมอ",
+                        "<b>ผิด</b> แม้ p=F ประพจน์นี้ก็ยังคงเป็นจริง",
+                        "<b>ผิด</b> แม้ q=T ประพจน์นี้ก็ยังคงเป็นจริง"
                     ]
                 },
                 {
                     q: "[ระดับปานกลาง] ข้อที่ 7: ข้อใดเป็นนิเสธของข้อความ 'มีจำนวนจริง x บางตัวซึ่ง x > 0 และ x^2 < 0'?",
-                    options: ["ก. สำหรับจำนวนจริง x ทุกตัว x ≤ 0 หรือ x^2 ≥ 0", "ข. สำหรับจำนวนจริง x ทุกตัว x ≤ 0 และ x^2 ≥ 0", "ค. มีจำนวนจริง x บางตัวซึ่ง x ≤ 0 หรือ x^2 ≥ 0", "ง. มีจำนวนจริง x บางตัวซึ่ง x ≤ 0 และ x^2 ≥ 0"],
+                    options: ["สำหรับจำนวนจริง x ทุกตัว x ≤ 0 หรือ x^2 ≥ 0", "สำหรับจำนวนจริง x ทุกตัว x ≤ 0 และ x^2 ≥ 0", "มีจำนวนจริง x บางตัวซึ่ง x ≤ 0 หรือ x^2 ≥ 0", "มีจำนวนจริง x บางตัวซึ่ง x ≤ 0 และ x^2 ≥ 0"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> ~∃x[P(x) ∧ Q(x)] ≡ ∀x[~P(x) ∨ ~Q(x)] เปลี่ยน 'มีบางตัว' เป็น 'ทุกตัว', > เปลี่ยนเป็น ≤, ∧ เปลี่ยนเป็น ∨",
-                        "<b>ข้อ ข. ผิด</b> ตัวเชื่อมต้องเปลี่ยนจาก 'และ' เป็น 'หรือ' ตามกฎ De Morgan",
-                        "<b>ข้อ ค. ผิด</b> ลืมเปลี่ยนตัวบ่งปริมาณจาก 'มีบางตัว' เป็น 'ทุกตัว'",
-                        "<b>ข้อ ง. ผิด</b> ไม่ได้เปลี่ยนตัวบ่งปริมาณและไม่ได้เปลี่ยนตัวเชื่อม"
+                        "<b>ถูกต้อง!</b> ~∃x[P(x) ∧ Q(x)] ≡ ∀x[~P(x) ∨ ~Q(x)] เปลี่ยน 'มีบางตัว' เป็น 'ทุกตัว', > เปลี่ยนเป็น ≤, ∧ เปลี่ยนเป็น ∨",
+                        "<b>ผิด</b> ตัวเชื่อมต้องเปลี่ยนจาก 'และ' เป็น 'หรือ' ตามกฎ De Morgan",
+                        "<b>ผิด</b> ลืมเปลี่ยนตัวบ่งปริมาณจาก 'มีบางตัว' เป็น 'ทุกตัว'",
+                        "<b>ผิด</b> ไม่ได้เปลี่ยนตัวบ่งปริมาณและไม่ได้เปลี่ยนตัวเชื่อม"
                     ]
                 },
                 {
                     q: "[ระดับปานกลาง] ข้อที่ 8: ประพจน์ (p → q) ∧ (q → r) → (p → r) เรียกว่ากฎอะไร และเป็นสัจนิรันดร์หรือไม่?",
-                    options: ["ก. Hypothetical Syllogism, เป็นสัจนิรันดร์", "ข. Modus Ponens, ไม่เป็นสัจนิรันดร์", "ค. Modus Tollens, เป็นสัจนิรันดร์", "ง. Disjunctive Syllogism, ไม่เป็นสัจนิรันดร์"],
+                    options: ["Hypothetical Syllogism, เป็นสัจนิรันดร์", "Modus Ponens, ไม่เป็นสัจนิรันดร์", "Modus Tollens, เป็นสัจนิรันดร์", "Disjunctive Syllogism, ไม่เป็นสัจนิรันดร์"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> กฎการถ่ายทอด/กฎลูกโซ่ (Hypothetical Syllogism) เป็นรูปแบบการอ้างเหตุผลที่สมเหตุสมผลและเป็นสัจนิรันดร์เสมอ",
-                        "<b>ข้อ ข. ผิด</b> Modus Ponens คือ [(p → q) ∧ p] → q",
-                        "<b>ข้อ ค. ผิด</b> Modus Tollens คือ [(p → q) ∧ ~q] → ~p",
-                        "<b>ข้อ ง. ผิด</b> Disjunctive Syllogism คือ [(p ∨ q) ∧ ~p] → q"
+                        "<b>ถูกต้อง!</b> กฎการถ่ายทอด/กฎลูกโซ่ (Hypothetical Syllogism) เป็นรูปแบบการอ้างเหตุผลที่สมเหตุสมผลและเป็นสัจนิรันดร์เสมอ",
+                        "<b>ผิด</b> Modus Ponens คือ [(p → q) ∧ p] → q",
+                        "<b>ผิด</b> Modus Tollens คือ [(p → q) ∧ ~q] → ~p",
+                        "<b>ผิด</b> Disjunctive Syllogism คือ [(p ∨ q) ∧ ~p] → q"
                     ]
                 },
                 {
                     q: "[ระดับปานกลาง] ข้อที่ 9: กำหนดให้ p → q มีค่าความจริงเป็นเท็จ ค่าความจริงของ (~p ∨ q) ↔ (p ∧ ~q) คือข้อใด?",
-                    options: ["ก. เท็จ (F)", "ข. จริง (T)", "ค. เป็นสัจนิรันดร์", "ง. สรุปไม่ได้"],
+                    options: ["เท็จ (F)", "จริง (T)", "เป็นสัจนิรันดร์", "สรุปไม่ได้"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> p→q เป็น F หมายถึง p=T, q=F จะได้ (~p ∨ q) ≡ F ∨ F ≡ F และ (p ∧ ~q) ≡ T ∧ T ≡ T ทำให้ได้ F ↔ T ซึ่งเป็นเท็จ (F)",
-                        "<b>ข้อ ข. ผิด</b> สองฝั่งมีค่าความจริงตรงข้ามกัน (F กับ T) ตัวเชื่อม ↔ จึงให้ผลลัพธ์เป็นเท็จ",
-                        "<b>ข้อ ค. ผิด</b> ประพจน์นี้ไม่ใช่สัจนิรันดร์ (อันที่จริงสองฝั่งนี้เป็นนิเสธกัน)",
-                        "<b>ข้อ ง. ผิด</b> สามารถหาค่าความจริงที่แน่นอนได้คือ เท็จ (F)"
+                        "<b>ถูกต้อง!</b> p→q เป็น F หมายถึง p=T, q=F จะได้ (~p ∨ q) ≡ F ∨ F ≡ F และ (p ∧ ~q) ≡ T ∧ T ≡ T ทำให้ได้ F ↔ T ซึ่งเป็นเท็จ (F)",
+                        "<b>ผิด</b> สองฝั่งมีค่าความจริงตรงข้ามกัน (F กับ T) ตัวเชื่อม ↔ จึงให้ผลลัพธ์เป็นเท็จ",
+                        "<b>ผิด</b> ประพจน์นี้ไม่ใช่สัจนิรันดร์",
+                        "<b>ผิด</b> สามารถหาค่าความจริงที่แน่นอนได้คือ เท็จ (F)"
                     ]
                 },
                 {
                     q: "[ระดับปานกลาง] ข้อที่ 10: พิจารณา เหตุ: 1. p → q  2. q → ~r  3. r  ผลสรุปที่สมเหตุสมผลคือข้อใด?",
-                    options: ["ก. ~p", "ข. p", "ค. q", "ง. r → p"],
+                    options: ["~p", "p", "q", "r → p"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> จากเหตุ 3 (r เป็น T) นำไปใช้กับเหตุ 2 (q → ~r) จะได้ ~q (Modus Tollens) จากนั้นนำ ~q ไปใช้กับเหตุ 1 (p → q) จะได้ ~p",
-                        "<b>ข้อ ข. ผิด</b> หากสรุป p จะเกิดข้อขัดแย้งกับเหตุที่กำหนด",
-                        "<b>ข้อ ค. ผิด</b> เหตุผลบังคับให้ q ต้องเป็นเท็จ (~q)",
-                        "<b>ข้อ ง. ผิด</b> r → p จะมีค่าความจริงเป็นเท็จเพราะ r=T แต่ p=F"
+                        "<b>ถูกต้อง!</b> จากเหตุ 3 (r เป็น T) นำไปใช้กับเหตุ 2 (q → ~r) จะได้ ~q (Modus Tollens) จากนั้นนำ ~q ไปใช้กับเหตุ 1 (p → q) จะได้ ~p",
+                        "<b>ผิด</b> หากสรุป p จะเกิดข้อขัดแย้งกับเหตุที่กำหนด",
+                        "<b>ผิด</b> เหตุผลบังคับให้ q ต้องเป็นเท็จ (~q)",
+                        "<b>ผิด</b> r → p จะมีค่าความจริงเป็นเท็จเพราะ r=T แต่ p=F"
                     ]
                 },
                 {
                     q: "[ระดับปานกลาง] ข้อที่ 11: ประพจน์ [p ∧ (p → q)] → q เป็นสัจนิรันดร์หรือไม่?",
-                    options: ["ก. เป็นสัจนิรันดร์", "ข. ไม่เป็นสัจนิรันดร์", "ค. เป็นเท็จทุกกรณี", "ง. เป็นจริงเฉพาะเมื่อ p=F"],
+                    options: ["เป็นสัจนิรันดร์", "ไม่เป็นสัจนิรันดร์", "เป็นเท็จทุกกรณี", "เป็นจริงเฉพาะเมื่อ p=F"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> สมมติเป็น F จะได้ p ∧ (p → q) = T (นั่นคือ p=T, p→q=T) แต่ฝั่งขวา q=F ซึ่งขัดแย้งกับ p→q=T จึงเป็นสัจนิรันดร์",
-                        "<b>ข้อ ข. ผิด</b> เป็นรูปแบบ Modus Ponens ซึ่งเป็นสัจนิรันดร์เสมอ",
-                        "<b>ข้อ ค. ผิด</b> ประพจน์นี้เป็นจริงทุกกรณี",
-                        "<b>ข้อ ง. ผิด</b> แม้ p=T ประพจน์นี้ก็ยังคงเป็นจริง"
+                        "<b>ถูกต้อง!</b> สมมติเป็น F จะได้ p ∧ (p → q) = T (นั่นคือ p=T, p→q=T) แต่ฝั่งขวา q=F ซึ่งขัดแย้งกับ p→q=T จึงเป็นสัจนิรันดร์",
+                        "<b>ผิด</b> เป็นรูปแบบ Modus Ponens ซึ่งเป็นสัจนิรันดร์เสมอ",
+                        "<b>ผิด</b> ประพจน์นี้เป็นจริงทุกกรณี",
+                        "<b>ผิด</b> แม้ p=T ประพจน์นี้ก็ยังคงเป็นจริง"
                     ]
                 },
                 {
                     q: "[ระดับปานกลาง] ข้อที่ 12: กำหนด U = {1, 2, 3, 4} ประพจน์ ∀x[x + 2 < 7] มีค่าความจริงเป็นอย่างไร?",
-                    options: ["ก. เป็นจริง (T)", "ข. เป็นเท็จ (F)", "ค. สรุปไม่ได้", "ง. เป็นข้อขัดแย้ง"],
+                    options: ["เป็นจริง (T)", "เป็นเท็จ (F)", "สรุปไม่ได้", "เป็นข้อขัดแย้ง"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> ทดลองแทนสมาชิกทุกตัว: 1+2=3, 2+2=4, 3+2=5, 4+2=6 ซึ่งทุกค่าล้วนน้อยกว่า 7 ประพจน์จึงเป็นจริงทุกกรณีใน U",
-                        "<b>ข้อ ข. ผิด</b> ไม่มีสมาชิกตัวใดใน U ที่ทำให้ x + 2 ≥ 7",
-                        "<b>ข้อ ค. ผิด</b> สามารถตรวจหาค่าได้ครบทุกตัวใน U",
-                        "<b>ข้อ ง. ผิด</b> เป็นประพจน์ที่มีค่าความจริงเป็นจริง"
+                        "<b>ถูกต้อง!</b> ทดลองแทนสมาชิกทุกตัว: 1+2=3, 2+2=4, 3+2=5, 4+2=6 ซึ่งทุกค่าล้วนน้อยกว่า 7 ประพจน์จึงเป็นจริงทุกกรณีใน U",
+                        "<b>ผิด</b> ไม่มีสมาชิกตัวใดใน U ที่ทำให้ x + 2 ≥ 7",
+                        "<b>ผิด</b> สามารถตรวจหาค่าได้ครบทุกตัวใน U",
+                        "<b>ผิด</b> เป็นประพจน์ที่มีค่าความจริงเป็นจริง"
                     ]
                 },
                 {
                     q: "[ระดับปานกลาง] ข้อที่ 13: รูปแบบประพจน์ (p → r) ∧ (q → r) สมมูลกับรูปแบบในข้อใด?",
-                    options: ["ก. (p ∨ q) → r", "ข. (p ∧ q) → r", "ค. p → (q ∨ r)", "ง. (p → q) → r"],
+                    options: ["(p ∨ q) → r", "(p ∧ q) → r", "p → (q ∨ r)", "(p → q) → r"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> (~p ∨ r) ∧ (~q ∨ r) ≡ (~p ∧ ~q) ∨ r ≡ ~(p ∨ q) ∨ r ≡ (p ∨ q) → r",
-                        "<b>ข้อ ข. ผิด</b> (p ∧ q) → r สมมูลกับ p → (q → r) หรือ (p → r) ∨ (q → r)",
-                        "<b>ข้อ ค. ผิด</b> p → (q ∨ r) สมมูลกับ (p ∧ ~q) → r",
-                        "<b>ข้อ ง. ผิด</b> รูปแบบนี้ไม่ตรงตามกฎการกระจายของสมมูล"
+                        "<b>ถูกต้อง!</b> (~p ∨ r) ∧ (~q ∨ r) ≡ (~p ∧ ~q) ∨ r ≡ ~(p ∨ q) ∨ r ≡ (p ∨ q) → r",
+                        "<b>ผิด</b> (p ∧ q) → r สมมูลกับ p → (q → r) หรือ (p → r) ∨ (q → r)",
+                        "<b>ผิด</b> p → (q ∨ r) สมมูลกับ (p ∧ ~q) → r",
+                        "<b>ผิด</b> รูปแบบนี้ไม่ตรงตามกฎการกระจายของสมมูล"
                     ]
                 },
                 {
                     q: "[ระดับปานกลาง] ข้อที่ 14: นิเสธของข้อความ '∀x ∈ R [x^2 > 0 → x > 0]' คือข้อใด?",
-                    options: ["ก. ∃x ∈ R [x^2 > 0 ∧ x ≤ 0]", "ข. ∃x ∈ R [x^2 ≤ 0 ∨ x ≤ 0]", "ค. ∀x ∈ R [x^2 > 0 ∧ x ≤ 0]", "ง. ∃x ∈ R [x^2 > 0 → x ≤ 0]"],
+                    options: ["∃x ∈ R [x^2 > 0 ∧ x ≤ 0]", "∃x ∈ R [x^2 ≤ 0 ∨ x ≤ 0]", "∀x ∈ R [x^2 > 0 ∧ x ≤ 0]", "∃x ∈ R [x^2 > 0 → x ≤ 0]"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> ~∀x[P(x) → Q(x)] ≡ ∃x[P(x) ∧ ~Q(x)] นิเสธของ x > 0 คือ x ≤ 0",
-                        "<b>ข้อ ข. ผิด</b> กระจายนิเสธผิด เพราะนิเสธของ P → Q คือ P ∧ ~Q ไม่ใช่ ~P ∨ ~Q",
-                        "<b>ข้อ ค. ผิด</b> ลืมเปลี่ยนตัวบ่งปริมาณจาก ∀ เป็น ∃",
-                        "<b>ข้อ ง. ผิด</b> ตัวเชื่อมหลักภายในต้องเปลี่ยนจาก → เป็น ∧"
+                        "<b>ถูกต้อง!</b> ~∀x[P(x) → Q(x)] ≡ ∃x[P(x) ∧ ~Q(x)] นิเสธของ x > 0 คือ x ≤ 0",
+                        "<b>ผิด</b> กระจายนิเสธผิด เพราะนิเสธของ P → Q คือ P ∧ ~Q ไม่ใช่ ~P ∨ ~Q",
+                        "<b>ผิด</b> ลืมเปลี่ยนตัวบ่งปริมาณจาก ∀ เป็น ∃",
+                        "<b>ผิด</b> ตัวเชื่อมหลักภายในต้องเปลี่ยนจาก → เป็น ∧"
                     ]
                 },
                 {
                     q: "[ระดับปานกลาง] ข้อที่ 15: กำหนดให้ p เป็น T, q เป็น F, r เป็น T ค่าความจริงของ (p ∨ q) → (~r ∧ p) คือข้อใด?",
-                    options: ["ก. เท็จ (F)", "ข. จริง (T)", "ค. เป็นสัจนิรันดร์", "ง. หาค่าไม่ได้"],
+                    options: ["เท็จ (F)", "จริง (T)", "เป็นสัจนิรันดร์", "หาค่าไม่ได้"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> (p ∨ q) ≡ T ∨ F ≡ T และ (~r ∧ p) ≡ F ∧ T ≡ F จะได้ T → F ซึ่งมีค่าความจริงเป็นเท็จ (F)",
-                        "<b>ข้อ ข. ผิด</b> เพราะหน้าเป็นจริง (T) แต่หลังเป็นเท็จ (F) ในตัวเชื่อม 'ถ้า...แล้ว' จะได้เท็จ",
-                        "<b>ข้อ ค. ผิด</b> นี่คือการหาค่าความจริงของประพจน์ ไม่ใช่การเช็กสัจนิรันดร์",
-                        "<b>ข้อ ง. ผิด</b> สามารถคำนวณหาค่าความจริงได้แน่นอน"
+                        "<b>ถูกต้อง!</b> (p ∨ q) ≡ T ∨ F ≡ T และ (~r ∧ p) ≡ F ∧ T ≡ F จะได้ T → F ซึ่งมีค่าความจริงเป็นเท็จ (F)",
+                        "<b>ผิด</b> เพราะหน้าเป็นจริง (T) แต่หลังเป็นเท็จ (F) ในตัวเชื่อม 'ถ้า...แล้ว' จะได้เท็จ",
+                        "<b>ผิด</b> นี่คือการหาค่าความจริงของประพจน์ ไม่ใช่การเช็กสัจนิรันดร์",
+                        "<b>ผิด</b> สามารถคำนวณหาค่าความจริงได้แน่นอน"
                     ]
                 },
                 {
                     q: "[ระดับปานกลาง] ข้อที่ 16: การอ้างเหตุผล เหตุ: 1. p → q  2. ~p  ผล: ~q สมเหตุสมผลหรือไม่?",
-                    options: ["ก. ไม่สมเหตุสมผล (Denying the Antecedent)", "ข. สมเหตุสมผล", "ค. เป็นสัจนิรันดร์", "ง. สรุปได้แน่นอน"],
+                    options: ["ไม่สมเหตุสมผล (Denying the Antecedent)", "สมเหตุสมผล", "เป็นสัจนิรันดร์", "สรุปได้แน่นอน"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> เป็นข้อผิดพลาดทางตรรกศาสตร์ (Denying the Antecedent) เช่น 'ถ้าเป็นฝนตกแล้วถนนเปียก, ฝนไม่ตก สรุปว่าถนนไม่เปียก' ซึ่งไม่จริงเสมอไป (ถนนอาจเปียกจากน้ำรดต้นไม้)",
-                        "<b>ข้อ ข. ผิด</b> รูปแบบ [(p → q) ∧ ~p] → ~q ไม่เป็นสัจนิรันดร์ (เป็นเท็จได้เมื่อ p=F, q=T)",
-                        "<b>ข้อ ค. ผิด</b> ไม่เป็นสัจนิรันดร์",
-                        "<b>ข้อ ง. ผิด</b> ไม่สามารถสรุปผล ~q ได้อย่างแน่นอน"
+                        "<b>ถูกต้อง!</b> เป็นข้อผิดพลาดทางตรรกศาสตร์ (Denying the Antecedent)",
+                        "<b>ผิด</b> รูปแบบ [(p → q) ∧ ~p] → ~q ไม่เป็นสัจนิรันดร์",
+                        "<b>ผิด</b> ไม่เป็นสัจนิรันดร์",
+                        "<b>ผิด</b> ไม่สามารถสรุปผล ~q ได้อย่างแน่นอน"
                     ]
                 },
                 {
                     q: "[ระดับปานกลาง] ข้อที่ 17: ประพจน์ p ↔ ~p มีค่าความจริงเป็นอย่างไร?",
-                    options: ["ก. เป็นเท็จทุกกรณี (Contradiction)", "ข. เป็นจริงทุกกรณี (Tautology)", "ค. เป็นจริงเมื่อ p=T", "ง. เป็นจริงเมื่อ p=F"],
+                    options: ["เป็นเท็จทุกกรณี (Contradiction)", "เป็นจริงทุกกรณี (Tautology)", "เป็นจริงเมื่อ p=T", "is false"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> p และ ~p มีค่าความจริงตรงข้ามกันเสมอ ตัวเชื่อม 'ก็ต่อเมื่อ' (↔) เมื่อเชื่อมค่าที่ต่างกันจะให้ผลลัพธ์เป็นเท็จเสมอ",
-                        "<b>ข้อ ข. ผิด</b> ตัวเชื่อม ↔ จะเป็นจริงได้เมื่อสองฝั่งมีค่าความจริงเหมือนกันเท่านั้น",
-                        "<b>ข้อ ค. ผิด</b> ถ้า p=T จะได้ T ↔ F ซึ่งเป็นเท็จ",
-                        "<b>ข้อ ง. ผิด</b> ถ้า p=F จะได้ F ↔ T ซึ่งเป็นเท็จเช่นกัน"
+                        "<b>ถูกต้อง!</b> p และ ~p มีค่าความจริงตรงข้ามกันเสมอ ตัวเชื่อม 'ก็ต่อเมื่อ' (↔) เมื่อเชื่อมค่าที่ต่างกันจะให้ผลลัพธ์เป็นเท็จเสมอ",
+                        "<b>ผิด</b> ตัวเชื่อม ↔ จะเป็นจริงได้เมื่อสองฝั่งมีค่าความจริงเหมือนกันเท่านั้น",
+                        "<b>ผิด</b> ถ้า p=T จะได้ T ↔ F ซึ่งเป็นเท็จ",
+                        "<b>ผิด</b> หาก p=F จะได้ F ↔ T ซึ่งเป็นเท็จเช่นกัน"
                     ]
                 },
                 {
                     q: "[ระดับปานกลาง] ข้อที่ 18: กำหนด U = {1, 2, 3} ข้อใดทำให้ ∃x[x + 3 > 5] มีค่าความจริงเป็นจริง?",
-                    options: ["ก. x = 3", "ข. x = 1", "ค. x = 2", "ง. ไม่สมาชิกตัวใดใน U ใช้ได้เลย"],
+                    options: ["x = 3", "x = 1", "x = 2", "ไม่มีสมาชิกตัวใดใน U ใช้ได้เลย"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> เมื่อเลือก x = 3 แทนค่าจะได้ 3 + 3 = 6 ซึ่งมากกว่า 5 ทำให้ประโยคเป็นจริง",
-                        "<b>ข้อ ข. ผิด</b> แทน x = 1 จะได้ 1 + 3 = 4 ซึ่งไม่มากกว่า 5",
-                        "<b>ข้อ ค. ผิด</b> แทน x = 2 จะได้ 2 + 3 = 5 ซึ่งไม่ได้มากกว่า 5 (เท่ากับ 5)",
-                        "<b>ข้อ ง. ผิด</b> มี x = 3 ใน U ที่ใช้ได้"
+                        "<b>ถูกต้อง!</b> เมื่อเลือก x = 3 แทนค่าจะได้ 3 + 3 = 6 ซึ่งมากกว่า 5 ทำให้ประโยคเป็นจริง",
+                        "<b>ผิด</b> แทน x = 1 จะได้ 1 + 3 = 4 ซึ่งไม่มากกว่า 5",
+                        "<b>ผิด</b> แทน x = 2 จะได้ 2 + 3 = 5 ซึ่งไม่ได้มากกว่า 5",
+                        "<b>ผิด</b> มี x = 3 ใน U ที่ใช้ได้"
                     ]
                 },
                 {
                     q: "[ระดับปานกลาง] ข้อที่ 19: รูปแบบประพจน์ ~p → (p → q) เป็นสัจนิรันดร์หรือไม่?",
-                    options: ["ก. เป็นสัจนิรันดร์", "ข. ไม่เป็นสัจนิรันดร์", "ค. เป็นจริงเฉพาะเมื่อ q=T", "ง. เป็นเท็จทุกกรณี"],
+                    options: ["เป็นสัจนิรันดร์", "ไม่เป็นสัจนิรันดร์", "เป็นจริงเฉพาะเมื่อ q=T", "เป็นเท็จทุกกรณี"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> ~p → (p → q) ≡ p ∨ (~p ∨ q) ≡ (p ∨ ~p) ∨ q ≡ T ∨ q ≡ T เสมอ",
-                        "<b>ข้อ ข. ผิด</b> ไม่ว่าจะกำหนดค่า p, q อย่างไร ผลลัพธ์ก็เป็นจริงเสมอ",
-                        "<b>ข้อ ค. ผิด</b> ถึงแม้ q=F หาก p=F จะได้ T → (F → F) ≡ T → T ซึ่งเป็นจริง",
-                        "<b>ข้อ ง. ผิด</b> ประพจน์นี้เป็นจริงทุกกรณี ไม่ใช่เท็จทุกกรณี"
+                        "<b>ถูกต้อง!</b> ~p → (p → q) ≡ p ∨ (~p ∨ q) ≡ (p ∨ ~p) ∨ q ≡ T ∨ q ≡ T เสมอ",
+                        "<b>ผิด</b> ไม่ว่าจะกำหนดค่า p, q อย่างไร ผลลัพธ์ก็เป็นจริงเสมอ",
+                        "<b>ผิด</b> ถึงแม้ q=F หาก p=F จะได้ T → (F → F) ≡ T → T ซึ่งเป็นจริง",
+                        "<b>ผิด</b> ประพจน์นี้เป็นจริงทุกกรณี ไม่ใช่เท็จทุกกรณี"
                     ]
                 },
                 {
                     q: "[ระดับปานกลาง] ข้อที่ 20: ข้อใดสมมูลกับประพจน์ ~(p ↔ q)?",
-                    options: ["ก. p ↔ ~q", "ข. ~p ↔ ~q", "ค. p ↔ q", "ง. ~p ∧ ~q"],
+                    options: ["p ↔ ~q", "~p ↔ ~q", "p ↔ q", "~p ∧ ~q"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> นิเสธของก็ต่อเมื่อ สามารถใส่นิเสธที่ฝั่งใดฝั่งหนึ่งได้ คือ (p ↔ ~q) หรือ (~p ↔ q)",
-                        "<b>ข้อ ข. ผิด</b> ~p ↔ ~q สมมูลกับ p ↔ q ไม่ใช่นิเสธ",
-                        "<b>ข้อ ค. ผิด</b> นี่คือประพจน์เดิมก่อนใส่นิเสธ",
-                        "<b>ข้อ ง. ผิด</b> ~p ∧ ~q ไม่ใช่รูปสมมูลของนิเสธของก็ต่อเมื่อ"
+                        "<b>ถูกต้อง!</b> นิเสธของก็ต่อเมื่อ สามารถใส่นิเสธที่ฝั่งใดฝั่งหนึ่งได้ คือ (p ↔ ~q) หรือ (~p ↔ q)",
+                        "<b>ผิด</b> ~p ↔ ~q สมมูลกับ p ↔ q ไม่ใช่นิเสธ",
+                        "<b>ผิด</b> นี่คือประพจน์เดิมก่อนใส่นิเสธ",
+                        "<b>ผิด</b> ~p ∧ ~q ไม่ใช่รูปสมมูลของนิเสธของก็ต่อเมื่อ"
                     ]
                 }
             ],
             hard: [
                 {
                     q: "[ระดับยาก] ข้อที่ 1: กำหนดให้ P(x) แทน 'x > 5' และ U = {1, 2, 3, 4, 5, 6, 7} ประพจน์ ∃x[P(x)] ∧ ∀x[P(x)] มีค่าความจริงเป็นอย่างไร?",
-                    options: ["ก. เป็นเท็จ (F)", "ข. เป็นจริง (T)", "ค. สรุปไม่ได้", "ง. เป็นสัจนิรันดร์"],
+                    options: ["เป็นเท็จ (F)", "เป็นจริง (T)", "สรุปไม่ได้", "เป็นสัจนิรันดร์"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> ∃x[P(x)] เป็น T (มี 6,7 ที่ > 5) แต่ ∀x[P(x)] เป็น F (1 ไม่ได้ > 5) ดังนั้น T ∧ F ได้เท็จ (F)",
-                        "<b>ข้อ ข. ผิด</b> เพราะประพจน์ฝั่งขวา ∀x[P(x)] มีค่าความจริงเป็นเท็จ ทำให้ตัวเชื่อม 'และ' เป็นเท็จ",
-                        "<b>ข้อ ค. ผิด</b> สามารถสรุปค่าความจริงได้อย่างชัดเจน",
-                        "<b>ข้อ ง. ผิด</b> นี่เป็นประโยคที่มีตัวบ่งปริมาณ มีค่าความจริงเป็นเท็จ ไม่ใช่สัจนิรันดร์"
+                        "<b>ถูกต้อง!</b> ∃x[P(x)] เป็น T (มี 6,7 ที่ > 5) แต่ ∀x[P(x)] เป็น F (1 ไม่ได้ > 5) ดังนั้น T ∧ F ได้เท็จ (F)",
+                        "<b>ผิด</b> เพราะประพจน์ฝั่งขวา ∀x[P(x)] มีค่าความจริงเป็นเท็จ ทำให้ตัวเชื่อม 'และ' เป็นเท็จ",
+                        "<b>ผิด</b> สามารถสรุปค่าความจริงได้อย่างชัดเจน",
+                        "<b>ผิด</b> นี่เป็นประโยคที่มีตัวบ่งปริมาณ มีค่าความจริงเป็นเท็จ ไม่ใช่สัจนิรันดร์"
                     ]
                 },
                 {
                     q: "[ระดับยาก] ข้อที่ 2: พิจารณาประพจน์ [(p ∨ q) ∧ ~(p ∧ q)] ↔ (p ↔ ~q) เป็นสัจนิรันดร์หรือไม่?",
-                    options: ["ก. เป็นสัจนิรันดร์", "ข. ไม่เป็นสัจนิรันดร์", "ค. เป็นจริงเฉพาะเมื่อ p=T, q=F", "ง. เป็นเท็จทุกกรณี"],
+                    options: ["เป็นสัจนิรันดร์", "ไม่เป็นสัจนิรันดร์", "เป็นจริงเฉพาะเมื่อ p=T, q=F", "เป็นเท็จทุกกรณี"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> ฝั่งซ้ายคือ Exclusive OR (จริงตัวใดตัวหนึ่งเท่านั้น) ซึ่งสมมูลกับ p ↔ ~q เสมอ เมื่อประพจน์สมมูลกันเชื่อมด้วย ↔ จึงเป็นสัจนิรันดร์",
-                        "<b>ข้อ ข. ผิด</b> ประพจน์ทั้งสองฝั่งสมมูลกันทุกกรณี",
-                        "<b>ข้อ ค. ผิด</b> เป็นจริงในทุกๆ กรณีของ p และ q",
-                        "<b>ข้อ ง. ผิด</b> ประพจน์นี้เป็นจริงทุกกรณี"
+                        "<b>ถูกต้อง!</b> ฝั่งซ้ายคือ Exclusive OR ซึ่งสมมูลกับ p ↔ ~q เสมอ เมื่อประพจน์สมมูลกันเชื่อมด้วย ↔ จึงเป็นสัจนิรันดร์",
+                        "<b>ผิด</b> ประพจน์ทั้งสองฝั่งสมมูลกันทุกกรณี",
+                        "<b>ผิด</b> เป็นจริงในทุกๆ กรณีของ p และ q",
+                        "<b>ผิด</b> ประพจน์นี้เป็นจริงทุกกรณี"
                     ]
                 },
                 {
                     q: "[ระดับยาก] ข้อที่ 3: กำหนด U = {-2, -1, 0, 1, 2} ประพจน์ ∀x [x^2 > 0 → x > 0] มีค่าความจริงเป็นอย่างไร?",
-                    options: ["ก. เป็นเท็จ (F)", "ข. เป็นจริง (T)", "ค. สรุปไม่ได้", "ง. เป็นสัจนิรันดร์"],
+                    options: ["เป็นเท็จ (F)", "เป็นจริง (T)", "สรุปไม่ได้", "เป็นสัจนิรันดร์"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> พบตัวอย่างค้านเมื่อ x = -2 จะได้ (-2)^2 = 4 > 0 (จริง) แต่ -2 > 0 (เท็จ) ทำให้เกิดกรณี T → F ซึ่งได้เท็จ",
-                        "<b>ข้อ ข. ผิด</b> มีสมาชิกใน U เช่น x = -2 หรือ -1 ที่ทำให้เงื่อนไขเป็นเท็จ",
-                        "<b>ข้อ ค. ผิด</b> สามารถหาตัวอย่างค้านเพื่อสรุปว่าประพจน์เป็นเท็จได้แน่นอน",
-                        "<b>ข้อ ง. ผิด</b> ประพจน์นี้มีค่าความจริงเป็นเท็จ"
+                        "<b>ถูกต้อง!</b> พบตัวอย่างค้านเมื่อ x = -2 จะได้ (-2)^2 = 4 > 0 (จริง) แต่ -2 > 0 (เท็จ) ทำให้เกิดกรณี T → F ซึ่งได้เท็จ",
+                        "<b>ผิด</b> มีสมาชิกใน U เช่น x = -2 หรือ -1 ที่ทำให้เงื่อนไขเป็นเท็จ",
+                        "<b>ผิด</b> สามารถหาตัวอย่างค้านเพื่อสรุปว่าประพจน์เป็นเท็จได้แน่นอน",
+                        "<b>ผิด</b> ประพจน์นี้มีค่าความจริงเป็นเท็จ"
                     ]
                 },
                 {
                     q: "[ระดับยาก] ข้อที่ 4: การอ้างเหตุผล เหตุ: 1. p → (q ∨ r)  2. ~q ∧ ~r  ผล: ~p สมเหตุสมผลหรือไม่?",
-                    options: ["ก. สมเหตุสมผล", "ข. ไม่สมเหตุสมผล", "ค. เป็นข้อขัดแย้ง", "ง. สรุปไม่ได้"],
+                    options: ["สมเหตุสมผล", "ไม่สมเหตุสมผล", "เป็นข้อขัดแย้ง", "สรุปไม่ได้"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> จากเหตุ 2: ~q ∧ ~r ≡ ~(q ∨ r) เมื่อนำไปใช้กับเหตุ 1: p → (q ∨ r) โดยใช้กฎ Modus Tollens (ปฏิเสธผล ย่อมปฏิเสธเหตุ) จะได้ ~p สมเหตุสมผล",
-                        "<b>ข้อ ข. ผิด</b> สามารถพิสูจน์ได้ว่า [[p → (q ∨ r)] ∧ (~q ∧ ~r)] → ~p เป็นสัจนิรันดร์",
-                        "<b>ข้อ ค. ผิด</b> การอ้างเหตุผลนี้สมเหตุสมผล",
-                        "<b>ข้อ ง. ผิด</b> สรุปผลเป็น ~p ได้อย่างสมบูรณ์"
+                        "<b>ถูกต้อง!</b> จากเหตุ 2: ~q ∧ ~r ≡ ~(q ∨ r) เมื่อนำไปใช้กับเหตุ 1: p → (q ∨ r) โดยใช้กฎ Modus Tollens จะได้ ~p สมเหตุสมผล",
+                        "<b>ผิด</b> สามารถพิสูจน์ได้ว่าเป็นสัจนิรันดร์",
+                        "<b>ผิด</b> การอ้างเหตุผลนี้สมเหตุสมผล",
+                        "<b>ผิด</b> สรุปผลเป็น ~p ได้อย่างสมบูรณ์"
                     ]
                 },
                 {
                     q: "[ระดับยาก] ข้อที่ 5: นิเสธของประพจน์ ∃x ∀y [P(x, y) → Q(x, y)] สมมูลกับข้อใด?",
-                    options: ["ก. ∀x ∃y [P(x, y) ∧ ~Q(x, y)]", "ข. ∀x ∀y [P(x, y) ∧ ~Q(x, y)]", "ค. ∃x ∃y [~P(x, y) ∨ Q(x, y)]", "ง. ∀x ∃y [~P(x, y) → ~Q(x, y)]"],
+                    options: ["∀x ∃y [P(x, y) ∧ ~Q(x, y)]", "∀x ∀y [P(x, y) ∧ ~Q(x, y)]", "∃x ∃y [~P(x, y) ∨ Q(x, y)]", "∀x ∃y [~P(x, y) → ~Q(x, y)]"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> แจกแจงนิเสธ: เปลี่ยน ∃x เป็น ∀x, เปลี่ยน ∀y เป็น ∃y และ ~[P → Q] ≡ P ∧ ~Q",
-                        "<b>ข้อ ข. ผิด</b> ลืมเปลี่ยนตัวบ่งปริมาณตัวที่สองจาก ∀y เป็น ∃y",
-                        "<b>ข้อ ค. ผิด</b> ลืมเปลี่ยนตัวบ่งปริมาณตัวแรกจาก ∃x เป็น ∀x และหานิเสธประโยคเปิดผิด",
-                        "<b>ข้อ ง. ผิด</b> นิเสธของ P → Q ต้องได้ P ∧ ~Q ไม่ใช่ ~P → ~Q"
+                        "<b>ถูกต้อง!</b> แจกแจงนิเสธ: เปลี่ยน ∃x เป็น ∀x, เปลี่ยน ∀y เป็น ∃y และ ~[P → Q] ≡ P ∧ ~Q",
+                        "<b>ผิด</b> ลืมเปลี่ยนตัวบ่งปริมาณตัวที่สองจาก ∀y เป็น ∃y",
+                        "<b>ผิด</b> ลืมเปลี่ยนตัวบ่งปริมาณตัวแรกจาก ∃x เป็น ∀x",
+                        "<b>ผิด</b> นิเสธของ P → Q ต้องได้ P ∧ ~Q ไม่ใช่ ~P → ~Q"
                     ]
                 },
                 {
                     q: "[ระดับยาก] ข้อที่ 6: กำหนดให้ (p ∧ q) → (r ∨ s) มีค่าความจริงเป็นเท็จ ค่าความจริงของ p, q, r, s ตามลำดับคือข้อใด?",
-                    options: ["ก. T, T, F, F", "ข. T, F, T, F", "ค. F, F, T, T", "ง. T, T, T, F"],
+                    options: ["T, T, F, F", "T, F, T, F", "F, F, T, T", "T, T, T, F"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> ตัวเชื่อมหลัก → เป็น F เมื่อ หน้า T หลัง F นั่นคือ (p ∧ q)=T บังคับ p=T, q=T และ (r ∨ s)=F บังคับ r=F, s=F",
-                        "<b>ข้อ ข. ผิด</b> หาก q=F จะทำให้ (p ∧ q)=F ส่งผลให้ตัวเชื่อมหลักเป็นจริง",
-                        "<b>ข้อ ค. ผิด</b> หาก r=T จะทำให้ (r ∨ s)=T ส่งผลให้ตัวเชื่อมหลักเป็นจริง",
-                        "<b>ข้อ ง. ผิด</b> หาก r=T จะทำให้ฝั่งขวาเป็นจริงส่งผลให้ตัวเชื่อมหลักเป็นจริง"
+                        "<b>ถูกต้อง!</b> ตัวเชื่อมหลัก → เป็น F เมื่อ หน้า T หลัง F นั่นคือ (p ∧ q)=T บังคับ p=T, q=T และ (r ∨ s)=F บังคับ r=F, s=F",
+                        "<b>ผิด</b> หาก q=F จะทำให้ (p ∧ q)=F ส่งผลให้ตัวเชื่อมหลักเป็นจริง",
+                        "<b>ผิด</b> หาก r=T จะทำให้ (r ∨ s)=T ส่งผลให้ตัวเชื่อมหลักเป็นจริง",
+                        "<b>ผิด</b> หาก r=T จะทำให้ฝั่งขวาเป็นจริงส่งผลให้ตัวเชื่อมหลักเป็นจริง"
                     ]
                 },
                 {
                     q: "[ระดับยาก] ข้อที่ 7: ประพจน์ [(p → q) ∧ (q → r)] → (p → r) เป็นสัจนิรันดร์โดยวิธีหาข้อขัดแย้ง กรณีใดที่ไม่พบข้อขัดแย้ง?",
-                    options: ["ก. ไม่มีกรณีใดที่ไม่พบข้อขัดแย้ง (ขัดแย้งทุกกรณี)", "ข. เมื่อ p=T, q=F, r=F", "ค. เมื่อ p=F, q=T, r=F", "ง. เมื่อ p=T, q=T, r=T"],
+                    options: ["ไม่มีกรณีใดที่ไม่พบข้อขัดแย้ง (ขัดแย้งทุกกรณี)", "เมื่อ p=T, q=F, r=F", "เมื่อ p=F, q=T, r=F", "เมื่อ p=T, q=T, r=T"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> เนื่องจากรูปแบบนี้เป็นสัจนิรันดร์ (กฎลูกโซ่) ดังนั้นเมื่อสมมติให้เป็นเท็จ จะต้องเกิดข้อขัดแย้งในทุกๆ กรณีที่เป็นไปได้เสมอ",
-                        "<b>ข้อ ข. ผิด</b> กรณีนี้ทำให้ (p → q) เป็นเท็จ ซึ่งขัดแย้งกับสมมติฐานที่ให้ฝั่งซ้ายเป็นจริง",
-                        "<b>ข้อ ค. ผิด</b> กรณีนี้ทำให้ (q → r) เป็นเท็จ ซึ่งขัดแย้งกับสมมติฐานที่ให้ฝั่งซ้ายเป็นจริง",
-                        "<b>ข้อ ง. ผิด</b> กรณีนี้ทำให้ (p → r) เป็นจริง ซึ่งขัดแย้งกับสมมติฐานที่ให้ฝั่งขวาเป็นเท็จ"
+                        "<b>ถูกต้อง!</b> เนื่องจากรูปแบบนี้เป็นสัจนิรันดร์ (กฎลูกโซ่) ดังนั้นเมื่อสมมติให้เป็นเท็จ จะต้องเกิดข้อขัดแย้งในทุกๆ กรณีที่เป็นไปได้เสมอ",
+                        "<b>ผิด</b> กรณีนี้ทำให้ (p → q) เป็นเท็จ",
+                        "<b>ผิด</b> กรณีนี้ทำให้ (q → r) เป็นเท็จ",
+                        "<b>ผิด</b> กรณีนี้ทำให้ (p → r) เป็นจริง ซึ่งขัดแย้งกับสมมติฐาน"
                     ]
                 },
                 {
                     q: "[ระดับยาก] ข้อที่ 8: กำหนด U = {1, 2, 3} ประพจน์ ∀x ∃y [x + y = 4] มีค่าความจริงเป็นอย่างไร?",
-                    options: ["ก. เป็นจริง (T)", "ข. เป็นเท็จ (F)", "ค. สรุปไม่ได้", "ง. หาค่าความจริงไม่ได้"],
+                    options: ["เป็นจริง (T)", "เป็นเท็จ (F)", "สรุปไม่ได้", "หาค่าความจริงไม่ได้"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> ตรวจสอบทุก x ใน U: ถ้า x=1 เลือก y=3 (1+3=4), ถ้า x=2 เลือก y=2 (2+2=4), ถ้า x=3 เลือก y=1 (3+1=4) สามารถหา y ใน U ได้ครบทุก x",
-                        "<b>ข้อ ข. ผิด</b> ไม่เป็นเท็จ เพราะทุกค่าของ x สามารถจับคู่กับ y ใน U ที่ทำให้ผลรวมเป็น 4 ได้เสมอ",
-                        "<b>ข้อ ค. ผิด</b> สรุปได้แน่นอนว่าเป็นจริง",
-                        "<b>ข้อ ง. ผิด</b> สามารถหาค่าความจริงได้"
+                        "<b>ถูกต้อง!</b> ตรวจสอบทุก x ใน U: ถ้า x=1 เลือก y=3, ถ้า x=2 เลือก y=2, ถ้า x=3 เลือก y=1 สามารถหา y ใน U ได้ครบทุก x",
+                        "<b>ผิด</b> ไม่เป็นเท็จ เพราะทุกค่าของ x สามารถจับคู่กับ y ใน U ที่ทำให้ผลรวมเป็น 4 ได้เสมอ",
+                        "<b>ผิด</b> สรุปได้แน่นอนว่าเป็นจริง",
+                        "<b>ผิด</b> สามารถหาค่าความจริงได้"
                     ]
                 },
                 {
                     q: "[ระดับยาก] ข้อที่ 9: กำหนด U = {1, 2, 3} ประพจน์ ∃y ∀x [x + y = 4] มีค่าความจริงเป็นอย่างไร?",
-                    options: ["ก. เป็นเท็จ (F)", "ข. เป็นจริง (T)", "ค. สรุปไม่ได้", "ง. เป็นสัจนิรันดร์"],
+                    options: ["เป็นเท็จ (F)", "เป็นจริง (T)", "สรุปไม่ได้", "เป็นสัจนิรันดร์"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> ∃y ขึ้นก่อน หมายความว่าต้องมี y ตัวเดียวที่ใช้คู่กับ x ทุกตัวได้พร้อมกัน หาก y=1 (1+1≠4), y=2 (1+2≠4), y=3 (2+3≠4) ไม่มี y ตัวไหนใช้ได้กับทุก x",
-                        "<b>ข้อ ข. ผิด</b> เพราะไม่มี y ค่าเดียวตัวใดใน U ที่สอดคล้องกับ x ทุกตัวพร้อมกัน",
-                        "<b>ข้อ ค. ผิด</b> สามารถสรุปได้แน่นอนว่าเป็นเท็จ",
-                        "<b>ข้อ ง. ผิด</b> มีค่าความจริงเป็นเท็จ"
+                        "<b>ถูกต้อง!</b> ∃y ขึ้นก่อน หมายความว่าต้องมี y ตัวเดียวที่ใช้คู่กับ x ทุกตัวได้พร้อมกัน หาก y=1, y=2, y=3 ไม่มี y ตัวไหนใช้ได้กับทุก x",
+                        "<b>ผิด</b> ไม่มี y ค่าเดียวตัวใดใน U ที่สอดคล้องกับ x ทุกตัวพร้อมกัน",
+                        "<b>ผิด</b> สามารถสรุปได้แน่นอนว่าเป็นเท็จ",
+                        "<b>ผิด</b> มีค่าความจริงเป็นเท็จ"
                     ]
                 },
                 {
                     q: "[ระดับยาก] ข้อที่ 10: รูปแบบประพจน์ [(p → q) ∧ (r → s) ∧ (p ∨ r)] → (q ∨ s) สมเหตุสมผลหรือไม่ และเรียกว่ากฎอะไร?",
-                    options: ["ก. สมเหตุสมผล (Constructive Dilemma)", "ข. ไม่สมเหตุสมผล", "ค. สมเหตุสมผล (Destructive Dilemma)", "ง. เป็นข้อขัดแย้ง"],
+                    options: ["สมเหตุสมผล (Constructive Dilemma)", "ไม่สมเหตุสมผล", "สมเหตุสมผล (Destructive Dilemma)", "เป็นข้อขัดแย้ง"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> เรียกว่ากฎ Constructive Dilemma เป็นรูปแบบการอ้างเหตุผลที่สมเหตุสมผลและเป็นสัจนิรันดร์",
-                        "<b>ข้อ ข. ผิด</b> เป็นรูปแบบที่สมเหตุสมผลเสมอ",
-                        "<b>ข้อ ค. ผิด</b> Destructive Dilemma จะเป็น [(p → q) ∧ (r → s) ∧ (~q ∨ ~s)] → (~p ∨ ~r)",
-                        "<b>ข้อ ง. ผิด</b> รูปแบบนี้เป็นสัจนิรันดร์ ไม่ใช่ข้อขัดแย้ง"
+                        "<b>ถูกต้อง!</b> เรียกว่ากฎ Constructive Dilemma เป็นรูปแบบการอ้างเหตุผลที่สมเหตุสมผลและเป็นสัจนิรันดร์",
+                        "<b>ผิด</b> เป็นรูปแบบที่สมเหตุสมผลเสมอ",
+                        "<b>ผิด</b> Destructive Dilemma จะเป็นรูปแบบอื่น",
+                        "<b>ผิด</b> รูปแบบนี้เป็นสัจนิรันดร์ ไม่ใช่ข้อขัดแย้ง"
                     ]
                 },
                 {
                     q: "[ระดับยาก] ข้อที่ 11: ข้อใดต่อไปนี้ **ไม่สมมูล** กับประพจน์ p → (q ∨ r)?",
-                    options: ["ก. (p ∧ ~q) → ~r", "ข. (p ∧ ~q) → r", "ค. ~p ∨ q ∨ r", "ง. (p → q) ∨ (p → r)"],
+                    options: ["(p ∧ ~q) → ~r", "(p ∧ ~q) → r", "~p ∨ q ∨ r", "(p → q) ∨ (p → r)"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง! (ข้อนี้ไม่สมมูล)</b> (p ∧ ~q) → ~r ≡ ~(p ∧ ~q) ∨ ~r ≡ ~p ∨ q ∨ ~r ซึ่งไม่เท่ากับ ~p ∨ q ∨ r",
-                        "<b>ข้อ ข. ผิด (รูปแบบนี้สมมูล)</b> (p ∧ ~q) → r ≡ ~(p ∧ ~q) ∨ r ≡ ~p ∨ q ∨ r",
-                        "<b>ข้อ ค. ผิด (รูปแบบนี้สมมูล)</b> p → (q ∨ r) ≡ ~p ∨ (q ∨ r) ≡ ~p ∨ q ∨ r",
-                        "<b>ข้อ ง. ผิด (รูปแบบนี้สมมูล)</b> (p → q) ∨ (p → r) ≡ (~p ∨ q) ∨ (~p ∨ r) ≡ ~p ∨ q ∨ r"
+                        "<b>ถูกต้อง! (ข้อนี้ไม่สมมูล)</b> (p ∧ ~q) → ~r ≡ ~(p ∧ ~q) ∨ ~r ≡ ~p ∨ q ∨ ~r ซึ่งไม่เท่ากับ ~p ∨ q ∨ r",
+                        "<b>ผิด (รูปแบบนี้สมมูล)</b>",
+                        "<b>ผิด (รูปแบบนี้สมมูล)</b>",
+                        "<b>ผิด (รูปแบบนี้สมมูล)</b>"
                     ]
                 },
                 {
-                    q: "[ระดับยาก] ข้อที่ 12: กำหนดให้ A = ∀x[x^2 > 0] และ B = ∃x[x + 1 = x] โดยมี U = R ค่าความจริงของ A → B คือข้อใด?",
-                    options: ["ก. เป็นจริง (T)", "ข. เป็นเท็จ (F)", "ค. สรุปไม่ได้", "ง. เป็นสัจนิรันดร์"],
+                    q: "[ระดับยาก] ข้อที่ 12: กำหนดให้ A = ∀x[x^2 > 0] และ B = ∃x[x + 1 = x] บนเอกภพสัมพัทธ์ R ค่าความจริงของ A → B คือข้อใด?",
+                    options: ["เป็นจริง (T)", "เป็นเท็จ (F)", "เป็นสัจนิรันดร์", "สรุปไม่ได้"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> A เป็นเท็จ (เพราะเมื่อ x=0 ได้ 0^2 > 0 เป็นเท็จ) และ B เป็นเท็จ (ไม่มีจำนวนจริงใดที่ x+1=x) เมื่อเชื่อม F → F จะได้ค่าความจริงเป็นจริง (T)",
-                        "<b>ข้อ ข. ผิด</b> ตัวเชื่อม 'ถ้า...แล้ว' ที่มีเหตุเป็นเท็จ (F → F) จะได้ผลลัพธ์เป็นจริงเสมอ",
-                        "<b>ข้อ ค. ผิด</b> หาค่าความจริงได้ชัดเจนคือ จริง (T)",
-                        "<b>ข้อ ง. ผิด</b> นี่เป็นประพจน์ที่มีค่าความจริงเป็นจริง ไม่ใช่สัจนิรันดร์"
+                        "<b>ถูกต้อง!</b> A เป็น F (เพราะ x=0 ทำให้ 0^2 > 0 เป็นเท็จ) และ B เป็น F (ไม่มี x ที่ทำให้ x+1=x) ดังนั้น F → F ให้ค่าความจริงเป็นจริง (T)",
+                        "<b>ผิด</b> เพราะเงื่อนไขหน้า (A) เป็นเท็จ ซึ่งทำให้ F → F ได้ผลลัพธ์เป็นจริง",
+                        "<b>ผิด</b> นี่เป็นการหาค่าความจริงเฉพาะกรณี",
+                        "<b>ผิด</b> สามารถหาค่าความจริงได้แน่นอน"
                     ]
                 },
                 {
-                    q: "[ระดับยาก] ข้อที่ 13: ประพจน์ (p ∧ ~q) → (p → q) เป็นสัจนิรันดร์หรือไม่?",
-                    options: ["ก. ไม่เป็นสัจนิรันดร์", "ข. เป็นสัจนิรันดร์", "ค. เป็นจริงเฉพาะเมื่อ p=F", "ง. เป็นเท็จทุกกรณี"],
+                    q: "[ระดับยาก] ข้อที่ 13: รูปแบบประพจน์ ~[(p ∧ ~q) → ~p] สมมูลกับข้อใด?",
+                    options: ["เท็จทุกกรณี (Contradiction)", "p ∧ ~q", "p ∨ q", "จริงทุกกรณี (Tautology)"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> หากสมมติให้เป็นเท็จ จะได้ฝั่งซ้าย (p ∧ ~q)=T นั่นคือ p=T, q=F และฝั่งขวา (p → q) ≡ T → F ≡ F ซึ่งไม่เกิดข้อขัดแย้ง (เป็นเท็จได้เมื่อ p=T, q=F) จึงไม่เป็นสัจนิรันดร์",
-                        "<b>ข้อ ข. ผิด</b> สามารถหากรณีที่เป็นเท็จได้เมื่อ p=T และ q=F",
-                        "<b>ข้อ ค. ผิด</b> เมื่อ p=T และ q=T ประพจน์นี้ก็ยังมีค่าความจริงเป็นจริง",
-                        "<b>ข้อ ง. ผิด</b> เมื่อ p=F ประพจน์นี้จะมีค่าความจริงเป็นจริง"
+                        "<b>ถูกต้อง!</b> (p ∧ ~q) → ~p ให้ผลเป็น ~p ∨ q ซึ่งเมื่อลดรูปและพิจารณานิเสธซ้อนแล้วจะได้เป็น เท็จทุกกรณี (Contradiction)",
+                        "<b>ผิด</b> คำนวณนิเสธผิดพลาด",
+                        "<b>ผิด</b> ไม่ตรงกับผลลัพธ์การลดรูป",
+                        "<b>ผิด</b> ประพจน์นี้เป็นเท็จทุกกรณี"
                     ]
                 },
                 {
-                    q: "[ระดับยาก] ข้อที่ 14: นิเสธของข้อความ 'สำหรับสมาชิก x ทุกตัว ถ้า x เป็นจำนวนคู่ แล้ว x^2 เป็นจำนวนคู่' คือข้อใด?",
-                    options: ["ก. มีสมาชิก x บางตัวซึ่ง x เป็นจำนวนคู่ และ x^2 เป็นจำนวนคี่", "ข. สำหรับสมาชิก x ทุกตัว x เป็นจำนวนคี่ และ x^2 เป็นจำนวนคี่", "ค. มีสมาชิก x บางตัวซึ่ง x เป็นจำนวนคี่ หรือ x^2 เป็นจำนวนคู่", "ง. มีสมาชิก x บางตัวซึ่ง ถ้า x เป็นจำนวนคี่ แล้ว x^2 เป็นจำนวนคี่"],
+                    q: "[ระดับยาก] ข้อที่ 14: ข้อใดเป็นตัวอย่างค้านที่พิสูจน์ว่า ∀x ∈ R [x^2 > x] มีค่าความจริงเป็นเท็จ?",
+                    options: ["x = 0.5", "x = 2", "x = -2", "x = 3"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> ~∀x[P(x) → Q(x)] ≡ ∃x[P(x) ∧ ~Q(x)] เปลี่ยน 'ทุกตัว' เป็น 'บางตัว', หน้าคงเดิม (x เป็นคู่), ตัวเชื่อมเป็น 'และ', นิเสธของ x^2 เป็นคู่ คือ x^2 เป็นคี่",
-                        "<b>ข้อ ข. ผิด</b> ลืมเปลี่ยนตัวบ่งปริมาณจาก 'ทุกตัว' เป็น 'บางตัว' และใส่นิเสธที่เงื่อนไขหน้าผิด",
-                        "<b>ข้อ ค. ผิด</b> ตัวเชื่อมหลักต้องเป็น 'และ' ไม่ใช่ 'หรือ'",
-                        "<b>ข้อ ง. ผิด</b> ตัวเชื่อมหลักต้องเป็น 'และ' ไม่ใช่ 'ถ้า...แล้ว'"
+                        "<b>ถูกต้อง!</b> เมื่อ x = 0.5 จะได้ (0.5)^2 = 0.25 ซึ่งไม่ได้มากกว่า 0.5 (0.25 > 0.5 เป็นเท็จ) จึงเป็นตัวอย่างค้านที่ถูกต้อง",
+                        "<b>ผิด</b> เมื่อ x = 2 ได้ 2^2 = 4 > 2 เป็นจริง",
+                        "<b>ผิด</b> เมื่อ x = -2 ได้ (-2)^2 = 4 > -2 เป็นจริง",
+                        "<b>ผิด</b> เมื่อ x = 3 ได้ 3^2 = 9 > 3 เป็นจริง"
                     ]
                 },
                 {
-                    q: "[ระดับยาก] ข้อที่ 15: พิจารณา เหตุ: 1. p → q  2. r → s  3. ~q ∨ ~s  ผลสรุปในข้อใดทำให้สมเหตุสมผล (Destructive Dilemma)?",
-                    options: ["ก. ~p ∨ ~r", "ข. ~p ∧ ~r", "ค. p ∨ r", "ง. q ∨ s"],
+                    q: "[ระดับยาก] ข้อที่ 15: กำหนดให้ประพจน์ p ↔ q มีค่าความจริงเป็นจริง และ p ∧ ~q มีค่าความจริงเป็นจริง ข้อใดถูกต้อง?",
+                    options: ["เป็นไปไม่ได้ที่ประพจน์ทั้งสองจะเป็นจริงพร้อมกัน (ขัดแย้งกัน)", "p = T, q = T", "p = F, q = F", "p = T, q = F"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> ตามกฎ Destructive Dilemma เมื่อเหตุที่ 3 คือการปฏิเสธผลลัพธ์ตัวใดตัวหนึ่ง (~q ∨ ~s) ผลสรุปย่อมเป็นการปฏิเสธเหตุตัวใดตัวหนึ่งคือ ~p ∨ ~r",
-                        "<b>ข้อ ข. ผิด</b> ตัวเชื่อมของผลสรุปต้องเป็น 'หรือ' (∨) ไม่ใช่ 'และ' (∧)",
-                        "<b>ข้อ ค. ผิด</b> ไม่ได้ใส่นิเสธให้ประพจน์เหตุ",
-                        "<b>ข้อ ง. ผิด</b> นี่คือผลลัพธ์ของกฎ Constructive Dilemma เมื่อเหตุที่ 3 คือ p ∨ r"
+                        "<b>ถูกต้อง!</b> หาก p ∧ ~q เป็นจริง แสดงว่า p=T และ q=F แต่ถ้า p=T และ q=F จะทำให้ p ↔ q เป็นเท็จ จึงขัดแย้งกันเป็นไปไม่ได้",
+                        "<b>ผิด</b> หาก p=T, q=T จะทำให้ p ∧ ~q เป็นเท็จ",
+                        "<b>ผิด</b> หาก p=F, q=F จะทำให้ p ∧ ~q เป็นเท็จ",
+                        "<b>ผิด</b> หาก p=T, q=F จะทำให้ p ↔ q เป็นเท็จ"
                     ]
                 },
                 {
-                    q: "[ระดับยาก] ข้อที่ 16: กำหนด U = {-1, 0, 1} ประพจน์ ∀x ∃y [x + y = 0] มีค่าความจริงเป็นอย่างไร?",
-                    options: ["ก. เป็นจริง (T)", "ข. เป็นเท็จ (F)", "ค. สรุปไม่ได้", "ง. เป็นข้อขัดแย้ง"],
+                    q: "[ระดับยาก] ข้อที่ 16: กำหนด U = {1, 2, 3} ประพจน์ ∃x[x^2 - 5x + 6 = 0] มีค่าความจริงเป็นอย่างไร?",
+                    options: ["เป็นจริง (T)", "เป็นเท็จ (F)", "สรุปไม่ได้", "เป็นสัจนิรันดร์"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> ทุกตัวของ x ใน U สามารถเลือก y = -x ซึ่งอยู่ใน U เสมอ (ถ้า x=-1 เลือก y=1; ถ้า x=0 เลือก y=0; ถ้า x=1 เลือก y=-1) ทำให้ x + y = 0 เป็นจริงทุกตัว",
-                        "<b>ข้อ ข. ผิด</b> เพราะสามารถจับคู่ y ใน U ให้ผลรวมเป็น 0 ได้ครบทุก x",
-                        "<b>ข้อ ค. ผิด</b> สรุปได้แน่นอนว่าเป็นจริง",
-                        "<b>ข้อ ง. ผิด</b> ประพจน์นี้มีค่าความจริงเป็นจริง"
+                        "<b>ถูกต้อง!</b> แยกตัวประกอบได้ (x-2)(x-3) = 0 มีคำตอบคือ x = 2 และ x = 3 ซึ่งอยู่ใน U ดังนั้น ∃x ทำให้เป็นจริง",
+                        "<b>ผิด</b> เพราะมีคำตอบใน U คือ 2 และ 3",
+                        "<b>ผิด</b> ตรวจสอบคำตอบได้ชัดเจน",
+                        "<b>ผิด</b> เป็นประโยคที่มีตัวบ่งปริมาณ มีค่าความจริงเป็นจริง"
                     ]
                 },
                 {
-                    q: "[ระดับยาก] ข้อที่ 17: ประพจน์ [(p → q) ∧ (q → p)] ↔ (p ↔ q) เป็นสัจนิรันดร์หรือไม่?",
-                    options: ["ก. เป็นสัจนิรันดร์", "ข. ไม่เป็นสัจนิรันดร์", "ค. เป็นจริงเมื่อ p=T เท่านั้น", "ง. เป็นจริงเมื่อ q=T เท่านั้น"],
+                    q: "[ระดับยาก] ข้อที่ 17: ประพจน์ [(p → q) ∧ (~p → q)] → q เป็นสัจนิรันดร์หรือไม่?",
+                    options: ["เป็นสัจนิรันดร์", "ไม่เป็นสัจนิรันดร์", "เป็นเท็จเมื่อ q=F", "เป็นจริงเมื่อ p=F เท่านั้น"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> ฝั่งซ้าย [(p → q) ∧ (q → p)] เป็นนิยามการสมมูลของ (p ↔ q) เมื่อสองฝั่งเหมือนกันเชื่อมด้วย ↔ จึงเป็นสัจนิรันดร์",
-                        "<b>ข้อ ข. ผิด</b> ไม่สามารถหากรณีที่เป็นเท็จได้เลย",
-                        "<b>ข้อ ค. ผิด</b> เป็นจริงทุกกรณี ไม่ว่า p จะเป็นจริงหรือเท็จ",
-                        "<b>ข้อ ง. ผิด</b> เป็นจริงทุกกรณี ไม่ว่า q จะเป็นจริงหรือเท็จ"
+                        "<b>ถูกต้อง!</b> สมมติให้เป็น F จะได้ q=F และ (p → q) = T, (~p → q) = T เมื่อ q=F บังคับให้ p=F และ ~p=F แต่ ~p=F ทำให้ ~p → q กลายเป็น F → F ≡ T (ไม่ขัดแย้ง... เดี๋ยวนะ หาก p=F จะได้ ~p=T ทำให้ T → F ≡ F ซึ่งขัดแย้งกับสมมติฐาน แสดงว่าเป็นสัจนิรันดร์)",
+                        "<b>ผิด</b> รูปแบบนี้สามารถพิสูจน์ได้ว่าเป็นสัจนิรันดร์เสมอ",
+                        "<b>ผิด</b> ประพจน์นี้เป็นจริงทุกกรณี",
+                        "<b>ผิด</b> เป็นจริงในทุกๆ กรณี"
                     ]
                 },
                 {
-                    q: "[ระดับยาก] ข้อที่ 18: กำหนดให้ p ↔ q มีค่าความจริงเป็นเท็จ ค่าความจริงของ (p ∧ ~q) ∨ (q ∧ ~p) คือข้อใด?",
-                    options: ["ก. จริง (T)", "ข. เท็จ (F)", "ค. สรุปไม่ได้", "ง. เป็นข้อขัดแย้ง"],
+                    q: "[ระดับยาก] ข้อที่ 18: กำหนดให้ P(x) แทน 'x เป็นจำนวนคู่' และ Q(x) แทน 'x หารด้วย 4 ลงตัว' บน U = {2, 4, 6, 8} ประพจน์ ∀x[P(x) → Q(x)] มีค่าความจริงเป็นอย่างไร?",
+                    options: ["เป็นเท็จ (F)", "เป็นจริง (T)", "สรุปไม่ได้", "เป็นสัจนิรันดร์"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> p ↔ q เป็น F หมายถึง p และ q มีค่าความจริงตรงกันข้ามกัน กรณีที่ 1 (p=T, q=F) ได้ (T ∧ T) ∨ (F ∧ F) ≡ T; กรณีที่ 2 (p=F, q=T) ได้ (F ∧ F) ∨ (T ∧ T) ≡ T เป็นจริงทั้งสองกรณี",
-                        "<b>ข้อ ข. ผิด</b> ไม่ว่ากรณีใดผลลัพธ์ก็นำไปสู่ค่าความจริงเป็นจริง",
-                        "<b>ข้อ ค. ผิด</b> สามารถหาค่าความจริงที่แน่นอนได้",
-                        "<b>ข้อ ง. ผิด</b> มีค่าความจริงเป็นจริง ไม่ใช่ข้อขัดแย้ง"
+                        "<b>ถูกต้อง!</b> ลองแทน x = 2 จะได้ P(2) เป็น T (2 เป็นจำนวนคู่) แต่ Q(2) เป็น F (2 หารด้วย 4 ไม่ลงตัว) ได้ T → F ซึ่งเป็นเท็จ",
+                        "<b>ผิด</b> มีตัวอย่างค้านคือ x = 2 หรือ x = 6",
+                        "<b>ผิด</b> สามารถหาตัวอย่างค้านได้อย่างชัดเจน",
+                        "<b>ผิด</b> ประพจน์นี้มีค่าความจริงเป็นเท็จ"
                     ]
                 },
                 {
-                    q: "[ระดับยาก] ข้อที่ 19: กำหนด U = {1, 2} ประพจน์ ∀x ∀y [x + y > 2] มีค่าความจริงเป็นอย่างไร?",
-                    options: ["ก. เป็นเท็จ (F)", "ข. เป็นจริง (T)", "ค. สรุปไม่ได้", "ง. เป็นสัจนิรันดร์"],
+                    q: "[ระดับยาก] ข้อที่ 19: รูปแบบประพจน์ [p ∧ (q ∨ r)] ↔ [(p ∧ q) ∨ (p ∧ r)] เป็นสัจนิรันดร์หรือไม่?",
+                    options: ["เป็นสัจนิรันดร์ (กฎการแจกแจง)", "ไม่เป็นสัจนิรันดร์", "เป็นเท็จทุกกรณี", "เป็นจริงเฉพาะเมื่อ p=F"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> พบตัวอย่างค้านเมื่อเลือก x = 1 และ y = 1 (ซึ่งอยู่ใน U ทั้งคู่) จะได้ 1 + 1 = 2 ซึ่งไม่ได้มากกว่า 2 (2 > 2 เป็นเท็จ) ส่งผลให้ ∀x ∀y เป็นเท็จทันที",
-                        "<b>ข้อ ข. ผิด</b> มีกรณี x=1, y=1 ที่ทำให้ประโยคเป็นเท็จ",
-                        "<b>ข้อ ค. ผิด</b> สรุปได้แน่นอนว่าเป็นเท็จ",
-                        "<b>ข้อ ง. ผิด</b> ประพจน์นี้มีค่าความจริงเป็นเท็จ"
+                        "<b>ถูกต้อง!</b> นี่คือกฎการแจกแจง (Distributive Law) ของ 'และ' บน 'หรือ' ซึ่งสมมูลกันทุกกรณี เมื่อเชื่อมด้วย ↔ จึงเป็นสัจนิรันดร์",
+                        "<b>ผิด</b> รูปแบบนี้เป็นกฎพื้นฐานที่ถูกต้องและเป็นสัจนิรันดร์",
+                        "<b>ผิด</b> ประพจน์นี้เป็นจริงทุกกรณี",
+                        "<b>ผิด</b> เป็นจริงเสมอทุกกรณีของ p, q, r"
                     ]
                 },
                 {
-                    q: "[ระดับยาก] ข้อที่ 20: ประพจน์ [p → (q → r)] ↔ [(p ∧ q) → r] เป็นสัจนิรันดร์หรือไม่?",
-                    options: ["ก. เป็นสัจนิรันดร์ (Exportation Law)", "ข. ไม่เป็นสัจนิรันดร์", "ค. เป็นจริงเฉพาะกรณี r=T", "ง. เป็นเท็จทุกกรณี"],
+                    q: "[ระดับยาก] ข้อที่ 20: พิจารณาข้อความ 'ถ้า 2+2 = 5 แล้ว พระอาทิตย์ขึ้นทางทิศตะวันตก' ค่าความจริงของประพจน์นี้คือข้อใด?",
+                    options: ["จริง (T)", "เท็จ (F)", "หาค่าความจริงไม่ได้", "เป็นสัจนิรันดร์"],
                     correct: 0,
                     explanations: [
-                        "<b>ข้อ ก. ถูกต้อง!</b> กฎการส่งออก (Exportation Law) ระบุว่า p → (q → r) ≡ (p ∧ q) → r สองฝั่งสมมูลกันเสมอ เมื่อเชื่อมด้วย ↔ จึงเป็นสัจนิรันดร์",
-                        "<b>ข้อ ข. ผิด</b> ประพจน์ทั้งสองฝั่งสมมูลกันทุกกรณี",
-                        "<b>ข้อ ค. ผิด</b> แม้ r=F ประพจน์นี้ก็ยังคงเป็นจริง",
-                        "<b>ข้อ ง. ผิด</b> ประพจน์นี้เป็นจริงทุกกรณี"
+                        "<b>ถูกต้อง!</b> ตามนิยามตัวเชื่อม 'ถ้า...แล้ว' (→) เมื่อเหตุ (ตัวหน้า) มีค่าความจริงเป็นเท็จ (2+2=5 เป็น F) ประพจน์เงื่อนไขนั้นจะมีค่าความจริงเป็นจริง (T) เสมอ",
+                        "<b>ผิด</b> เหตุเป็นเท็จ (F) ในตารางค่าความจริงของ F → F หรือ F → T จะได้ผลลัพธ์เป็นจริงเสมอ",
+                        "<b>ผิด</b> สามารถระบุค่าความจริงได้ทันทีตามกฎของประพจน์มีเงื่อนไข",
+                        "<b>ผิด</b> นี่คือประพจน์เฉพาะเจาะจง ไม่ใช่รูปแบบประพจน์ที่เป็นสัจนิรันดร์"
                     ]
                 }
             ]
         };
 
-        // เลือกระดับความยาก (จะรีเซ็ตเริ่มที่ข้อ 1 เสมอ)
+        // ฟังก์ชันสลับตำแหน่งอาร์เรย์ (Fisher-Yates Shuffle)
+        function shuffleArray(array) {
+            let currentIndex = array.length, randomIndex;
+            while (currentIndex != 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+                [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+            }
+            return array;
+        }
+
         function setDifficulty(diff, btnElement) {
             currentDifficulty = diff;
-            
-            const diffButtons = document.querySelectorAll('.diff-btn');
-            diffButtons.forEach(btn => btn.classList.remove('active'));
-            btnElement.classList.add('active');
-
-            // เริ่มต้นทำข้อสอบใหม่ที่ข้อ 1 เสมอเมื่อเปลี่ยนระดับความยาก
-            currentQuestion = 1; 
-            userAnswers = Array(20).fill(null);
-            
-            document.getElementById('quiz-body').style.display = 'block';
-            document.getElementById('final-summary').style.display = 'none';
-
-            loadQuestion(currentQuestion);
+            const diffBtns = document.querySelectorAll('.diff-btn');
+            diffBtns.forEach(btn => {
+                if(!btn.classList.contains('reset-btn')) {
+                    btn.classList.remove('active');
+                }
+            });
+            if(btnElement) btnElement.classList.add('active');
+            resetQuiz();
         }
 
         function loadQuestion() {
-    const list = quizData[currentDifficulty];
-    if (!list || list.length === 0) return;
+            const dataList = quizData[currentDifficulty];
+            const qObj = dataList[currentQuestion - 1];
 
-    const qData = list[(currentQuestion - 1) % list.length];
+            document.getElementById('question-text').innerHTML = qObj.q;
+            document.getElementById('score-text').innerText = `คะแนน: ${calculateScore()} / 20`;
 
-    // 💡 สุ่มสลับตำแหน่งตัวเลือก (สุ่มครั้งเดียวต่อข้อ)
-    if (!qData.shuffledOptions) {
-        // 1. มัดรวม ข้อความคำตอบ, คำอธิบาย, และเช็คว่าข้อนี้ใช่ข้อที่ถูกหรือไม่
-        let combinedOptions = qData.options.map((opt, idx) => ({
-            text: opt.replace(/^[ก-ง]\.\s*/, ''), // ตัด ก. ข. ค. ง. ดั้งเดิมออกก่อน
-            explanation: qData.explanations[idx],
-            isCorrect: idx === qData.correct
-        }));
+            // สลับตำแหน่งตัวเลือก (Options) พร้อมเก็บบันทึกตำแหน่งใหม่เทียบกับเฉลี่ยเดิม
+            let indices = [0, 1, 2, 3];
+            shuffleArray(indices);
+            randomizedOptionsMap[currentQuestion - 1] = indices;
 
-        // 2. ทำการสุ่มสลับตำแหน่ง
-        shuffleArray(combinedOptions);
+            for (let i = 0; i < 4; i++) {
+                const originalIndex = indices[i];
+                const optBtn = document.getElementById(`opt${i}`);
+                optBtn.innerHTML = `${String.fromCharCode(3585 + i)}. ${qObj.options[originalIndex]}`;
+                optBtn.disabled = false;
+                optBtn.classList.remove('correct', 'wrong');
+            }
 
-        // 3. นำคำนำหน้า ก. ข. ค. ง. ใส่กลับเข้าไปตามลำดับใหม่ที่ถูกสุ่ม
-        const prefixes = ["ก. ", "ข. ", "ค. ", "ง. "];
-        qData.shuffledOptions = combinedOptions.map((item, i) => prefixes[i] + item.text);
-        qData.shuffledExplanations = combinedOptions.map(item => item.explanation);
-        qData.shuffledCorrectIndex = combinedOptions.findIndex(item => item.isCorrect); // หา index ใหม่ของข้อที่ถูก
-    }
+            const explanationBox = document.getElementById('explanation-box');
+            explanationBox.style.display = 'none';
 
-    // แสดงผลข้อความโจทย์
-    document.getElementById('question-text').innerText = qData.q;
+            if (userAnswers[currentQuestion - 1] !== null) {
+                highlightAnswer(userAnswers[currentQuestion - 1]);
+            }
 
-    // แสดงผลปุ่มตัวเลือกทั้ง 4 ข้อ
-    for (let i = 0; i < 4; i++) {
-        const btn = document.getElementById(`opt${i}`);
-        btn.innerText = qData.shuffledOptions[i];
-        btn.className = 'option-btn';
-        btn.disabled = false;
-    }
-
-    document.getElementById('prev-btn').disabled = (currentQuestion === 1);
-    document.getElementById('explanation-box').style.display = 'none';
-
-    // ถ้าเคยตอบข้อนี้ไปแล้ว ให้ดึงคำตอบเดิมมาแสดงผล
-    const savedAns = userAnswers[currentQuestion - 1];
-    if (savedAns !== null) {
-        renderAnswerState(savedAns, qData.shuffledCorrectIndex, qData.shuffledExplanations);
-    }
-
-    updateScoreDisplay();
-
-    if (window.MathJax) {
-        MathJax.typesetPromise();
-    }
-}
-
-        // ตรวจคำตอบ
-        function checkAnswer(selectedIndex) {
-            if (userAnswers[currentQuestion - 1] !== null) return;
-
-            userAnswers[currentQuestion - 1] = selectedIndex;
-            loadQuestion(currentQuestion);
+            document.getElementById('prev-btn').disabled = (currentQuestion === 1);
         }
 
-        // ข้อถัดไป
+        function checkAnswer(selectedDisplayIndex) {
+            if (userAnswers[currentQuestion - 1] !== null) return; // ตอบไปแล้วเปลี่ยนไม่ได้
+
+            const dataList = quizData[currentDifficulty];
+            const qObj = dataList[currentQuestion - 1];
+            const originalIndices = randomizedOptionsMap[currentQuestion - 1];
+            const selectedOriginalIndex = originalIndices[selectedDisplayIndex];
+
+            userAnswers[currentQuestion - 1] = selectedDisplayIndex;
+            highlightAnswer(selectedDisplayIndex);
+            document.getElementById('score-text').innerText = `คะแนน: ${calculateScore()} / 20`;
+        }
+
+        function highlightAnswer(selectedDisplayIndex) {
+            const dataList = quizData[currentDifficulty];
+            const qObj = dataList[currentDifficulty === 'easy' ? currentQuestion - 1 : currentQuestion - 1]; // ป้องกัน index เพี้ยน
+            // ดึงข้อความอธิบายตามข้อที่ถูกต้องจริง
+            const currentQObj = quizData[currentDifficulty][currentQuestion - 1];
+            const originalIndices = randomizedOptionsMap[currentQuestion - 1];
+            const selectedOriginalIndex = originalIndices[selectedDisplayIndex];
+
+            const isCorrect = (selectedOriginalIndex === currentQObj.correct);
+
+            for (let i = 0; i < 4; i++) {
+                const btn = document.getElementById(`opt${i}`);
+                btn.disabled = true;
+                const origIdx = originalIndices[i];
+                if (origIdx === currentQObj.correct) {
+                    btn.classList.add('correct');
+                } else if (i === selectedDisplayIndex && !isCorrect) {
+                    btn.classList.add('wrong');
+                }
+            }
+
+            const explanationBox = document.getElementById('explanation-box');
+            explanationBox.style.display = 'block';
+            if (isCorrect) {
+                explanationBox.className = 'explanation-box correct-bg';
+                explanationBox.innerHTML = currentQObj.explanations[currentQObj.correct];
+            } else {
+                explanationBox.className = 'explanation-box wrong-bg';
+                explanationBox.innerHTML = currentQObj.explanations[selectedOriginalIndex];
+            }
+        }
+
+        function calculateScore() {
+            let score = 0;
+            const dataList = quizData[currentDifficulty];
+            for (let i = 0; i < 20; i++) {
+                if (userAnswers[i] !== null) {
+                    const originalIndices = randomizedOptionsMap[i];
+                    if (originalIndices && originalIndices[userAnswers[i]] === dataList[i].correct) {
+                        score++;
+                    }
+                }
+            }
+            return score;
+        }
+
         function nextQuestion() {
             if (currentQuestion < 20) {
                 currentQuestion++;
-                loadQuestion(currentQuestion);
+                loadQuestion();
             } else {
                 showFinalSummary();
             }
         }
 
-        // ข้อก่อนหน้า
         function prevQuestion() {
             if (currentQuestion > 1) {
                 currentQuestion--;
-                loadQuestion(currentQuestion);
+                loadQuestion();
             }
         }
 
-        // อัปเดตการแสดงผลคะแนนในชุดปัจจุบัน
-        function updateScoreDisplay() {
-            let score = 0;
-            userAnswers.forEach((ans, idx) => {
-                if (ans !== null && ans === quizData[currentDifficulty][idx].correct) {
-                    score++;
-                }
-            });
-            document.getElementById('score-text').innerText = `ข้อ ${currentQuestion} / 20 | คะแนน: ${score}`;
+        function resetQuiz() {
+            currentQuestion = 1;
+            userAnswers = Array(20).fill(null);
+            randomizedOptionsMap = {};
+            document.getElementById('quiz-body').style.display = 'block';
+            document.getElementById('final-summary').style.display = 'none';
+            loadQuestion();
         }
 
-        // แสดงหน้าสรุปคะแนนหลังทำครบ 20 ข้อ
         function showFinalSummary() {
             document.getElementById('quiz-body').style.display = 'none';
-            document.getElementById('final-summary').style.display = 'block';
+            const finalSummary = document.getElementById('final-summary');
+            finalSummary.style.display = 'block';
 
-            let score = 0;
-            userAnswers.forEach((ans, idx) => {
-                if (ans !== null && ans === quizData[currentDifficulty][idx].correct) {
-                    score++;
-                }
-            });
-
-            const diffNames = { easy: "🔵 ง่าย", medium: "🟡 ปานกลาง", hard: "🔴 ยาก" };
-            const percent = ((score / 20) * 100).toFixed(1);
+            const score = calculateScore();
+            const diffText = currentDifficulty === 'easy' ? 'ระดับง่าย' : (currentDifficulty === 'medium' ? 'ระดับปานกลาง' : 'ระดับยาก');
             
-            document.getElementById('summary-diff-text').innerText = `สรุปคะแนนระดับ: ${diffNames[currentDifficulty]}`;
+            document.getElementById('summary-diff-text').innerText = `สรุปคะแนนรวมของคุณ (${diffText})`;
             document.getElementById('final-score-text').innerText = `${score} / 20`;
-            document.getElementById('score-percentage-text').innerText = `คิดเป็น ${percent}%`;
+            
+            const percentage = (score / 20) * 100;
+            let message = '';
+            if (percentage >= 80) message = '🎉 ยอดเยี่ยมมาก! คุณมีความเข้าใจในวิชาตรรกศาสตร์เป็นอย่างดี';
+            else if (percentage >= 50) message = '👍 ทำได้ดี! ลองทบทวนเนื้อหาเพิ่มเติมอีกนิดเพื่อความแม่นยำ';
+            else message = '💪 พยายามอีกนิดนะ! ลองกลับไปอ่านสรุปเนื้อหาแล้วทำใหม่อีกรอบได้เลย';
+            
+            document.getElementById('score-percentage-text').innerText = message;
         }
 
-     function resetQuiz() {
-    currentQuestion = 1;
-    userAnswers = Array(20).fill(null);
-    
-    // 💡 ล้างค่าตัวเลือกที่เคยสุ่มไว้ เพื่อให้สุ่มใหม่ทุกครั้งที่กดรีเซ็ต
-    for (let key in quizData) {
-        quizData[key].forEach(q => {
-            delete q.shuffledOptions;
-            delete q.shuffledExplanations;
-            delete q.shuffledCorrectIndex;
-        });
-    }
-
-    document.getElementById('final-summary').style.display = 'none';
-    document.getElementById('quiz-body').style.display = 'block';
-    loadQuestion();
-}
-
         // ----------------------------------------------------
-        // 4. ระบบกระดาษทดเลข (Scratchpad Canvas Engine)
+        // 4. ระบบกระดาษทดเลข (Scratchpad Canvas)
         // ----------------------------------------------------
+        const scratchpadArea = document.getElementById('scratchpad-area');
         const canvas = document.getElementById('scratchpad');
-        const ctx = canvas ? canvas.getContext('2d') : null;
+        const ctx = canvas.getContext('2d');
         let isDrawing = false;
 
         function toggleScratchpad() {
-            const area = document.getElementById('scratchpad-area');
-            if (area.style.display === 'block') {
-                area.style.display = 'none';
+            if (scratchpadArea.style.display === 'block') {
+                scratchpadArea.style.display = 'none';
             } else {
-                area.style.display = 'block';
+                scratchpadArea.style.display = 'block';
                 resizeCanvas();
             }
         }
 
         function resizeCanvas() {
-            if (!canvas) return;
             canvas.width = canvas.parentElement.clientWidth - 30;
             canvas.height = 200;
             ctx.strokeStyle = '#1e3c72';
             ctx.lineWidth = 2;
             ctx.lineCap = 'round';
-        }
-
-        function startDrawing(e) {
-            isDrawing = true;
-            draw(e);
-        }
-
-        function stopDrawing() {
-            isDrawing = false;
-            ctx.beginPath();
-        }
-
-        function draw(e) {
-            if (!isDrawing) return;
-            const rect = canvas.getBoundingClientRect();
-            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-
-            ctx.lineTo(clientX - rect.left, clientY - rect.top);
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo(clientX - rect.left, clientY - rect.top);
+            ctx.lineJoin = 'round';
         }
 
         function clearScratchpad() {
-            if (ctx && canvas) {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-            }
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
         }
 
-        if (canvas) {
-            canvas.addEventListener('mousedown', startDrawing);
-            canvas.addEventListener('mouseup', stopDrawing);
-            canvas.addEventListener('mousemove', draw);
-
-            canvas.addEventListener('touchstart', startDrawing);
-            canvas.addEventListener('touchend', stopDrawing);
-            canvas.addEventListener('touchmove', draw);
+        function getMousePos(e) {
+            const rect = canvas.getBoundingClientRect();
+            return {
+                x: e.clientX - rect.left,
+                y: e.clientY - rect.top
+            };
         }
 
-        window.addEventListener('resize', resizeCanvas);
+        function getTouchPos(e) {
+            const rect = canvas.getBoundingClientRect();
+            return {
+                x: e.touches[0].clientX - rect.left,
+                y: e.touches[0].clientY - rect.top
+            };
+        }
 
-        // เริ่มต้นโหลดข้อที่ 1 เมื่อเปิดหน้าเว็บ
-        window.addEventListener('DOMContentLoaded', () => {
-            loadQuestion(1);
+        canvas.addEventListener('mousedown', (e) => {
+            isDrawing = true;
+            const pos = getMousePos(e);
+            ctx.beginPath();
+            ctx.moveTo(pos.x, pos.y);
         });
+
+        canvas.addEventListener('mousemove', (e) => {
+            if (!isDrawing) return;
+            const pos = getMousePos(e);
+            ctx.lineTo(pos.x, pos.y);
+            ctx.stroke();
+        });
+
+        canvas.addEventListener('mouseup', () => isDrawing = false);
+        canvas.addEventListener('mouseleave', () => isDrawing = false);
+
+        canvas.addEventListener('touchstart', (e) => {
+            isDrawing = true;
+            const pos = getTouchPos(e);
+            ctx.beginPath();
+            ctx.moveTo(pos.x, pos.y);
+            e.preventDefault();
+        });
+
+        canvas.addEventListener('touchmove', (e) => {
+            if (!isDrawing) return;
+            const pos = getTouchPos(e);
+            ctx.lineTo(pos.x, pos.y);
+            ctx.stroke();
+            e.preventDefault();
+        });
+
+        canvas.addEventListener('touchend', () => isDrawing = false);
+
+        // เริ่มโหลดข้อสอบข้อแรกเมื่อเปิดหน้าเว็บ
+        window.onload = function() {
+            loadQuestion();
+        };
     </script>
+</body>
+</html>
