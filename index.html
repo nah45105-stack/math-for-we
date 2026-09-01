@@ -740,7 +740,7 @@
             </div>
         </section>
 
-<!-- หน้าที่ 3: การสมมูลกัน รวบรวมกฎ เปลี่ยนตัวอย่างโจทย์เป็นแบบตรวจสอบความสมมูล และนำตัวอย่างเดิมออก -->
+<!-- หน้าที่ 3: การสมมูลกัน (Logical Equivalence) ปรับแต่งให้ปลอดภัยบนมือถือ -->
         <section id="page3" class="page">
             <h2>การสมมูลกัน (Logical Equivalence) และกฎของตัวเชื่อม</h2>
             <p>ประพจน์สองประพจน์จะ <b>สมมูลกัน (ใช้สัญลักษณ์ $\equiv$)</b> ก็ต่อเมื่อ ประพจน์ทั้งสองมี <b>ค่าความจริงเหมือนกันทุกกรณี</b> กรณีต่อกรณี</p>
@@ -748,178 +748,122 @@
 
             <h3 style="margin-top: 25px; margin-bottom: 15px; color: #2c3e50;">🔑 กฎการสมมูลและคุณสมบัติของตัวเชื่อม (แยกตามประเภท)</h3>
             
-            <!-- กล่องแสดงกฎแบ่งตามหมวดหมู่สี -->
-            <div style="display: flex; flex-direction: column; gap: 15px;">
+            <!-- กล่องแสดงกฎแบ่งตามหมวดหมู่สี (ครอบด้วย overflow-x เพื่อกันล้นบนจอแคบ) -->
+            <div style="display: flex; flex-direction: column; gap: 15px; width: 100%; box-sizing: border-box;">
                 
-                <!-- หมวดที่ 1: ตัวเชื่อม และ และ หรือ (โทนสีฟ้า) -->
-                <div style="background-color: #eef6ff; border-left: 5px solid #3498db; padding: 15px; border-radius: 6px;">
+                <!-- หมวดที่ 1: ตัวเชื่อม และ และ หรือ -->
+                <div style="background-color: #eef6ff; border-left: 5px solid #3498db; padding: 15px; border-radius: 6px; overflow-x: auto;">
                     <h4 style="margin: 0 0 10px 0; color: #2980b9;">🔷 กลุ่มตัวเชื่อม และ ($\land$) และ หรือ ($\lor$)</h4>
-                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
-                        <li style="margin-bottom: 6px;"><b>กฎการสลับที่ (Commutative Law):</b> $p \land q \equiv q \land p$ และ $p \lor q \equiv q \lor p$ (ใช้กับ $\land, \lor, \leftrightarrow$)</li>
-                        <li style="margin-bottom: 6px;"><b>กฎการเปลี่ยนกลุ่ม (Associative Law):</b> $(p \land q) \land r \equiv p \land (q \land r)$ (ใช้กับ $\land, \lor, \leftrightarrow$)</li>
-                        <li style="margin-bottom: 6px;"><b>กฎการแจกแจง (Distributive Law):</b> $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$ (ใช้สลับข้ามระหว่าง $\land$ และ $\lor$)</li>
-                        <li><b>กฎซ้ำเดิม (Idempotent Law):</b> $p \land p \equiv p$ และ $p \lor p \equiv p$ (ใช้กับ $\land, \lor$)</li>
+                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8; word-break: break-word;">
+                        <li style="margin-bottom: 6px;"><b>กฎการสลับที่:</b> $p \land q \equiv q \land p$ และ $p \lor q \equiv q \lor p$</li>
+                        <li style="margin-bottom: 6px;"><b>กฎการเปลี่ยนกลุ่ม:</b> $(p \land q) \land r \equiv p \land (q \land r)$</li>
+                        <li style="margin-bottom: 6px;"><b>กฎการแจกแจง:</b> $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$</li>
+                        <li><b>กฎซ้ำเดิม:</b> $p \land p \equiv p$ และ $p \lor p \equiv p$</li>
                     </ul>
                 </div>
 
-                <!-- หมวดที่ 2: ตัวเชื่อม ถ้า...แล้ว (โทนสีส้ม) -->
-                <div style="background-color: #fff8ec; border-left: 5px solid #e67e22; padding: 15px; border-radius: 6px;">
+                <!-- หมวดที่ 2: ตัวเชื่อม ถ้า...แล้ว -->
+                <div style="background-color: #fff8ec; border-left: 5px solid #e67e22; padding: 15px; border-radius: 6px; overflow-x: auto;">
                     <h4 style="margin: 0 0 10px 0; color: #d35400;">🟠 กลุ่มตัวเชื่อม ถ้า...แล้ว ($\rightarrow$)</h4>
-                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
+                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8; word-break: break-word;">
                         <li style="margin-bottom: 6px;"><b>กฎการเปลี่ยนรูปเงื่อนไข:</b> $p \rightarrow q \equiv \sim p \lor q$</li>
-                        <li><b>กฎการแย้งสลับที่ (Contraposition):</b> $p \rightarrow q \equiv \sim q \rightarrow \sim p$ (ใช้กับ $\rightarrow, \leftrightarrow$)</li>
+                        <li><b>กฎการแย้งสลับที่:</b> $p \rightarrow q \equiv \sim q \rightarrow \sim p$</li>
                     </ul>
                 </div>
 
-                <!-- หมวดที่ 3: ตัวเชื่อม ก็ต่อเมื่อ (โทนสีม่วง) -->
-                <div style="background-color: #f5eef8; border-left: 5px solid #8e44ad; padding: 15px; border-radius: 6px;">
+                <!-- หมวดที่ 3: ตัวเชื่อม ก็ต่อเมื่อ -->
+                <div style="background-color: #f5eef8; border-left: 5px solid #8e44ad; padding: 15px; border-radius: 6px; overflow-x: auto;">
                     <h4 style="margin: 0 0 10px 0; color: #6c3483;">🟣 กลุ่มตัวเชื่อม ก็ต่อเมื่อ ($\leftrightarrow$)</h4>
-                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
+                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8; word-break: break-word;">
                         <li><b>กฎการเปลี่ยนรูปก็ต่อเมื่อ:</b> $p \leftrightarrow q \equiv (p \rightarrow q) \land (q \rightarrow p)$</li>
                     </ul>
                 </div>
 
-                <!-- หมวดที่ 4: ตัวเชื่อม นิเสธ (โทนสีแดง) -->
-                <div style="background-color: #fdf2e9; border-left: 5px solid #e74c3c; padding: 15px; border-radius: 6px;">
+                <!-- หมวดที่ 4: ตัวเชื่อม นิเสธ -->
+                <div style="background-color: #fdf2e9; border-left: 5px solid #e74c3c; padding: 15px; border-radius: 6px; overflow-x: auto;">
                     <h4 style="margin: 0 0 10px 0; color: #c0392b;">🔴 กลุ่มตัวเชื่อม นิเสธ ($\sim$)</h4>
-                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
-                        <li style="margin-bottom: 6px;"><b>กฎนิเสธสองชั้น (Double Negation):</b> $\sim(\sim p) \equiv p$</li>
-                        <li><b>กฎของเดอมอร์แกน (De Morgan's Laws):</b> $\sim(p \land q) \equiv \sim p \lor \sim q$ และ $\sim(p \lor q) \equiv \sim p \land \sim q$</li>
+                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8; word-break: break-word;">
+                        <li style="margin-bottom: 6px;"><b>กฎนิเสธสองชั้น:</b> $\sim(\sim p) \equiv p$</li>
+                        <li><b>กฎของเดอมอร์แกน:</b> $\sim(p \land q) \equiv \sim p \lor \sim q$</li>
                     </ul>
                 </div>
 
             </div>
 
-            <!-- กล่องตัวอย่างโจทย์ตรวจสอบความสมมูล (ประพจน์นี้สมมูลกับประพจน์นี้ไหม) รวม 5 ข้อ -->
-            <div style="background: #fff0f3; border: 1px solid #ff416c; padding: 20px; border-radius: 8px; margin-top: 25px;">
-                <h4 style="color: #d62850; margin-top: 0; font-size: 1.2rem;">💡 ตัวอย่างโจทย์ตรวจสอบความสมมูล (ประพจน์นี้สมมูลกันหรือไม่?)</h4>
+            <!-- กล่องตัวอย่างโจทย์ตรวจสอบความสมมูล -->
+            <div style="background: #fff0f3; border: 1px solid #ff416c; padding: 15px; border-radius: 8px; margin-top: 25px; overflow-x: auto; box-sizing: border-box;">
+                <h4 style="color: #d62850; margin-top: 0; font-size: 1.1rem;">💡 ตัวอย่างโจทย์ตรวจสอบความสมมูล</h4>
                 
-                <!-- โจทย์ข้อที่ 1 -->
-                <div style="margin-bottom: 15px; border-bottom: 1px dashed #ffb3c1; padding-bottom: 12px;">
-                    <p style="margin: 0 0 5px 0;"><b>ข้อ 1:</b> ประพจน์ $\sim(p \rightarrow q)$ สมมูลกับประพจน์ $p \land \sim q$ หรือไม่?</p>
-                    <p style="margin: 0; color: #555; padding-left: 15px; font-size: 0.95rem;">
-                        <i>แนวคิด:</i> แปลง $\sim(p \rightarrow q)$ โดยเปลี่ยนในวงเล็บเป็น $\sim(\sim p \lor q)$ แล้วใช้กฎเดอมอร์แกนกระจาย $\sim$ จะได้ $\sim(\sim p) \land \sim q \equiv p \land \sim q$<br>
-                        <b>สรุป: สมมูลกัน</b>
-                    </p>
+                <div style="margin-bottom: 12px; border-bottom: 1px dashed #ffb3c1; padding-bottom: 10px; word-break: break-word;">
+                    <p style="margin: 0 0 4px 0;"><b>ข้อ 1:</b> $\sim(p \rightarrow q)$ สมมูลกับ $p \land \sim q$ หรือไม่?</p>
+                    <p style="margin: 0; color: #555; font-size: 0.9rem;"><i>สรุป:</i> <b>สมมูลกัน</b></p>
                 </div>
-
-                <!-- โจทย์ข้อที่ 2 -->
-                <div style="margin-bottom: 15px; border-bottom: 1px dashed #ffb3c1; padding-bottom: 12px;">
-                    <p style="margin: 0 0 5px 0;"><b>ข้อ 2:</b> ประพจน์ $p \rightarrow q$ สมมูลกับประพจน์ $\sim p \lor q$ หรือไม่?</p>
-                    <p style="margin: 0; color: #555; padding-left: 15px; font-size: 0.95rem;">
-                        <i>แนวคิด:</i> เป็นกฎการเปลี่ยนรูปเงื่อนไขพื้นฐาน ($p \rightarrow q \equiv \sim p \lor q$) โดยตรง<br>
-                        <b>สรุป: สมมูลกัน</b>
-                    </p>
+                <div style="margin-bottom: 12px; border-bottom: 1px dashed #ffb3c1; padding-bottom: 10px; word-break: break-word;">
+                    <p style="margin: 0 0 4px 0;"><b>ข้อ 2:</b> $p \rightarrow q$ สมมูลกับ $\sim p \lor q$ หรือไม่?</p>
+                    <p style="margin: 0; color: #555; font-size: 0.9rem;"><i>สรุป:</i> <b>สมมูลกัน</b></p>
                 </div>
-
-                <!-- โจทย์ข้อที่ 3 -->
-                <div style="margin-bottom: 15px; border-bottom: 1px dashed #ffb3c1; padding-bottom: 12px;">
-                    <p style="margin: 0 0 5px 0;"><b>ข้อ 3:</b> ประพจน์ $\sim(p \lor q)$ สมมูลกับประพจน์ $\sim p \lor \sim q$ หรือไม่?</p>
-                    <p style="margin: 0; color: #555; padding-left: 15px; font-size: 0.95rem;">
-                        <i>แนวคิด:</i> ตามกฎเดอมอร์แกน $\sim(p \lor q) \equiv \sim p \land \sim q$ (เครื่องหมายเชื่อมต้องเปลี่ยนจาก $\lor$ เป็น $\land$) แต่โจทย์ให้มาเป็น $\sim p \lor \sim q$<br>
-                        <b>สรุป: ไม่สมมูลกัน</b>
-                    </p>
+                <div style="margin-bottom: 12px; border-bottom: 1px dashed #ffb3c1; padding-bottom: 10px; word-break: break-word;">
+                    <p style="margin: 0 0 4px 0;"><b>ข้อ 3:</b> $\sim(p \lor q)$ สมมูลกับ $\sim p \lor \sim q$ หรือไม่?</p>
+                    <p style="margin: 0; color: #555; font-size: 0.9rem;"><i>สรุป:</i> <b>ไม่สมมูลกัน</b></p>
                 </div>
-
-                <!-- โจทย์ข้อที่ 4 -->
-                <div style="margin-bottom: 15px; border-bottom: 1px dashed #ffb3c1; padding-bottom: 12px;">
-                    <p style="margin: 0 0 5px 0;"><b>ข้อ 4:</b> ประพจน์ $p \rightarrow q$ สมมูลกับประพจน์ $\sim q \rightarrow \sim p$ หรือไม่?</p>
-                    <p style="margin: 0; color: #555; padding-left: 15px; font-size: 0.95rem;">
-                        <i>แนวคิด:</i> เป็นไปตามกฎการแย้งสลับที่ (Contraposition) ซึ่ง $p \rightarrow q \equiv \sim q \rightarrow \sim p$ เสมอ<br>
-                        <b>สรุป: สมมูลกัน</b>
-                    </p>
+                <div style="margin-bottom: 12px; border-bottom: 1px dashed #ffb3c1; padding-bottom: 10px; word-break: break-word;">
+                    <p style="margin: 0 0 4px 0;"><b>ข้อ 4:</b> $p \rightarrow q$ สมมูลกับ $\sim q \rightarrow \sim p$ หรือไม่?</p>
+                    <p style="margin: 0; color: #555; font-size: 0.9rem;"><i>สรุป:</i> <b>สมมูลกัน</b></p>
                 </div>
-
-                <!-- โจทย์ข้อที่ 5 -->
-                <div>
-                    <p style="margin: 0 0 5px 0;"><b>ข้อ 5:</b> ประพจน์ $p \leftrightarrow q$ สมมูลกับประพจน์ $(p \rightarrow q) \land (q \rightarrow p)$ หรือไม่?</p>
-                    <p style="margin: 0; color: #555; padding-left: 15px; font-size: 0.95rem;">
-                        <i>แนวคิด:</i> เป็นกฎการเปลี่ยนรูปตัวเชื่อม "ก็ต่อเมื่อ" เป็นเงื่อนไขไป-กลับเชื่อมด้วย $\land$<br>
-                        <b>สรุป: สมมูลกัน</b>
-                    </p>
+                <div style="word-break: break-word;">
+                    <p style="margin: 0 0 4px 0;"><b>ข้อ 5:</b> $p \leftrightarrow q$ สมมูลกับ $(p \rightarrow q) \land (q \rightarrow p)$ หรือไม่?</p>
+                    <p style="margin: 0; color: #555; font-size: 0.9rem;"><i>สรุป:</i> <b>สมมูลกัน</b></p>
                 </div>
             </div>
         </section>
 
-            </div>
-        <section id="page4" class="page">
-            <h2>การอ้างเหตุผล (Logical Argument)</h2>
-            <p>การอ้างเหตุผลประกอบด้วยส่วนสำคัญ 2 ส่วน คือ:</p>
-            <ol style="padding-left: 20px; margin: 10px 0;">
-                <li><b>เหตุ (Premises):</b> $H_1, H_2, H_3, ..., H_n$</li>
-                <li><b>ผล (Conclusion):</b> $C$</li>
-            </ol>
-            <p>การอ้างเหตุผลจะ <b>"สมเหตุสมผล" (Valid)</b> ก็ต่อเมื่อ เมื่อเรานำเหตุทุกข้อมาเชื่อมด้วย "และ" ($\land$) แล้วเชื่อมไปยังผลด้วย "ถ้า...แล้ว" ($\rightarrow$) แล้วรูปแบบประพจน์นั้นเป็น <b>สัจนิรันดร์</b></p>
-
-            <div style="background-color: #f8f9fa; border-left: 4px solid #2a5298; padding: 15px; margin: 15px 0; border-radius: 4px;">
-                <h3 style="color: #2a5298; margin-bottom: 8px;">⚙️ ขั้นตอนการตรวจสอบความสมเหตุสมผล</h3>
-                <p><b>วิธีสั้น (การหาข้อขัดแย้ง):</b></p>
-                <ol style="padding-left: 20px; line-height: 1.8;">
-                    <li>ให้ <b>เหตุทุกข้อมีค่าความจริงเป็น จริง (T)</b></li>
-                    <li>ให้ <b>ผลลัพธ์มีค่าความจริงเป็น เท็จ (F)</b></li>
-                    <li>นำค่าความจริงจากผล ($F$) และเหตุพิสูจน์ย้อนกลับไปหาประพจน์ย่อย</li>
-                    <li>หากเกิด <b>ข้อขัดแย้ง</b> $\rightarrow$ สรุปว่า <b>สมเหตุสมผล (Valid)</b></li>
-                    <li>หาก <b>ไม่เกิดข้อขัดแย้ง</b> (กำหนดให้เหตุเป็นจริงทุกข้อและผลเป็นเท็จได้สำเร็จ) $\rightarrow$ สรุปว่า <b>ไม่สมเหตุสมผล (Invalid)</b></li>
-                </ol>
-            </div>
-
-            <div style="background: #eef4ff; border: 1px solid #1e3c72; padding: 15px; border-radius: 8px; margin-top: 15px;">
-                <h4 style="color: #1e3c72;">💡 ตัวอย่างการพิสูจน์การอ้างเหตุผล</h4>
-                <p><b>กำหนดให้:</b></p>
-                <p>เหตุ 1: $p \rightarrow q$</p>
-                <p>เหตุ 2: $\sim q$</p>
-                <p>ผล: $\sim p$</p>
-                <p><b>ตรวจสอบ:</b></p>
-                <p>1. กำหนดให้ผลเป็นเท็จ: $\sim p \equiv \text{F} \Rightarrow p \equiv \text{T}$</p>
-                <p>2. กำหนดให้เหตุเป็นจริงทุกข้อ:</p>
-                <p style="padding-left: 20px;">- เหตุ 2: $\sim q \equiv \text{T} \Rightarrow q \equiv \text{F}$</p>
-                <p style="padding-left: 20px;">- เหตุ 1: $p \rightarrow q \equiv \text{T}$</p>
-                <p>3. แทนค่า $p=\text{T}$ และ $q=\text{F}$ ในเหตุ 1 จะได้ $\text{T} \rightarrow \text{F} \equiv \text{F}$ ซึ่งขัดแย้งกับที่ตั้งไว้ว่าเหตุ 1 ต้องเป็น $\text{T}$</p>
-                <p><b>สรุป:</b> เกิดข้อขัดแย้ง การอ้างเหตุผลนี้จึง <b>สมเหตุสมผล (Valid)</b></p>
-            </div>
-        </section>
-
+       <!-- หน้าตัวบ่งปริมาณ (Quantifiers) แบบ Responsive ป้องกันล้นจอและซูมออก -->
         <section id="page6" class="page">
             <h2>ตัวบ่งปริมาณ (Quantifiers)</h2>
             <p>ตัวบ่งปริมาณคือสัญลักษณ์ที่ใช้ระบุจำนวนสมาชิกในเอกภพสัมพัทธ์ ($U$) ที่ทำให้ประโยคเปิด $P(x)$ มีค่าความจริง โดยแบ่งออกเป็น 2 ประเภทหลัก:</p>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0;">
-                <div style="background: #f0f8ff; padding: 15px; border-radius: 8px; border: 1px solid #87ceeb;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; width: 100%; box-sizing: border-box;">
+                <div style="background: #f0f8ff; padding: 15px; border-radius: 8px; border: 1px solid #87ceeb; overflow-x: auto; box-sizing: border-box;">
                     <h3 style="color: #1e3c72; border-bottom: 2px solid #87ceeb; padding-bottom: 5px;">1. $\forall x$ (For All - สำหรับ...ทุกตัว)</h3>
-                    <ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
-                        <li><b>เป็นจริง (T):</b> เมื่อสมาชิก **ทุกตัว** ใน $U$ นำไปแทนใน $P(x)$ แล้วทำให้ได้ข้อความจริงทั้งหมด</li>
-                        <li><b>เป็นเท็จ (F):</b> ขอเพียงมีสมาชิก **อย่างน้อย 1 ตัว** ใน $U$ ที่ทำให้ $P(x)$ เป็นเท็จ</li>
+                    <ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6; word-break: break-word;">
+                        <li><b>เป็นจริง (T):</b> เมื่อสมาชิก <b>ทุกตัว</b> ใน $U$ นำไปแทนใน $P(x)$ แล้วทำให้ได้ข้อความจริงทั้งหมด</li>
+                        <li><b>เป็นเท็จ (F):</b> ขอเพียงมีสมาชิก <b>อย่างน้อย 1 ตัว</b> ใน $U$ ที่ทำให้ $P(x)$ เป็นเท็จ</li>
                     </ul>
                 </div>
-                <div style="background: #fff5f5; padding: 15px; border-radius: 8px; border: 1px solid #ff416c;">
+                <div style="background: #fff5f5; padding: 15px; border-radius: 8px; border: 1px solid #ff416c; overflow-x: auto; box-sizing: border-box;">
                     <h3 style="color: #ff416c; border-bottom: 2px solid #ff416c; padding-bottom: 5px;">2. $\exists x$ (For Some - สำหรับ...บางตัว)</h3>
-                    <ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
-                        <li><b>เป็นจริง (T):</b> ขอเพียงมีสมาชิก **อย่างน้อย 1 ตัว** ใน $U$ ที่ทำให้ $P(x)$ เป็นจริง</li>
-                        <li><b>เป็นเท็จ (F):</b> เมื่อสมาชิก **ทุกตัว** ใน $U$ นำไปแทนแล้วทำให้ $P(x)$ เป็นเท็จทั้งหมด</li>
+                    <ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6; word-break: break-word;">
+                        <li><b>เป็นจริง (T):</b> ขอเพียงมีสมาชิก <b>อย่างน้อย 1 ตัว</b> ใน $U$ ที่ทำให้ $P(x)$ เป็นจริง</li>
+                        <li><b>เป็นเท็จ (F):</b> เมื่อสมาชิก <b>ทุกตัว</b> ใน $U$ นำไปแทนแล้วทำให้ $P(x)$ เป็นเท็จทั้งหมด</li>
                     </ul>
                 </div>
             </div>
 
-            <div style="background-color: #f8f9fa; border-left: 4px solid #ff9800; padding: 15px; margin: 15px 0; border-radius: 4px;">
+            <div style="background-color: #f8f9fa; border-left: 4px solid #ff9800; padding: 15px; margin: 15px 0; border-radius: 4px; overflow-x: auto; box-sizing: border-box;">
                 <h3 style="color: #e68a00; margin-bottom: 8px;">🔄 นิเสธของตัวบ่งปริมาณ (Negation of Quantifiers)</h3>
                 <p>การหานิเสธของประโยคที่มีตัวบ่งปริมาณ ให้สลับตัวบ่งปริมาณ ($\forall \leftrightarrow \exists$) และใส่นิเสธเข้าที่ประโยคเปิด $P(x)$ ด้านใน:</p>
-                <ul style="padding-left: 20px; line-height: 1.8;">
+                <ul style="padding-left: 20px; line-height: 1.8; word-break: break-word;">
                     <li>$\sim[\forall x [P(x)]] \equiv \exists x [\sim P(x)]$</li>
                     <li>$\sim[\exists x [P(x)]] \equiv \forall x [\sim P(x)]$</li>
                     <li>$\sim[\forall x [P(x) \rightarrow Q(x)]] \equiv \exists x [P(x) \land \sim Q(x)]$</li>
                 </ul>
             </div>
 
-            <div style="background: #eef4ff; border: 1px solid #1e3c72; padding: 15px; border-radius: 8px; margin-top: 15px;">
-                <h4 style="color: #1e3c72;">💡 ตัวอย่างการหาค่าความจริงของตัวบ่งปริมาณ</h4>
+            <div style="background: #eef4ff; border: 1px solid #1e3c72; padding: 15px; border-radius: 8px; margin-top: 15px; overflow-x: auto; box-sizing: border-box;">
+                <h4 style="color: #1e3c72; margin-top: 0;">💡 ตัวอย่างการหาค่าความจริงของตัวบ่งปริมาณ</h4>
                 <p><b>กำหนดให้:</b> $U = \{-1, 0, 1, 2\}$</p>
-                <p><b>โจทย์ข้อ 1:</b> หาค่าความจริงของ $\exists x [x^2 = 4]$</p>
-                <p style="padding-left: 20px;">- ทดลองแทน $x = 2 \in U \rightarrow 2^2 = 4$ (เป็นจริง)</p>
-                <p style="padding-left: 20px;">- พบอย่างน้อย 1 ตัวที่ทำให้เป็นจริง $\Rightarrow$ <b>ตอบ: มีค่าความจริงเป็น จริง (T)</b></p>
                 
-                <p style="margin-top: 10px;"><b>โจทย์ข้อ 2:</b> หาค่าความจริงของ $\forall x [x + 1 > 0]$</p>
-                <p style="padding-left: 20px;">- ทดลองแทน $x = -1 \in U \rightarrow -1 + 1 = 0 > 0$ (เป็นเท็จ)</p>
-                <p style="padding-left: 20px;">- มี $x=-1$ ที่ทำให้ประพจน์เป็นเท็จ $\Rightarrow$ <b>ตอบ: มีค่าความจริงเป็น เท็จ (F)</b></p>
+                <div style="word-break: break-word; margin-bottom: 10px;">
+                    <p style="margin: 0 0 4px 0;"><b>โจทย์ข้อ 1:</b> หาค่าความจริงของ $\exists x [x^2 = 4]$</p>
+                    <p style="margin: 0; padding-left: 15px; color: #555; font-size: 0.95rem;">- ทดลองแทน $x = 2 \in U \rightarrow 2^2 = 4$ (เป็นจริง)</p>
+                    <p style="margin: 0; padding-left: 15px; color: #555; font-size: 0.95rem;">- พบอย่างน้อย 1 ตัวที่ทำให้เป็นจริง $\Rightarrow$ <b>ตอบ: มีค่าความจริงเป็น จริง (T)</b></p>
+                </div>
+
+                <div style="word-break: break-word;">
+                    <p style="margin: 0 0 4px 0;"><b>โจทย์ข้อ 2:</b> หาค่าความจริงของ $\forall x [x + 1 > 0]$</p>
+                    <p style="margin: 0; padding-left: 15px; color: #555; font-size: 0.95rem;">- ทดลองแทน $x = -1 \in U \rightarrow -1 + 1 = 0 > 0$ (เป็นเท็จ)</p>
+                    <p style="margin: 0; padding-left: 15px; color: #555; font-size: 0.95rem;">- มี $x=-1$ ที่ทำให้ประพจน์เป็นเท็จ $\Rightarrow$ <b>ตอบ: มีค่าความจริงเป็น เท็จ (F)</b></p>
+                </div>
             </div>
         </section>
 
