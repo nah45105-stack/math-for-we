@@ -633,6 +633,47 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+/* นำไปใส่ในส่วน <style> ของคุณเพื่อซ่อนปุ่มกากบาท, ซ่อนแถบเลื่อน แต่ยังใช้นิ้วปัดเลื่อนขึ้นลงได้ปกติ */
+.menu-container, .modal-menu, .sidebar {
+    max-height: 85vh;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    
+    /* ซ่อนแถบเลื่อนสำหรับ Firefox และ IE/Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* ซ่อนแถบเลื่อนสำหรับ Chrome, Safari และ Opera */
+.menu-container::-webkit-scrollbar, 
+.modal-menu::-webkit-scrollbar, 
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+.menu-container, .modal-menu, .sidebar {
+    position: fixed;      /* ล็อกตำแหน่งให้อยู่กับที่ */
+    top: 0;               /* ชิดขอบบนสุด */
+    left: 0;              /* ชิดขอบซ้ายสุด */
+    height: 100vh;        /* สูงเต็มจอพอดี */
+    max-height: 100vh;
+    width: 280px;         /* ปรับความกว้างของเมนูได้ตามต้องการ (เช่น 250px หรือ 300px) */
+    background: white;
+    z-index: 1000;        /* ให้อยู่ชั้นบนสุดไม่โดนเนื้อหาอื่นทับ */
+    overflow-y: auto !important; 
+    -webkit-overflow-scrolling: touch; 
+    
+    /* ซ่อนแถบเลื่อน (Scrollbar) แต่ยังใช้นิ้วปัดเลื่อนขึ้นลงได้ปกติ */
+    scrollbar-width: none;  
+    -ms-overflow-style: none;  
+    box-sizing: border-box;
+}
+
+/* ซ่อนแถบเลื่อนสำหรับ Chrome, Safari และ Opera */
+.menu-container::-webkit-scrollbar, 
+.modal-menu::-webkit-scrollbar, 
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
     </style>
     <script>
   window.MathJax = {
@@ -680,16 +721,12 @@
     </div>
 
     <nav class="sidebar" id="sidebar">
-        <button class="close-btn" onclick="toggleMenu()" title="ปิดเมนู">&times;</button>
         <button class="nav-btn active" onclick="showPage('page1', this)">หน้าแรก (Home)</button>
         <button class="nav-btn" onclick="showPage('page2', this)">สัจนิรันดร์ (Tautology)</button>
         <button class="nav-btn" onclick="showPage('page3', this)">สมมูล (Equivalent)</button>
         <button class="nav-btn" onclick="showPage('page4', this)">การอ้างเหตุผล (Logical Argument)</button>
         <button class="nav-btn" onclick="showPage('page6', this)">ตัวบ่งปริมาณ (Quantifier)</button>
         <button class="nav-btn" onclick="showPage('page5', this)">แบบทดสอบ (Quiz)</button>
-        <div class="menu-container" style="max-height: 100vh; overflow-y: auto; -webkit-overflow-scrolling: touch;">
-    <!-- ปุ่มเมนูต่างๆ อยู่ข้างในนี้ -->
-</div>
     </nav>
 
     <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
