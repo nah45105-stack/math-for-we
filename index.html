@@ -740,176 +740,108 @@
             </div>
         </section>
 
+<!-- หน้าที่ 3: การสมมูลกัน รวบรวมกฎ เปลี่ยนตัวอย่างโจทย์เป็นแบบตรวจสอบความสมมูล และนำตัวอย่างเดิมออก -->
         <section id="page3" class="page">
-            <h2>การสมมูลกัน (Logical Equivalence)</h2>
+            <h2>การสมมูลกัน (Logical Equivalence) และกฎของตัวเชื่อม</h2>
             <p>ประพจน์สองประพจน์จะ <b>สมมูลกัน (ใช้สัญลักษณ์ $\equiv$)</b> ก็ต่อเมื่อ ประพจน์ทั้งสองมี <b>ค่าความจริงเหมือนกันทุกกรณี</b> กรณีต่อกรณี</p>
             <p>ถ้าประพจน์ $A$ และ $B$ สมมูลกัน ($A \equiv B$) แล้ว เมื่อนำมาเชื่อมด้วยตัวเชื่อม "ก็ต่อเมื่อ" จะได้ $(A \leftrightarrow B)$ เป็น<b>สัจนิรันดร์</b>เสมอ</p>
 
-            <div style="background-color: #f8f9fa; border-left: 4px solid #ff416c; padding: 15px; margin: 15px 0; border-radius: 4px;">
-                <h3 style="color: #ff416c; margin-bottom: 8px;">🔑 กฎการสมมูลที่สำคัญ (ควรจำเพื่อใช้ทำข้อสอบ)</h3>
-                <ul style="padding-left: 20px; line-height: 1.8;">
-                    <li><b>กฎการเปลี่ยนตัวเชื่อมถ้า...แล้ว:</b> $p \rightarrow q \equiv \sim p \lor q$</li>
-                    <li><b>กฎการสลับที่และใส่นิเสธ (Contraposition):</b> $p \rightarrow q \equiv \sim q \rightarrow \sim p$</li>
-                    <li><b>กฎของเดอมอร์แกน (De Morgan's Laws):</b>
-                        <ul style="padding-left: 20px;">
-                            <li>$\sim(p \land q) \equiv \sim p \lor \sim q$</li>
-                            <li>$\sim(p \lor q) \equiv \sim p \land \sim q$</li>
-                        </ul>
-                    </li>
-                    <li><b>กฎก็ต่อเมื่อ:</b> $p \leftrightarrow q \equiv (p \rightarrow q) \land (q \rightarrow p)$</li>
-                    <li><b>กฎการแจกแจง:</b> $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$</li>
-                </ul>
-            </div>
-
-            <div style="background: #fff0f3; border: 1px solid #ff416c; padding: 15px; border-radius: 8px; margin-top: 15px;">
-                <h4 style="color: #d62850;">💡 ตัวอย่างการแก้โจทย์สมมูล</h4>
-                <p><b>โจทย์:</b> ประพจน์ $\sim p \rightarrow (q \rightarrow r)$ สมมูลกับรูปแบบในข้อใด?</p>
-                <p><b>วิธีทำ:</b></p>
-                <p>1. เปลี่ยน $q \rightarrow r$ วงเล็บหลังก่อน โดยใช้กฎ $A \rightarrow B \equiv \sim A \lor B$</p>
-                <p style="padding-left: 20px;">$\rightarrow \sim p \rightarrow (\sim q \lor r)$</p>
-                <p>2. เปลี่ยนตัวเชื่อม $\rightarrow$ หลักตรงกลาง โดยใส่นิเสธหน้า $\sim p$ แล้วเปลี่ยนเป็น $\lor$</p>
-                <p style="padding-left: 20px;">$\rightarrow \sim(\sim p) \lor (\sim q \lor r)$</p>
-                <p style="padding-left: 20px;">$\rightarrow p \lor \sim q \lor r$</p>
-                <p>3. จัดรูปใหม่โดยเปลี่ยนเป็นตัวเชื่อมถ้า...แล้ว ($p \lor \sim q \equiv \sim q \lor p \equiv q \rightarrow p$):</p>
-                <p style="padding-left: 20px;">$\rightarrow (p \land q) \rightarrow r$ หรือ $(q \land \sim r) \rightarrow p$ เป็นต้น</p>
-            </div>
+            <h3 style="margin-top: 25px; margin-bottom: 15px; color: #2c3e50;">🔑 กฎการสมมูลและคุณสมบัติของตัวเชื่อม (แยกตามประเภท)</h3>
             
-            <div class="card" style="margin-top: 25px;">
-                <h3>สรุป: ตัวเชื่อมประพจน์ไหน ใช้กับกฎ/สมบัติข้อไหนได้บ้าง?</h3>
-                <p>ตารางสรุปการประยุกต์ใช้สมบัติพื้นฐานกับตัวเชื่อมต่างๆ:</p>
+            <!-- กล่องแสดงกฎแบ่งตามหมวดหมู่สี -->
+            <div style="display: flex; flex-direction: column; gap: 15px;">
                 
-                <table class="styled-table" style="width:100%; border-collapse: collapse; margin-top: 15px;">
-                    <thead>
-                        <tr style="background-color: #2c3e50; color: white;">
-                            <th style="padding: 10px; border: 1px solid #ddd;">กฎ / สมบัติ (Rule / Property)</th>
-                            <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">และ ($\land$)</th>
-                            <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">หรือ ($\lor$)</th>
-                            <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">ถ้า...แล้ว ($\rightarrow$)</th>
-                            <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">ก็ต่อเมื่อ ($\leftrightarrow$)</th>
-                            <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">นิเสธ ($\sim$)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="padding: 10px; border: 1px solid #ddd;"><b>1. สลับที่ (Commutative)</b></td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px; border: 1px solid #ddd;"><b>2. เปลี่ยนกลุ่ม (Associative)</b></td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px; border: 1px solid #ddd;"><b>3. แจกแจง (Distributive)</b></td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ (กับ $\lor$)</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ (กับ $\land$)</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ (แจกข้างหลัง)</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px; border: 1px solid #ddd;"><b>4. กฎเดอมอร์แกน (De Morgan's)</b></td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ (กระจาย $\sim$)</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ (กระจาย $\sim$)</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px; border: 1px solid #ddd;"><b>5. เอกลักษณ์ซ้ำเดิม (Idempotent)</b><br><small>($p \circ p \equiv p$)</small></td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗ ($p \rightarrow p \equiv T$)</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗ ($p \leftrightarrow p \equiv T$)</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px; border: 1px solid #ddd;"><b>6. นิเสธสองชั้น (Double Negation)</b></td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ ($\sim\sim p \equiv p$)</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px; border: 1px solid #ddd;"><b>7. การเปลี่ยนรูป (Transformation)</b></td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ ($\sim p \lor q$)</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ ($(p\rightarrow q) \land (q\rightarrow p)$)</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px; border: 1px solid #ddd;"><b>8. การแย้งสลับที่ (Contraposition)</b></td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red;">✗</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ ($\sim q \rightarrow \sim p$)</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green;">✓ ($\sim p \leftrightarrow \sim q$)</td>
-                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: gray;">-</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <!-- หมวดที่ 1: ตัวเชื่อม และ และ หรือ (โทนสีฟ้า) -->
+                <div style="background-color: #eef6ff; border-left: 5px solid #3498db; padding: 15px; border-radius: 6px;">
+                    <h4 style="margin: 0 0 10px 0; color: #2980b9;">🔷 กลุ่มตัวเชื่อม และ ($\land$) และ หรือ ($\lor$)</h4>
+                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
+                        <li style="margin-bottom: 6px;"><b>กฎการสลับที่ (Commutative Law):</b> $p \land q \equiv q \land p$ และ $p \lor q \equiv q \lor p$ (ใช้กับ $\land, \lor, \leftrightarrow$)</li>
+                        <li style="margin-bottom: 6px;"><b>กฎการเปลี่ยนกลุ่ม (Associative Law):</b> $(p \land q) \land r \equiv p \land (q \land r)$ (ใช้กับ $\land, \lor, \leftrightarrow$)</li>
+                        <li style="margin-bottom: 6px;"><b>กฎการแจกแจง (Distributive Law):</b> $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$ (ใช้สลับข้ามระหว่าง $\land$ และ $\lor$)</li>
+                        <li><b>กฎซ้ำเดิม (Idempotent Law):</b> $p \land p \equiv p$ และ $p \lor p \equiv p$ (ใช้กับ $\land, \lor$)</li>
+                    </ul>
+                </div>
 
-                <h4 style="margin-top: 25px; margin-bottom: 15px;">รายละเอียดการนำตัวเชื่อมแต่ละชนิดไปใช้ในแต่ละกฎ:</h4>
+                <!-- หมวดที่ 2: ตัวเชื่อม ถ้า...แล้ว (โทนสีส้ม) -->
+                <div style="background-color: #fff8ec; border-left: 5px solid #e67e22; padding: 15px; border-radius: 6px;">
+                    <h4 style="margin: 0 0 10px 0; color: #d35400;">🟠 กลุ่มตัวเชื่อม ถ้า...แล้ว ($\rightarrow$)</h4>
+                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
+                        <li style="margin-bottom: 6px;"><b>กฎการเปลี่ยนรูปเงื่อนไข:</b> $p \rightarrow q \equiv \sim p \lor q$</li>
+                        <li><b>กฎการแย้งสลับที่ (Contraposition):</b> $p \rightarrow q \equiv \sim q \rightarrow \sim p$ (ใช้กับ $\rightarrow, \leftrightarrow$)</li>
+                    </ul>
+                </div>
+
+                <!-- หมวดที่ 3: ตัวเชื่อม ก็ต่อเมื่อ (โทนสีม่วง) -->
+                <div style="background-color: #f5eef8; border-left: 5px solid #8e44ad; padding: 15px; border-radius: 6px;">
+                    <h4 style="margin: 0 0 10px 0; color: #6c3483;">🟣 กลุ่มตัวเชื่อม ก็ต่อเมื่อ ($\leftrightarrow$)</h4>
+                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
+                        <li><b>กฎการเปลี่ยนรูปก็ต่อเมื่อ:</b> $p \leftrightarrow q \equiv (p \rightarrow q) \land (q \rightarrow p)$</li>
+                    </ul>
+                </div>
+
+                <!-- หมวดที่ 4: ตัวเชื่อม นิเสธ (โทนสีแดง) -->
+                <div style="background-color: #fdf2e9; border-left: 5px solid #e74c3c; padding: 15px; border-radius: 6px;">
+                    <h4 style="margin: 0 0 10px 0; color: #c0392b;">🔴 กลุ่มตัวเชื่อม นิเสธ ($\sim$)</h4>
+                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
+                        <li style="margin-bottom: 6px;"><b>กฎนิเสธสองชั้น (Double Negation):</b> $\sim(\sim p) \equiv p$</li>
+                        <li><b>กฎของเดอมอร์แกน (De Morgan's Laws):</b> $\sim(p \land q) \equiv \sim p \lor \sim q$ และ $\sim(p \lor q) \equiv \sim p \land \sim q$</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- กล่องตัวอย่างโจทย์ตรวจสอบความสมมูล (ประพจน์นี้สมมูลกับประพจน์นี้ไหม) รวม 5 ข้อ -->
+            <div style="background: #fff0f3; border: 1px solid #ff416c; padding: 20px; border-radius: 8px; margin-top: 25px;">
+                <h4 style="color: #d62850; margin-top: 0; font-size: 1.2rem;">💡 ตัวอย่างโจทย์ตรวจสอบความสมมูล (ประพจน์นี้สมมูลกันหรือไม่?)</h4>
                 
-                <div style="display: flex; flex-direction: column; gap: 15px;">
-                    <div style="background-color: #eef6ff; border-left: 5px solid #3498db; padding: 15px; border-radius: 6px;">
-                        <h5 style="margin: 0 0 8px 0; color: #2980b9; font-size: 1.05rem;">
-                            🔷 ตัวเชื่อม และ ($\land$) และ หรือ ($\lor$)
-                        </h5>
-                        <ul style="margin: 0; padding-left: 20px; line-height: 1.7;">
-                            <li>ใช้กฎ<b>สลับที่</b>ได้: $p \land q \equiv q \land p$ และ $p \lor q \equiv q \lor p$</li>
-                            <li>ใช้กฎ<b>เปลี่ยนกลุ่ม</b>ได้: $(p \land q) \land r \equiv p \land (q \land r)$</li>
-                            <li>ใช้กฎ<b>แจกแจง</b>ข้ามกันได้: $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$</li>
-                            <li>ใช้กฎ<b>ซ้ำเดิม</b>ได้: $p \land p \equiv p$ และ $p \lor p \equiv p$</li>
-                        </ul>
-                    </div>
+                <!-- โจทย์ข้อที่ 1 -->
+                <div style="margin-bottom: 15px; border-bottom: 1px dashed #ffb3c1; padding-bottom: 12px;">
+                    <p style="margin: 0 0 5px 0;"><b>ข้อ 1:</b> ประพจน์ $\sim(p \rightarrow q)$ สมมูลกับประพจน์ $p \land \sim q$ หรือไม่?</p>
+                    <p style="margin: 0; color: #555; padding-left: 15px; font-size: 0.95rem;">
+                        <i>แนวคิด:</i> แปลง $\sim(p \rightarrow q)$ โดยเปลี่ยนในวงเล็บเป็น $\sim(\sim p \lor q)$ แล้วใช้กฎเดอมอร์แกนกระจาย $\sim$ จะได้ $\sim(\sim p) \land \sim q \equiv p \land \sim q$<br>
+                        <b>สรุป: สมมูลกัน</b>
+                    </p>
+                </div>
 
-                    <div style="background-color: #fff8ec; border-left: 5px solid #e67e22; padding: 15px; border-radius: 6px;">
-                        <h5 style="margin: 0 0 8px 0; color: #d35400; font-size: 1.05rem;">
-                            🟠 ตัวเชื่อม ถ้า...แล้ว ($\rightarrow$)
-                        </h5>
-                        <ul style="margin: 0; padding-left: 20px; line-height: 1.7;">
-                            <li><b>ไม่สามารถ</b>สลับที่ตรงๆ ได้ ($p \rightarrow q \not\equiv q \rightarrow p$)</li>
-                            <li><b>ไม่สามารถ</b>เปลี่ยนกลุ่มได้ ($(p \rightarrow q) \rightarrow r \not\equiv p \rightarrow (q \rightarrow r)$)</li>
-                            <li>ใช้กฎ<b>การแย้งสลับที่</b>ได้: $p \rightarrow q \equiv \sim q \rightarrow \sim p$</li>
-                            <li>ใช้กฎ<b>เปลี่ยนรูปเป็น "หรือ"</b> ได้: $p \rightarrow q \equiv \sim p \lor q$</li>
-                            <li>ใช้กฎ<b>แจกแจง</b>ได้เฉพาะกรณี: $p \rightarrow (q \land r) \equiv (p \rightarrow q) \land (p \rightarrow r)$</li>
-                        </ul>
-                    </div>
+                <!-- โจทย์ข้อที่ 2 -->
+                <div style="margin-bottom: 15px; border-bottom: 1px dashed #ffb3c1; padding-bottom: 12px;">
+                    <p style="margin: 0 0 5px 0;"><b>ข้อ 2:</b> ประพจน์ $p \rightarrow q$ สมมูลกับประพจน์ $\sim p \lor q$ หรือไม่?</p>
+                    <p style="margin: 0; color: #555; padding-left: 15px; font-size: 0.95rem;">
+                        <i>แนวคิด:</i> เป็นกฎการเปลี่ยนรูปเงื่อนไขพื้นฐาน ($p \rightarrow q \equiv \sim p \lor q$) โดยตรง<br>
+                        <b>สรุป: สมมูลกัน</b>
+                    </p>
+                </div>
 
-                    <div style="background-color: #f5eef8; border-left: 5px solid #8e44ad; padding: 15px; border-radius: 6px;">
-                        <h5 style="margin: 0 0 8px 0; color: #6c3483; font-size: 1.05rem;">
-                            🟣 ตัวเชื่อม ก็ต่อเมื่อ ($\leftrightarrow$)
-                        </h5>
-                        <ul style="margin: 0; padding-left: 20px; line-height: 1.7;">
-                            <li>ใช้กฎ<b>สลับที่</b>ได้: $p \leftrightarrow q \equiv q \leftrightarrow p$</li>
-                            <li>ใช้กฎ<b>เปลี่ยนรูป</b>ได้: $p \leftrightarrow q \equiv (p \rightarrow q) \land (q \rightarrow p)$</li>
-                            <li>ใส่<b>นิเสธทั้งสองข้าง</b>ได้: $p \leftrightarrow q \equiv \sim p \leftrightarrow \sim q$</li>
-                        </ul>
-                    </div>
+                <!-- โจทย์ข้อที่ 3 -->
+                <div style="margin-bottom: 15px; border-bottom: 1px dashed #ffb3c1; padding-bottom: 12px;">
+                    <p style="margin: 0 0 5px 0;"><b>ข้อ 3:</b> ประพจน์ $\sim(p \lor q)$ สมมูลกับประพจน์ $\sim p \lor \sim q$ หรือไม่?</p>
+                    <p style="margin: 0; color: #555; padding-left: 15px; font-size: 0.95rem;">
+                        <i>แนวคิด:</i> ตามกฎเดอมอร์แกน $\sim(p \lor q) \equiv \sim p \land \sim q$ (เครื่องหมายเชื่อมต้องเปลี่ยนจาก $\lor$ เป็น $\land$) แต่โจทย์ให้มาเป็น $\sim p \lor \sim q$<br>
+                        <b>สรุป: ไม่สมมูลกัน</b>
+                    </p>
+                </div>
 
-                    <div style="background-color: #fdf2e9; border-left: 5px solid #e74c3c; padding: 15px; border-radius: 6px;">
-                        <h5 style="margin: 0 0 8px 0; color: #c0392b; font-size: 1.05rem;">
-                            🔴 ตัวเชื่อม นิเสธ ($\sim$)
-                        </h5>
-                        <ul style="margin: 0; padding-left: 20px; line-height: 1.7;">
-                            <li>ใช้กฎ<b>นิเสธสองชั้น</b>ได้: $\sim(\sim p) \equiv p$</li>
-                            <li>ใช้กฎ<b>เดอมอร์แกน</b>เพื่อเปลี่ยนตัวเชื่อมได้: $\sim(p \land q) \equiv \sim p \lor \sim q$ และ $\sim(p \lor q) \equiv \sim p \land \sim q$</li>
-                            <li>ใช้หา<b>นิเสธของเงื่อนไข</b>ได้: $\sim(p \rightarrow q) \equiv p \land \sim q$</li>
-                        </ul>
-                    </div>
+                <!-- โจทย์ข้อที่ 4 -->
+                <div style="margin-bottom: 15px; border-bottom: 1px dashed #ffb3c1; padding-bottom: 12px;">
+                    <p style="margin: 0 0 5px 0;"><b>ข้อ 4:</b> ประพจน์ $p \rightarrow q$ สมมูลกับประพจน์ $\sim q \rightarrow \sim p$ หรือไม่?</p>
+                    <p style="margin: 0; color: #555; padding-left: 15px; font-size: 0.95rem;">
+                        <i>แนวคิด:</i> เป็นไปตามกฎการแย้งสลับที่ (Contraposition) ซึ่ง $p \rightarrow q \equiv \sim q \rightarrow \sim p$ เสมอ<br>
+                        <b>สรุป: สมมูลกัน</b>
+                    </p>
+                </div>
+
+                <!-- โจทย์ข้อที่ 5 -->
+                <div>
+                    <p style="margin: 0 0 5px 0;"><b>ข้อ 5:</b> ประพจน์ $p \leftrightarrow q$ สมมูลกับประพจน์ $(p \rightarrow q) \land (q \rightarrow p)$ หรือไม่?</p>
+                    <p style="margin: 0; color: #555; padding-left: 15px; font-size: 0.95rem;">
+                        <i>แนวคิด:</i> เป็นกฎการเปลี่ยนรูปตัวเชื่อม "ก็ต่อเมื่อ" เป็นเงื่อนไขไป-กลับเชื่อมด้วย $\land$<br>
+                        <b>สรุป: สมมูลกัน</b>
+                    </p>
                 </div>
             </div>
         </section>
 
+            </div>
         <section id="page4" class="page">
             <h2>การอ้างเหตุผล (Logical Argument)</h2>
             <p>การอ้างเหตุผลประกอบด้วยส่วนสำคัญ 2 ส่วน คือ:</p>
