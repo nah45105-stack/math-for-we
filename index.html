@@ -740,7 +740,7 @@
             </div>
         </section>
 
-<!-- หน้าที่ 3: การสมมูลกัน (Logical Equivalence) ปรับแต่งให้ปลอดภัยบนมือถือ -->
+<!-- หน้าที่ 3: การสมมูลกัน (Logical Equivalence) พร้อมวิธีทำทีละขั้นตอน -->
         <section id="page3" class="page">
             <h2>การสมมูลกัน (Logical Equivalence) และกฎของตัวเชื่อม</h2>
             <p>ประพจน์สองประพจน์จะ <b>สมมูลกัน (ใช้สัญลักษณ์ $\equiv$)</b> ก็ต่อเมื่อ ประพจน์ทั้งสองมี <b>ค่าความจริงเหมือนกันทุกกรณี</b> กรณีต่อกรณี</p>
@@ -748,10 +748,7 @@
 
             <h3 style="margin-top: 25px; margin-bottom: 15px; color: #2c3e50;">🔑 กฎการสมมูลและคุณสมบัติของตัวเชื่อม (แยกตามประเภท)</h3>
             
-            <!-- กล่องแสดงกฎแบ่งตามหมวดหมู่สี (ครอบด้วย overflow-x เพื่อกันล้นบนจอแคบ) -->
             <div style="display: flex; flex-direction: column; gap: 15px; width: 100%; box-sizing: border-box;">
-                
-                <!-- หมวดที่ 1: ตัวเชื่อม และ และ หรือ -->
                 <div style="background-color: #eef6ff; border-left: 5px solid #3498db; padding: 15px; border-radius: 6px; overflow-x: auto;">
                     <h4 style="margin: 0 0 10px 0; color: #2980b9;">🔷 กลุ่มตัวเชื่อม และ ($\land$) และ หรือ ($\lor$)</h4>
                     <ul style="margin: 0; padding-left: 20px; line-height: 1.8; word-break: break-word;">
@@ -762,7 +759,6 @@
                     </ul>
                 </div>
 
-                <!-- หมวดที่ 2: ตัวเชื่อม ถ้า...แล้ว -->
                 <div style="background-color: #fff8ec; border-left: 5px solid #e67e22; padding: 15px; border-radius: 6px; overflow-x: auto;">
                     <h4 style="margin: 0 0 10px 0; color: #d35400;">🟠 กลุ่มตัวเชื่อม ถ้า...แล้ว ($\rightarrow$)</h4>
                     <ul style="margin: 0; padding-left: 20px; line-height: 1.8; word-break: break-word;">
@@ -771,7 +767,6 @@
                     </ul>
                 </div>
 
-                <!-- หมวดที่ 3: ตัวเชื่อม ก็ต่อเมื่อ -->
                 <div style="background-color: #f5eef8; border-left: 5px solid #8e44ad; padding: 15px; border-radius: 6px; overflow-x: auto;">
                     <h4 style="margin: 0 0 10px 0; color: #6c3483;">🟣 กลุ่มตัวเชื่อม ก็ต่อเมื่อ ($\leftrightarrow$)</h4>
                     <ul style="margin: 0; padding-left: 20px; line-height: 1.8; word-break: break-word;">
@@ -779,40 +774,69 @@
                     </ul>
                 </div>
 
-                <!-- หมวดที่ 4: ตัวเชื่อม นิเสธ -->
                 <div style="background-color: #fdf2e9; border-left: 5px solid #e74c3c; padding: 15px; border-radius: 6px; overflow-x: auto;">
                     <h4 style="margin: 0 0 10px 0; color: #c0392b;">🔴 กลุ่มตัวเชื่อม นิเสธ ($\sim$)</h4>
                     <ul style="margin: 0; padding-left: 20px; line-height: 1.8; word-break: break-word;">
                         <li style="margin-bottom: 6px;"><b>กฎนิเสธสองชั้น:</b> $\sim(\sim p) \equiv p$</li>
-                        <li><b>กฎของเดอมอร์แกน:</b> $\sim(p \land q) \equiv \sim p \lor \sim q$</li>
+                        <li><b>กฎของเดอมอร์แกน:</b> $\sim(p \land q) \equiv \sim p \lor \sim q$ และ $\sim(p \lor q) \equiv \sim p \land \sim q$</li>
                     </ul>
                 </div>
-
             </div>
 
-            <!-- กล่องตัวอย่างโจทย์ตรวจสอบความสมมูล -->
+            <!-- กล่องตัวอย่างโจทย์ตรวจสอบความสมมูลพร้อมวิธีทำ -->
             <div style="background: #fff0f3; border: 1px solid #ff416c; padding: 15px; border-radius: 8px; margin-top: 25px; overflow-x: auto; box-sizing: border-box;">
-                <h4 style="color: #d62850; margin-top: 0; font-size: 1.1rem;">💡 ตัวอย่างโจทย์ตรวจสอบความสมมูล</h4>
+                <h4 style="color: #d62850; margin-top: 0; font-size: 1.1rem;">💡 ตัวอย่างโจทย์ตรวจสอบความสมมูล (พร้อมวิธีทำ)</h4>
                 
-                <div style="margin-bottom: 12px; border-bottom: 1px dashed #ffb3c1; padding-bottom: 10px; word-break: break-word;">
-                    <p style="margin: 0 0 4px 0;"><b>ข้อ 1:</b> $\sim(p \rightarrow q)$ สมมูลกับ $p \land \sim q$ หรือไม่?</p>
-                    <p style="margin: 0; color: #555; font-size: 0.9rem;"><i>สรุป:</i> <b>สมมูลกัน</b></p>
+                <!-- ข้อ 1 -->
+                <div style="margin-bottom: 15px; border-bottom: 1px dashed #ffb3c1; padding-bottom: 12px; word-break: break-word;">
+                    <p style="margin: 0 0 5px 0;"><b>ข้อ 1:</b> ประพจน์ $\sim(p \rightarrow q)$ สมมูลกับ $p \land \sim q$ หรือไม่?</p>
+                    <p style="margin: 0; color: #555; padding-left: 15px; font-size: 0.95rem; line-height: 1.6;">
+                        <b>วิธีทำ:</b><br>
+                        1. แปลงรูปในวงเล็บโดยใช้กฎ $p \rightarrow q \equiv \sim p \lor q$ จะได้ $\sim(\sim p \lor q)$<br>
+                        2. ใช้กฎของเดอมอร์แกนกระจาย $\sim$ เข้าไป $\rightarrow \sim(\sim p) \land \sim q$<br>
+                        3. ใช้กฎนิเสธสองชั้น $\sim(\sim p) \equiv p$ จะได้ $p \land \sim q$<br>
+                        👉 <b>สรุป: สมมูลกัน</b>
+                    </p>
                 </div>
-                <div style="margin-bottom: 12px; border-bottom: 1px dashed #ffb3c1; padding-bottom: 10px; word-break: break-word;">
-                    <p style="margin: 0 0 4px 0;"><b>ข้อ 2:</b> $p \rightarrow q$ สมมูลกับ $\sim p \lor q$ หรือไม่?</p>
-                    <p style="margin: 0; color: #555; font-size: 0.9rem;"><i>สรุป:</i> <b>สมมูลกัน</b></p>
+
+                <!-- ข้อ 2 -->
+                <div style="margin-bottom: 15px; border-bottom: 1px dashed #ffb3c1; padding-bottom: 12px; word-break: break-word;">
+                    <p style="margin: 0 0 5px 0;"><b>ข้อ 2:</b> ประพจน์ $p \rightarrow q$ สมมูลกับ $\sim p \lor q$ หรือไม่?</p>
+                    <p style="margin: 0; color: #555; padding-left: 15px; font-size: 0.95rem; line-height: 1.6;">
+                        <b>วิธีทำ:</b><br>
+                        เป็นกฎพื้นฐานของการเปลี่ยนรูปตัวเชื่อม ถ้า...แล้ว เป็น หรือ โดยตรง ($p \rightarrow q \equiv \sim p \lor q$)<br>
+                        👉 <b>สรุป: สมมูลกัน</b>
+                    </p>
                 </div>
-                <div style="margin-bottom: 12px; border-bottom: 1px dashed #ffb3c1; padding-bottom: 10px; word-break: break-word;">
-                    <p style="margin: 0 0 4px 0;"><b>ข้อ 3:</b> $\sim(p \lor q)$ สมมูลกับ $\sim p \lor \sim q$ หรือไม่?</p>
-                    <p style="margin: 0; color: #555; font-size: 0.9rem;"><i>สรุป:</i> <b>ไม่สมมูลกัน</b></p>
+
+                <!-- ข้อ 3 -->
+                <div style="margin-bottom: 15px; border-bottom: 1px dashed #ffb3c1; padding-bottom: 12px; word-break: break-word;">
+                    <p style="margin: 0 0 5px 0;"><b>ข้อ 3:</b> ประพจน์ $\sim(p \lor q)$ สมมูลกับ $\sim p \lor \sim q$ หรือไม่?</p>
+                    <p style="margin: 0; color: #555; padding-left: 15px; font-size: 0.95rem; line-height: 1.6;">
+                        <b>วิธีทำ:</b><br>
+                        ตามกฎของเดอมอร์แกน $\sim(p \lor q) \equiv \sim p \land \sim q$ (เครื่องหมายตรงกลางต้องเปลี่ยนจาก $\lor$ เป็น $\land$ แต่โจทย์ให้มาเป็น $\lor$)<br>
+                        👉 <b>สรุป: ไม่สมมูลกัน</b>
+                    </p>
                 </div>
-                <div style="margin-bottom: 12px; border-bottom: 1px dashed #ffb3c1; padding-bottom: 10px; word-break: break-word;">
-                    <p style="margin: 0 0 4px 0;"><b>ข้อ 4:</b> $p \rightarrow q$ สมมูลกับ $\sim q \rightarrow \sim p$ หรือไม่?</p>
-                    <p style="margin: 0; color: #555; font-size: 0.9rem;"><i>สรุป:</i> <b>สมมูลกัน</b></p>
+
+                <!-- ข้อ 4 -->
+                <div style="margin-bottom: 15px; border-bottom: 1px dashed #ffb3c1; padding-bottom: 12px; word-break: break-word;">
+                    <p style="margin: 0 0 5px 0;"><b>ข้อ 4:</b> ประพจน์ $p \rightarrow q$ สมมูลกับ $\sim q \rightarrow \sim p$ หรือไม่?</p>
+                    <p style="margin: 0; color: #555; padding-left: 15px; font-size: 0.95rem; line-height: 1.6;">
+                        <b>วิธีทำ:</b><br>
+                        เป็นไปตามกฎการแย้งสลับที่ (Contraposition) ซึ่งกำหนดไว้ว่า $p \rightarrow q \equiv \sim q \rightarrow \sim p$ เสมอ<br>
+                        👉 <b>สรุป: สมมูลกัน</b>
+                    </p>
                 </div>
+
+                <!-- ข้อ 5 -->
                 <div style="word-break: break-word;">
-                    <p style="margin: 0 0 4px 0;"><b>ข้อ 5:</b> $p \leftrightarrow q$ สมมูลกับ $(p \rightarrow q) \land (q \rightarrow p)$ หรือไม่?</p>
-                    <p style="margin: 0; color: #555; font-size: 0.9rem;"><i>สรุป:</i> <b>สมมูลกัน</b></p>
+                    <p style="margin: 0 0 5px 0;"><b>ข้อ 5:</b> ประพจน์ $p \leftrightarrow q$ สมมูลกับ $(p \rightarrow q) \land (q \rightarrow p)$ หรือไม่?</p>
+                    <p style="margin: 0; color: #555; padding-left: 15px; font-size: 0.95rem; line-height: 1.6;">
+                        <b>วิธีทำ:</b><br>
+                        เป็นกฎการเปลี่ยนรูปตัวเชื่อม "ก็ต่อเมื่อ" ให้กลายเป็นเงื่อนไขไปและกลับเชื่อมด้วย $\land$ ตามนิยาม ($p \leftrightarrow q \equiv (p \rightarrow q) \land (q \rightarrow p)$)<br>
+                        👉 <b>สรุป: สมมูลกัน</b>
+                    </p>
                 </div>
             </div>
         </section>
