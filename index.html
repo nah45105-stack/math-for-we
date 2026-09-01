@@ -633,24 +633,7 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-/* นำไปใส่ในส่วน <style> ของคุณเพื่อซ่อนปุ่มกากบาท, ซ่อนแถบเลื่อน แต่ยังใช้นิ้วปัดเลื่อนขึ้นลงได้ปกติ */
-.menu-container, .modal-menu, .sidebar {
-    max-height: 85vh;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch;
-    
-    /* ซ่อนแถบเลื่อนสำหรับ Firefox และ IE/Edge */
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-/* ซ่อนแถบเลื่อนสำหรับ Chrome, Safari และ Opera */
-.menu-container::-webkit-scrollbar, 
-.modal-menu::-webkit-scrollbar, 
-.sidebar::-webkit-scrollbar {
-    display: none;
-}
-.menu-container, .modal-menu, .sidebar {
+        .menu-container, .modal-menu, .sidebar {
     position: fixed;      /* ล็อกตำแหน่งให้อยู่กับที่ */
     top: 0;               /* ชิดขอบบนสุด */
     left: 0;              /* ชิดขอบซ้ายสุด */
@@ -878,6 +861,42 @@
                         👉 <b>สรุป: สมมูลกัน</b>
                     </p>
                 </div>
+            </div>
+        </section>
+        <section id="page4" class="page">
+            <h2>การอ้างเหตุผล (Logical Argument)</h2>
+            <p>การอ้างเหตุผลประกอบด้วยส่วนสำคัญ 2 ส่วน คือ:</p>
+            <ol style="padding-left: 20px; margin: 10px 0;">
+                <li><b>เหตุ (Premises):</b> $H_1, H_2, H_3, ..., H_n$</li>
+                <li><b>ผล (Conclusion):</b> $C$</li>
+            </ol>
+            <p>การอ้างเหตุผลจะ <b>"สมเหตุสมผล" (Valid)</b> ก็ต่อเมื่อ เมื่อเรานำเหตุทุกข้อมาเชื่อมด้วย "และ" ($\land$) แล้วเชื่อมไปยังผลด้วย "ถ้า...แล้ว" ($\rightarrow$) แล้วรูปแบบประพจน์นั้นเป็น <b>สัจนิรันดร์</b></p>
+
+            <div style="background-color: #f8f9fa; border-left: 4px solid #2a5298; padding: 15px; margin: 15px 0; border-radius: 4px;">
+                <h3 style="color: #2a5298; margin-bottom: 8px;">⚙️ ขั้นตอนการตรวจสอบความสมเหตุสมผล</h3>
+                <p><b>วิธีสั้น (การหาข้อขัดแย้ง):</b></p>
+                <ol style="padding-left: 20px; line-height: 1.8;">
+                    <li>ให้ <b>เหตุทุกข้อมีค่าความจริงเป็น จริง (T)</b></li>
+                    <li>ให้ <b>ผลลัพธ์มีค่าความจริงเป็น เท็จ (F)</b></li>
+                    <li>นำค่าความจริงจากผล ($F$) และเหตุพิสูจน์ย้อนกลับไปหาประพจน์ย่อย</li>
+                    <li>หากเกิด <b>ข้อขัดแย้ง</b> $\rightarrow$ สรุปว่า <b>สมเหตุสมผล (Valid)</b></li>
+                    <li>หาก <b>ไม่เกิดข้อขัดแย้ง</b> (กำหนดให้เหตุเป็นจริงทุกข้อและผลเป็นเท็จได้สำเร็จ) $\rightarrow$ สรุปว่า <b>ไม่สมเหตุสมผล (Invalid)</b></li>
+                </ol>
+            </div>
+
+            <div style="background: #eef4ff; border: 1px solid #1e3c72; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                <h4 style="color: #1e3c72;">💡 ตัวอย่างการพิสูจน์การอ้างเหตุผล</h4>
+                <p><b>กำหนดให้:</b></p>
+                <p>เหตุ 1: $p \rightarrow q$</p>
+                <p>เหตุ 2: $\sim q$</p>
+                <p>ผล: $\sim p$</p>
+                <p><b>ตรวจสอบ:</b></p>
+                <p>1. กำหนดให้ผลเป็นเท็จ: $\sim p \equiv \text{F} \Rightarrow p \equiv \text{T}$</p>
+                <p>2. กำหนดให้เหตุเป็นจริงทุกข้อ:</p>
+                <p style="padding-left: 20px;">- เหตุ 2: $\sim q \equiv \text{T} \Rightarrow q \equiv \text{F}$</p>
+                <p style="padding-left: 20px;">- เหตุ 1: $p \rightarrow q \equiv \text{T}$</p>
+                <p>3. แทนค่า $p=\text{T}$ และ $q=\text{F}$ ในเหตุ 1 จะได้ $\text{T} \rightarrow \text{F} \equiv \text{F}$ ซึ่งขัดแย้งกับที่ตั้งไว้ว่าเหตุ 1 ต้องเป็น $\text{T}$</p>
+                <p><b>สรุป:</b> เกิดข้อขัดแย้ง การอ้างเหตุผลนี้จึง <b>สมเหตุสมผล (Valid)</b></p>
             </div>
         </section>
 
